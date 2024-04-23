@@ -6,6 +6,10 @@ To repozytorium zawiera kod źródłowy mojego portfolio internetowego.
 
 Moje portfolio internetowe jest miejscem, gdzie prezentuję moje umiejętności, doświadczenie zawodowe oraz portfolio projektów. Jest to responsywna strona internetowa stworzona przy użyciu HTML, CSS oraz frameworka Bootstrap 5.3. Projekt ten służy jako wizytówka moich umiejętności programistycznych i graficznych.
 
+## Adres strony projektu
+- Github: https://github.com/alwoodm/Portfolio
+- Strona: https://alwood.site
+
 ## Struktura projektu
 
 Projekt składa się z następujących plików i folderów:
