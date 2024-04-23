@@ -1,5 +1,5 @@
 # Portfolio
-### Rok
+
 To repozytorium zawiera kod źródłowy mojego portfolio internetowego.
 
 ## Opis projektu
