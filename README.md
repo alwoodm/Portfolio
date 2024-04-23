@@ -19,4 +19,5 @@ Projekt składa się z następujących plików i folderów:
 ## Autor
 
 Autor: Aleksander Lis
+
 Kontakt: kontakt@alwood.site
