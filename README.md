@@ -18,7 +18,7 @@ Projekt składa się z następujących plików i folderów:
 - **portfolio.html**: Sekcja strony zawierająca projekty które stworzyłem.
 - **school.html**: Sekcja strony zawierająca osiągniącia w ramach edukacji szkolnej oraz link do strony zawierającej materiały z lekcji w szkole.
 - **contact.html**: Sekcja kontaktowa strony.
-- **bootstrap/**: Folder zawierający framework bootstrap w wersji 5.3.3.
+- **/node_modules/bootstrap**: Folder zawierający framework bootstrap w wersji 5.3.3.
 
 ## Autor
 
