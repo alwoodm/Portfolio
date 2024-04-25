@@ -1,0 +1,679 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Grammar</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="8891c8bc-94a4-4e6e-b29b-6adc2402114d" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">📘</span></div><h1 class="page-title">Grammar</h1><p class="page-description"></p></header><div class="page-body"><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">Present Simple</summary><div class="indented"><p id="a9be9cce-1c5e-43ee-8dd3-312bad7f7b1a" class="">We are using Present simple to :</p><ul id="ab8c8a9a-69a0-48ce-b87d-20a8bd4f6a25" class="bulleted-list"><li style="list-style-type:disc">reapeating actions</li></ul><ul id="0d62153d-ee0f-4d64-8b0c-80779f1ca674" class="bulleted-list"><li style="list-style-type:disc">old actionts when going to today </li></ul><ul id="210198a0-0031-4c17-b2a7-3fe0620cac35" class="bulleted-list"><li style="list-style-type:disc">general truth about nature world</li></ul><ul id="75ddcf28-79e1-48b3-90fa-bd85623edaef" class="bulleted-list"><li style="list-style-type:disc">time table</li></ul><ul id="3eaf64f6-782c-4ad3-add3-38248fa651c0" class="bulleted-list"><li style="list-style-type:disc">preferences / feelings</li></ul><h2 id="cdda32c9-9751-4fde-bea9-e955be17054a" class="">Usage of Present Simple</h2><h3 id="5ec3bbf5-e798-4f5e-b2e8-11929065fcca" class="">Full senteces</h3><table id="324382c6-34e1-4e55-81df-96eb47b281ef" class="simple-table"><tbody><tr id="6496c8fb-5c08-4d1d-a59d-03f1e2aa56d0"><td id="c{GM" class=""></td><td id="STBE" class="">I</td><td id="AEyn" class="">He/She/It</td><td id="M?gB" class="">You/We/They</td></tr><tr id="1bd0b5a5-f929-4621-994b-d4f61fb8b8ae"><td id="c{GM" class="">+</td><td id="STBE" class="">I read</td><td id="AEyn" class="">He/She/It reads</td><td id="M?gB" class="">You/we/They read</td></tr><tr id="363df6ba-8bd5-48a7-a9b8-e6324d450652"><td id="c{GM" class="">-</td><td id="STBE" class="">I don’t read</td><td id="AEyn" class="">He/She/It doesn’t reads</td><td id="M?gB" class="">You/we/They don’t read</td></tr><tr id="ecce74dd-d5a5-4512-9ada-1bb114230974"><td id="c{GM" class="">?</td><td id="STBE" class="">Do I read?</td><td id="AEyn" class="">Does He/She/It reads?</td><td id="M?gB" class="">Do You/we/They read?</td></tr></tbody></table><h3 id="f4d72dee-2775-4378-92da-ffa6982ca2fb" class=""> Verbs</h3><table id="9cae028d-3edb-47cb-bc01-7e50b1f95750" class="simple-table"><tbody><tr id="20b06a33-832c-4b56-af6e-ffc1a33f7ebd"><td id="c{GM" class=""></td><td id="STBE" class="">I</td><td id="AEyn" class="">He/She/It</td><td id="M?gB" class="">You/We/They</td></tr><tr id="4291cfa3-3eca-4465-88fa-341fae7f6d0e"><td id="c{GM" class="">+</td><td id="STBE" class="">read</td><td id="AEyn" class="">reads</td><td id="M?gB" class="">read</td></tr><tr id="0966c515-428b-46ee-8d5f-c9c8b8399eb0"><td id="c{GM" class="">-</td><td id="STBE" class="">read</td><td id="AEyn" class="">read</td><td id="M?gB" class="">read</td></tr><tr id="1efbd873-55a9-4c14-adc8-838aab7a17c4"><td id="c{GM" class="">?</td><td id="STBE" class="">read</td><td id="AEyn" class="">read</td><td id="M?gB" class="">read</td></tr></tbody></table><h3 id="c7f1b050-7892-443c-ac9e-7ef0292270b5" class="">To Be</h3><table id="f62fcfc8-391c-488f-bd75-d759051873a7" class="simple-table"><tbody><tr id="95a4a3f5-e86e-41bb-a064-bedb6967bb52"><td id="c{GM" class=""></td><td id="STBE" class="">I</td><td id="AEyn" class="">He/She/It</td><td id="M?gB" class="">You/We/They</td></tr><tr id="64fe87db-920d-495c-9aff-3a07a23413c2"><td id="c{GM" class="">+</td><td id="STBE" class="">empty</td><td id="AEyn" class="">empty</td><td id="M?gB" class="">empty</td></tr><tr id="ece50911-65ff-4eef-b953-c20b4bc16e3f"><td id="c{GM" class="">-</td><td id="STBE" class="">don’t</td><td id="AEyn" class="">doesn’t</td><td id="M?gB" class="">don’t</td></tr><tr id="6207c910-3b83-49a9-b60a-8c0a65d1e686"><td id="c{GM" class="">?</td><td id="STBE" class="">do</td><td id="AEyn" class="">does</td><td id="M?gB" class="">do</td></tr></tbody></table></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">Present Continues</summary><div class="indented"><p id="15f6f367-b016-4463-bb17-afaa7f5c4951" class="">We are use Present Continues to:</p><ul id="1aba3752-e094-4fa3-8228-351f159b531d" class="bulleted-list"><li style="list-style-type:disc">actions wchich are hapening now</li></ul><ul id="674b7565-196a-421f-9153-014d2b4501a3" class="bulleted-list"><li style="list-style-type:disc">plans and arrangemends</li></ul><ul id="d9f7768f-a7cd-4bd5-8154-79b207919ae2" class="bulleted-list"><li style="list-style-type:disc">when a preson makes tou angry</li></ul><ul id="d84c6c4d-0cf2-4213-8121-46fff000bed8" class="bulleted-list"><li style="list-style-type:disc">temporaray action</li></ul><ul id="20085c87-3079-47d3-9d72-1a0667d431cc" class="bulleted-list"><li style="list-style-type:disc">to show that things are changing</li></ul><h2 id="94acbdf9-aa1f-4223-8b38-5f85a96c7c8e" class="">Usage of Present Contineus</h2><h3 id="835ce653-c3d2-48e0-93ba-902adb8abbc2" class="">Full senteces</h3><table id="84bcefda-1e74-47d0-9885-3564881b7f58" class="simple-table"><thead class="simple-table-header"><tr id="ba096764-6b47-4a38-8a37-8ed18c9c2a3b"><th id="c{GM" class="simple-table-header-color simple-table-header"></th><th id="STBE" class="simple-table-header-color simple-table-header">I</th><th id="AEyn" class="simple-table-header-color simple-table-header">He/She/It</th><th id="M?gB" class="simple-table-header-color simple-table-header">You/We/They</th></tr></thead><tbody><tr id="bcaca77d-c250-454f-b1c2-52ac3edee06a"><th id="c{GM" class="simple-table-header-color simple-table-header">+</th><td id="STBE" class="">I am waiting</td><td id="AEyn" class="">He/She/it is waiting</td><td id="M?gB" class="">You/We/They are waiting</td></tr><tr id="5eefbf00-1c43-4212-9009-e1a4790c3718"><th id="c{GM" class="simple-table-header-color simple-table-header">-</th><td id="STBE" class="">I am not waiting</td><td id="AEyn" class="">He/She/it isn’t waiting</td><td id="M?gB" class="">You/We/They aren’t waiting</td></tr><tr id="869f8467-8c20-4310-8bb6-60243500850f"><th id="c{GM" class="simple-table-header-color simple-table-header">?</th><td id="STBE" class="">Am I waiting?</td><td id="AEyn" class="">Is He/She/it waiting?</td><td id="M?gB" class="">Are You/We/They waiting?</td></tr></tbody></table><h3 id="ed25ca2b-74c9-4038-ab27-c63467be3e2c" class=""> Verbs</h3><table id="f25ecc65-d3f5-4d56-aa10-aa677a033e71" class="simple-table"><thead class="simple-table-header"><tr id="672544a9-fd99-48a7-8f23-40fbba3b713d"><th id="c{GM" class="simple-table-header-color simple-table-header"></th><th id="STBE" class="simple-table-header-color simple-table-header">I</th><th id="AEyn" class="simple-table-header-color simple-table-header">He/She/It</th><th id="M?gB" class="simple-table-header-color simple-table-header">You/We/They</th></tr></thead><tbody><tr id="29e7d6c1-4339-412d-97e3-f4a07a8437ce"><th id="c{GM" class="simple-table-header-color simple-table-header">+</th><td id="STBE" class="">waiting</td><td id="AEyn" class="">waiting</td><td id="M?gB" class="">waiting</td></tr><tr id="b2557d4e-f50f-4888-bb5e-2bb0adfcd3c0"><th id="c{GM" class="simple-table-header-color simple-table-header">-</th><td id="STBE" class="">waiting</td><td id="AEyn" class="">waiting</td><td id="M?gB" class="">waiting</td></tr><tr id="b74e7475-8612-4181-8664-14adca1db460"><th id="c{GM" class="simple-table-header-color simple-table-header">?</th><td id="STBE" class="">waiting</td><td id="AEyn" class="">waiting</td><td id="M?gB" class="">waiting</td></tr></tbody></table><h3 id="abc2e221-b71b-42e6-8b89-fe1a1f867b5e" class="">To Be</h3><table id="7ff2fdab-cd90-471c-a4a6-6eb696dfa01f" class="simple-table"><thead class="simple-table-header"><tr id="bb834d88-1bc2-4924-89f7-e09a1753aea3"><th id="c{GM" class="simple-table-header-color simple-table-header"></th><th id="STBE" class="simple-table-header-color simple-table-header">I</th><th id="AEyn" class="simple-table-header-color simple-table-header">He/She/It</th><th id="M?gB" class="simple-table-header-color simple-table-header">You/We/They</th></tr></thead><tbody><tr id="626dfb95-f93c-4344-9d34-816f17f7d9c9"><th id="c{GM" class="simple-table-header-color simple-table-header">+</th><td id="STBE" class="">am</td><td id="AEyn" class="">is</td><td id="M?gB" class="">are</td></tr><tr id="c7f33593-4fcb-4f9c-90d1-a5a4e4b6cd63"><th id="c{GM" class="simple-table-header-color simple-table-header">-</th><td id="STBE" class="">am not</td><td id="AEyn" class="">isn’t</td><td id="M?gB" class="">aren’t</td></tr><tr id="2d336c70-1c46-4f2f-a16e-8397dcbd557f"><th id="c{GM" class="simple-table-header-color simple-table-header">?</th><td id="STBE" class="">am</td><td id="AEyn" class="">is</td><td id="M?gB" class="">are</td></tr></tbody></table></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">Compund Objectives</summary><div class="indented"><h3 id="440eef03-10ad-469e-a1b5-07f66a8335cb" class="">How to do</h3><p id="459aa48a-0a31-42a3-83ad-aab8f7ffa48a" class="">adjective noun —&gt; adjective-noun+ed</p><h3 id="8bd82829-3d36-43a1-9deb-86c7fa56280a" class="">Example</h3><p id="16e0cf60-0e52-4ea6-9903-5daf6513571d" class="">grey hair —&gt; grey-haired</p><p id="8b17795c-8155-471f-be37-6798f4ef3412" class="">short hair —&gt; short-haired</p><p id="9e76d91e-e1e9-4e0e-9643-1b0c78d3ad7f" class="">high heels —&gt; high-heeled</p><p id="20df96d9-c0d0-48fe-9f50-22ad2e2fe3e5" class="">green eyes —&gt; green-eyed </p><p id="28ba801d-8e61-4b20-8b9b-d8f33cdd5117" class="">
+</p></div></details><p id="2d1a5197-ec19-4042-be70-acfaa3195f84" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

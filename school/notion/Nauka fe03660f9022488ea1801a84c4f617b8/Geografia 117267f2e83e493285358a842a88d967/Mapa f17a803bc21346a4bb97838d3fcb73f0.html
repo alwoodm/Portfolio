@@ -1,0 +1,679 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Mapa</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="f17a803b-c213-46a4-bb97-838d3fcb73f0" class="page sans"><header><h1 class="page-title">Mapa</h1><p class="page-description"></p></header><div class="page-body"><h1 id="113ef26b-2792-4a96-97c7-75cc61ae95ba" class="">Zdane na 5 a więc END</h1><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Półwyspy 18 - 18 (END)</summary><div class="indented"><ul id="05fff984-4f09-4ada-a74c-eaee47ec4d74" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Labrador - przy kanadzie nad quebec</span><div class="indented"></div></li></ul><ul id="bbf009f3-699f-43e5-a17e-a3622803c996" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Alaska - Rosja sell for america</span><div class="indented"></div></li></ul><ul id="7c9631cc-05c9-4de5-8bd6-e9ce1b67f846" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Jokutan - nad ekwadorem / znane miasto menda</span><div class="indented"></div></li></ul><ul id="eeed6e4d-2419-4977-bd2b-135c6980094b" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Kalifornijski - na zachód od meksyku / pomiędzy cieśnina o takiej samej nazwie</span><div class="indented"></div></li></ul><ul id="854cd575-607a-4fe8-b6c4-5e959e887446" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Floryda - GTA 6</span><div class="indented"></div></li></ul><ul id="8651f870-859a-439f-9aa2-e7aa2f4ad2cf" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Skandynawski - Skandynawy / Wikingowie</span><div class="indented"></div></li></ul><ul id="e3cf5dd3-1a09-4322-a537-5528e7af4a4e" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Kolski - na wschód od finlandi</span><div class="indented"></div></li></ul><ul id="316a545c-89e7-4010-940b-581d488980bd" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Jutlandzki - dania kontynentalna</span><div class="indented"></div></li></ul><ul id="bd2cfc0d-132a-458c-b288-55d097374933" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Iberyjski - Hiszpania i Portugalia</span><div class="indented"></div></li></ul><ul id="8fde51f1-910d-43da-a076-181201309c84" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Apeniński.- włochy</span><div class="indented"></div></li></ul><ul id="6c55c536-2c59-4fd3-b023-b8ce6855d520" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Bałkański - Bośnia mocno</span><div class="indented"></div></li></ul><ul id="d058727d-db5c-4d3d-9e53-bf048644ba5e" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Arabski - Araby</span><div class="indented"></div></li></ul><ul id="efc194c4-a15a-48e2-901e-e87b37d71f28" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Indochiński - Wietnam</span><div class="indented"></div></li></ul><ul id="8b25b883-56d8-405e-a0fe-7add7fc2fdfa" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Indyjski  - Idnei</span><div class="indented"></div></li></ul><ul id="b587388d-62bb-49b8-9ae9-8c5ce14ac8fc" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Koreański - Koree </span><div class="indented"></div></li></ul><ul id="ac99cf4f-ff69-49b2-b6a7-dac448af38f7" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Kamczatka - Łagr</span><div class="indented"></div></li></ul><ul id="8ee6507f-5e6c-43e1-99b5-3641433c5352" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Jork - północ australii</span><div class="indented"></div></li></ul><ul id="c9ffbaa3-8078-4dfd-8181-00427d5e8eec" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Malajski - pod indochińskim</span><div class="indented"></div></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Wyspy 21 - 21 (END)</summary><div class="indented"><ul id="509be6ed-1d0e-47a7-9569-62ae4331b342" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Aleuty - alaska</span><div class="indented"></div></li></ul><ul id="9df335df-ac49-45f7-93ba-2b0044bb161e" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Antyle - piraci z karaibów</span><div class="indented"></div></li></ul><ul id="d7880ce3-bba4-45e3-8622-8e091b7f3aeb" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Ziemia Baffina - Kanada obok norze</span><div class="indented"></div></li></ul><ul id="82ab6357-3600-4dfb-bdc2-f0d76806b9d3" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Nowa Funlandia - kanada</span><div class="indented"></div></li></ul><ul id="61e4bb91-da67-4aa3-bc7e-a066f12c4c74" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Ziemia Ognista - południa chile</span><div class="indented"></div></li></ul><ul id="e23634e1-1ee5-4037-9fd4-d1e40da38306" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Kuba</span><div class="indented"></div></li></ul><ul id="3b23d9dd-2645-4543-8ab5-ea7f3ff106a0" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Nowa ziemia - Północ rosji</span><div class="indented"></div></li></ul><ul id="c62a2540-b1dd-4618-abbd-8f0b1931d865" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Islandia </span><div class="indented"></div></li></ul><ul id="aa74de10-9058-4a4d-a998-6641b70cb0cc" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Irlandia </span><div class="indented"></div></li></ul><ul id="12f77e75-3382-4bd8-9e05-1993014d817c" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Wielka Brytania</span><div class="indented"></div></li></ul><ul id="f0449542-33ac-47bd-ba9a-2f094f6082fe" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Sycylia</span><div class="indented"></div></li></ul><ul id="ad0a4ab8-3688-4611-9286-7274f6760e88" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Madagaskar</span><div class="indented"></div></li></ul><ul id="0b11adfc-1974-4bea-afc5-eec8f0fb092e" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Cejlon - sri lanka</span><div class="indented"></div></li></ul><ul id="4b7dcbc2-2fa9-4c01-b722-046d746893f9" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Nowa Gwinea</span><div class="indented"></div></li></ul><ul id="8f979c76-7dce-4504-ad77-02cb22f18216" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Filipiny</span><div class="indented"></div></li></ul><ul id="80bbfaa0-ec67-4881-a4ec-12c923505382" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Sumatra</span><div class="indented"></div></li></ul><ul id="47f69dd5-f18c-4606-a07d-80ef30827ee4" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Jawa</span><div class="indented"></div></li></ul><ul id="c0852ed3-9c3b-4208-833d-3bd458ca5e2c" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Borneo</span><div class="indented"></div></li></ul><ul id="bce1e25f-8e2d-4005-95d8-88a54748e167" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Tasmania</span><div class="indented"></div></li></ul><ul id="c251fdee-4f37-4ef7-a5e3-8dee01973331" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Sachalin</span><div class="indented"></div></li></ul><ul id="c80f29d1-773b-44cd-8bd2-4b2157616c13" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Wyspy Japońskie</span><div class="indented"></div></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Morza 19 - 19 (END)</summary><div class="indented"><ul id="cdbcf25f-3810-406c-b7a5-91dab3b65fe5" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Karaibskie</span><div class="indented"></div></li></ul><ul id="4a0127fc-df94-4258-a311-74c3ad4ad616" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Beringa</span><div class="indented"></div></li></ul><ul id="46e1e8fb-534c-4572-9d75-6626ca521481" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Śródziemne</span><div class="indented"></div></li></ul><ul id="8c2c43b9-11c1-49aa-ba4a-477527ff9990" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Północne</span><div class="indented"></div></li></ul><ul id="cde22b17-1c47-44d0-99f4-38fdf74adf76" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Norweskie</span><div class="indented"></div></li></ul><ul id="d197b52c-dbc0-4d05-baa2-830ff466ca7f" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Białe - pod półwyspem kolskim</span><div class="indented"></div></li></ul><ul id="7f5498b4-3d21-4128-aa48-3da0da949030" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Czarne</span><div class="indented"></div></li></ul><ul id="e49d361d-ebd2-4de9-9fe8-69a5e471c6fb" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Czerwone</span><div class="indented"></div></li></ul><ul id="70c27092-2af6-402b-a329-f19efde96afe" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Bałtyckie</span><div class="indented"></div></li></ul><ul id="517670d4-dedd-4f55-af7e-65e7b471c48b" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Arabskie</span><div class="indented"></div></li></ul><ul id="0f849f47-7751-4a8b-8d1c-666a54d31b57" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Ochockie - ma ochote na kamczatkę  - rosje</span><div class="indented"></div></li></ul><ul id="90a5c3df-efd0-41a8-b34b-7ad70d7ec719" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Japońskie</span><div class="indented"></div></li></ul><ul id="f0c3ea44-fa34-4866-a590-ffc7e5e65503" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Żółte - pomiędzy chinami a koreą</span><div class="indented"></div></li></ul><ul id="6bd69903-d8ba-46b7-bcf0-a42daa031b31" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Południowo chińskie - pod hong kongiem</span><div class="indented"></div></li></ul><ul id="8a691199-711f-456e-8dd5-aaf851667174" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Wschodnio Chińskie - pod żółtym</span><div class="indented"></div></li></ul><ul id="56c446d9-e368-4ab2-af26-6c2819fe3fd4" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Weddela - antarktyka obok takiej kreski</span><div class="indented"></div></li></ul><ul id="f8b50e5d-bdae-4e77-8463-8349a5ea2f25" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Rossa - w zatoce w antarktyce</span><div class="indented"></div></li></ul><ul id="18bce35e-3900-4c24-a101-73fe2bfdb374" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Arafura - pod papua nowa gwinea</span><div class="indented"></div></li></ul><ul id="a1fd0014-b089-4844-a2f3-b8457d052f23" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Barentsa - na północny wschód od skandynawi / nad rosją</span><div class="indented"></div></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Zatoki 9 - 9 (END)</summary><div class="indented"><ul id="b011e793-c777-4265-a946-0eebfc9d0e88" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Hudsona - pod ziemia buffina</span><div class="indented"></div></li></ul><ul id="e8b80b37-a96c-4f9c-a636-37fd3d72f54c" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Meksykańska</span><div class="indented"></div></li></ul><ul id="e0bdc97b-85bf-4164-b42c-91f507083036" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Kalifornijska</span><div class="indented"></div></li></ul><ul id="30b71bfa-0771-4952-8c17-0bf68725bb1a" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Biskajska - północ hiszpani zachód francji</span><div class="indented"></div></li></ul><ul id="dfc4bd0b-0bda-43a3-845f-4b8a3c539f16" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Perska</span><div class="indented"></div></li></ul><ul id="71300503-a1ba-4967-a73b-f7749dddcc4b" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Bengalska - indie / Mjamma</span><div class="indented"></div></li></ul><ul id="72dbce9b-7f81-4691-bdb1-4a2a6d664ba0" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Karpetaria - północ australii</span><div class="indented"></div></li></ul><ul id="320ab0b0-7f9b-4915-a336-1e2f4979df13" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Adeńska - pod jemenem</span><div class="indented"></div></li></ul><ul id="59dff84c-391f-4fad-9d0d-a8e99bde58a8" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Gwinejska afrika</span><div class="indented"></div></li></ul><p id="afa5cf20-2025-4b7a-8897-6fa635cab4fd" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Cieśniny 2 - 6</summary><div class="indented"><ul id="30c48114-e723-4c20-a738-bb19d4f35078" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Beringa</span><div class="indented"></div></li></ul><ul id="694d1862-51f2-4dfe-b80c-2dcb1a981512" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Magellana</span><div class="indented"></div></li></ul><ul id="7042e976-a1b0-4ba7-bc23-e07dbe68a964" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Malakka - nad indonezją, pod malezją</span><div class="indented"></div></li></ul><ul id="e3239988-5eda-4e2f-b28d-276f0ae81b1c" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Gibraltarska</span><div class="indented"></div></li></ul><ul id="9a083294-645f-4945-9dcd-bb262493727f" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Palk - przy Sri lanka</span><div class="indented"></div></li></ul><ul id="e6b87cb1-ae89-458f-bc09-c91ce321bd72" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Sund - </span><div class="indented"></div></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Rzeki 11 - 34</summary><div class="indented"><ul id="790e6141-9ac6-45c1-ac63-f65ec3a06e1d" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Missisipi</span><div class="indented"></div></li></ul><ul id="1bbe4465-6821-4d72-b7c8-239297e166fd" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Misouri</span><div class="indented"></div></li></ul><ul id="9f74597d-8d0d-4cfb-a42b-a121afaab3d6" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Rio Grande</span><div class="indented"></div></li></ul><ul id="1bf6eead-e653-431b-8798-a6dad49f8530" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Kolorado</span><div class="indented"></div></li></ul><ul id="6d7ac5cb-7266-428e-a87b-c6c3d2d120ee" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Jukon</span><div class="indented"></div></li></ul><ul id="5cc0dd07-837c-4eac-b863-cecbaf833943" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Amazonka</span><div class="indented"></div></li></ul><ul id="0215b66a-1076-4010-abab-13501ce3adf3" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Parana</span><div class="indented"></div></li></ul><ul id="56eb586b-acfd-443c-8de9-3558f66254d3" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Wołga</span><div class="indented"></div></li></ul><ul id="5b0e5935-93d6-4f63-b6b3-5d5b9882057d" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Dunaj - Europa środkowa</span><div class="indented"></div></li></ul><ul id="fd1bfc6e-de2e-498a-b5c0-d15488ad7dfb" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Ren - Niemcy</span><div class="indented"></div></li></ul><ul id="9f57fafd-4baa-4a3a-853c-8998db71030d" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Loara</span><div class="indented"></div></li></ul><ul id="cd389de6-77ca-41da-90b8-4b4ef2bb5eb0" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Sekwana - Francja</span><div class="indented"></div></li></ul><ul id="d69f6462-a709-4ce7-8476-fcc4b6e2e9f2" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Temiza - Anglia</span><div class="indented"></div></li></ul><ul id="161b5ff4-8e77-4bde-8692-f1d6ae74a2c5" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Nil</span><div class="indented"></div></li></ul><ul id="c89e5d82-8ae4-48d8-b5af-8d7748250fc8" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Niger</span><div class="indented"></div></li></ul><ul id="94ec74fe-22da-4667-b302-c0c2e4ba04c6" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Kongo</span><div class="indented"></div></li></ul><ul id="2944712c-e843-4a2f-8a47-ab62d4e93b0c" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Zambezi</span><div class="indented"></div></li></ul><ul id="7d581485-0c05-452d-bfbe-9b8ebf70f7f8" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Oranje</span><div class="indented"></div></li></ul><ul id="f1d9d9d4-7a16-4ae2-ab88-bfc124e71767" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Jangcy</span><div class="indented"></div></li></ul><ul id="2e710f2e-4e94-4b57-8851-ffee74ab9bc1" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Amur</span><div class="indented"></div></li></ul><ul id="7a5a3411-dd62-4eb9-b74d-3c358ce54646" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Mekong</span><div class="indented"></div></li></ul><ul id="811f7555-b64e-4d46-a125-72a348848458" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Indus</span><div class="indented"></div></li></ul><ul id="a1692fef-a51b-4e0a-95c9-d88a9c6ead67" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Eufrat</span><div class="indented"></div></li></ul><ul id="1632180d-220f-46e0-a223-46cd8ab8f083" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Tygrys</span><div class="indented"></div></li></ul><ul id="f9387e01-f7f7-4173-aeea-e8f27e784ed5" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">OB</span><div class="indented"></div></li></ul><ul id="81cdbf36-43ed-4c9e-b354-5c5d695d1744" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Irtysz</span><div class="indented"></div></li></ul><ul id="1496375d-4d41-491f-862a-e4ac5cae4640" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Lena</span><div class="indented"></div></li></ul><ul id="afac08a3-5d2d-46f7-85b5-788d15ce41e5" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Kołyma</span><div class="indented"></div></li></ul><ul id="dbedac9a-61f1-4d7b-a7e6-997b20bc2960" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Jenisej</span><div class="indented"></div></li></ul><ul id="0119b12e-46a9-4ef3-bde5-ecc7d83d4473" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Nelson</span><div class="indented"></div></li></ul><ul id="43fe928f-3fbe-4e52-8c7c-bb7068ef2658" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Ganges</span><div class="indented"></div></li></ul><ul id="cb516552-1fe0-4f0e-99a6-bd602f21a579" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Brahmaputra</span><div class="indented"></div></li></ul><ul id="89b50a8b-fe6a-4284-b9ff-83de1441eefc" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Huang - He</span><div class="indented"></div></li></ul><ul id="563747a4-2b30-4052-8686-0a1905b61d3f" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Żółta</span><div class="indented"></div></li></ul></div></details><p id="1294aebd-065f-4e18-8411-01bba3be91d1" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

@@ -1,0 +1,680 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Biblia</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="b97e905b-9307-437a-a811-cea5616b2237" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1600038734220-7e3c079bf982?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="https://static.thenounproject.com/png/22633-200.png"/></div><h1 class="page-title">Biblia</h1><p class="page-description"></p></header><div class="page-body"><h1 id="82ba2353-f1cb-4a29-8fcc-5e57f4a79a0b" class="">Czym jest biblia</h1><ul id="c58a8461-bad1-43f5-9010-2a720e7ac3d3" class="bulleted-list"><li style="list-style-type:disc">Z greckiego Biblios czyli zbiór ksiąg</li></ul><ul id="028318c7-9895-4e68-806b-eb6d659e8c32" class="bulleted-list"><li style="list-style-type:disc">Powstała w XIII wieku p.n.e</li></ul><ul id="8a6ef0b0-8a8d-413a-81ad-08a6cc52ec9b" class="bulleted-list"><li style="list-style-type:disc">Jest podstawą wiary Chrześcijańskiej i Judiazmu</li></ul><ul id="f4a53224-422b-49f0-96d0-d960d4ca8047" class="bulleted-list"><li style="list-style-type:disc">Składa się z 73 ksiąg </li></ul><ul id="4dce4a9e-3c3e-4b1f-a252-613fc9380243" class="bulleted-list"><li style="list-style-type:disc">Spisana przez około 40 pisarzy</li></ul><p id="a6097746-f9ee-43de-9ef2-bcd676a037dd" class="">Biblia stanowi jeden z fundamentów kultury starożytnej a więc ważnej do dzisiaj </p><p id="e6121dc3-98f1-43bc-9ce2-39d24599606e" class="">Biblia jest źródłem kulturowym na płaszczyznach:</p><p id="b90ac92a-772b-442c-9462-971ea69c2b0f" class="">Biblia składając się z starego i nowego testamentru stanowi fundament wiary chrześcijańskiej z kolei pierwsze 5 ksiąg starego testamentu stanowi podstawe wiary Judaistycznej</p><ul id="5a60c9bb-239f-436a-a81a-945580e5b123" class="bulleted-list"><li style="list-style-type:disc">Religii</li></ul><ul id="d9f2c601-3e01-4b6c-a147-ea6dda351a62" class="bulleted-list"><li style="list-style-type:disc">Etyki</li></ul><ul id="4f6f7c2f-a28c-47a0-ae18-072557c9dc44" class="bulleted-list"><li style="list-style-type:disc">Sztuki</li></ul><ul id="e060a17a-8fe9-4849-a3cd-727899ebbd39" class="bulleted-list"><li style="list-style-type:disc">Języka</li></ul><h3 id="2106a8e4-1e16-4ccd-ba3d-765a9ebf757c" class="">Podział Biblii</h3><p id="210b7187-5b94-43c2-b8fd-9577e09f5745" class="">Biblie dzieli się na:</p><ul id="9c18c8a1-2eed-4ca0-996e-993d44b0e7f4" class="bulleted-list"><li style="list-style-type:disc">Stary Testament - 46 ksiąg</li></ul><ul id="0bc03f07-4d9c-4507-8519-1806cef5d702" class="bulleted-list"><li style="list-style-type:disc">Nowy Testament -  27 ksiąg</li></ul><p id="c55d986a-a042-4e8b-8e85-659290192053" class="">Księgi biblii dzielimy na:</p><ul id="3d681651-d43c-42ad-b2f6-af2942f0ffa1" class="bulleted-list"><li style="list-style-type:disc">Księgi historyczner</li></ul><ul id="785933bb-e2bd-47cf-8d80-08401bf3fa1e" class="bulleted-list"><li style="list-style-type:disc">Księgi dydatktyczne</li></ul><ul id="30dca79d-6b61-4de1-add0-8301d91ff568" class="bulleted-list"><li style="list-style-type:disc">Ksiegi prorockie</li></ul><h3 id="b3f54068-00da-4007-b936-63cff7301ae7" class="">Przekłady Biblii</h3><p id="a0440044-c06c-46bc-83df-6116e2ec1583" class="">Najbardziej znane przedkłady Biblii na Język Polski to:</p><ul id="47e0f9be-32ec-4f77-abaa-1d24e53ad849" class="bulleted-list"><li style="list-style-type:disc">Biblia Jakuba Wujka - 1599 </li></ul><ul id="1ae24211-ca20-4514-ad66-251451f22a5d" class="bulleted-list"><li style="list-style-type:disc">Biblia Tysiąclecia, wydana w 1965</li></ul><p id="1d2d7f55-fe3c-4aa8-a50f-e8e1a7286eae" class="">Pierwsze przekłady Biblii to:</p><ul id="3295dc6e-c04e-4641-ac6b-8d3430cd4159" class="bulleted-list"><li style="list-style-type:disc">Septuaginta - pierwszy przekład na język starogrecki</li></ul><ul id="b61a8788-d751-4646-a279-a20f83bbcd64" class="bulleted-list"><li style="list-style-type:disc">Wulgata - pierwszy przekład na łacinę</li></ul><h3 id="c37f34dd-c5e4-420d-91d1-6b561437a0a5" class="">Skład Biblii</h3><p id="c3e325e5-44d7-4e4f-b79f-04cd4a2311af" class="">Bilbia składa się z tak zwanego Kanonu Biblijnego czyli ksiąg które kościół uznał za prawdziwez kolei istnieje wiele ksiąg które są tak zwanymi apokryfami</p><p id="11d609e3-64d2-49f2-ad70-484aafb8912b" class=""><strong>Apokryf</strong> - Księga którą kościół uznaje za kłamstwo, najczęsciej dotyczą Nowego Testamentu</p><h3 id="de5cb386-8c0b-4adf-8d6e-8d479d5e743a" class="">Symbol i Alegoria</h3><p id="f1d67e10-f628-4fcc-bf29-2f565da67ede" class=""><strong>Symbol</strong> - wiele przykładów, znaczeń</p><p id="4f1aec13-7a0e-4e80-8960-ea097b63a1d9" class=""><strong>Alegoria </strong>-  konkretna, ma jedno ustalone znaczenie </p><p id="5fb7092e-9c4c-4d99-9c2f-ab59f43c1ae0" class="">np:</p><p id="91fcb5e1-2757-4768-b1ab-499a9ab51ef4" class="">Symbol Przyjaźni — <strong>Lis — </strong>Alegoria Sprytu, Chciwości</p><p id="4a415b7c-4dd1-4700-8c52-1bc04caa622a" class="">Kobieta z kosą - alegoria śmierci</p><h3 id="81167c30-b0d3-4516-8365-b1069c8941a0" class="">Styl Biblijny</h3><p id="e565c19d-d9c6-463f-995d-0655f646d35d" class="">Biblia ma swój styl i jest on nazywanystylem Biblijnym, jeżeli jakiś autor będzie naśladował styl Biblijny bądzie to Stylizacja Biblijna</p><p id="39b43822-6654-4f33-a376-ddaef01417f0" class="">Styl Biblijny charakteryzuje się cechami:</p><ul id="681fa606-7a29-4431-b0b5-957e3d36e97c" class="bulleted-list"><li style="list-style-type:disc">Podniosły uroczysty ton wypowiedzi</li></ul><ul id="a5f4fdc2-2aac-46e7-a9a2-81285938af84" class="bulleted-list"><li style="list-style-type:disc">Liczne metafory i przenośnie</li></ul><ul id="b9b52583-ac32-4e39-a12e-125e05a7b9f6" class="bulleted-list"><li style="list-style-type:disc">Powtarzające się symbole i alegorie </li></ul><ul id="49a3e099-3bc9-45b8-832f-613a7413b59a" class="bulleted-list"><li style="list-style-type:disc">Inwersje</li></ul><ul id="bca41ff3-0a16-48bf-8ce3-48aca73b16dd" class="bulleted-list"><li style="list-style-type:disc">Wiele powtrórzeń i paraleizmów </li></ul><ul id="4c239413-b9b2-4cba-ba7c-19138525237a" class="bulleted-list"><li style="list-style-type:disc">Askładnikowych</li></ul><ul id="43c6877e-73e9-4f60-a0ec-d73201487803" class="bulleted-list"><li style="list-style-type:disc">Apostrofy i tryb rozkazójący</li></ul><ul id="16cbfb96-32f2-4431-b3e4-1a07870e4535" class="bulleted-list"><li style="list-style-type:disc">Przewaga zdań wsółrzędnie złożonych, często rozpoczynanych od spójnika </li></ul><ul id="ed67d966-5f42-4024-9e76-070aa810d8a3" class="bulleted-list"><li style="list-style-type:disc">Liczne sentencje i aforyzmy</li></ul><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="41c34382-f8ee-40e5-8801-a7d8e5ff683d"><div style="font-size:1.5em"><span class="icon">📝</span></div><div style="width:100%">Na Kartkówke:<ul id="23fc89b9-c76a-47fa-9aba-53144659f731" class="bulleted-list"><li style="list-style-type:disc">Alegorie i symbole </li></ul><ul id="c3567858-d531-4ced-b83f-fe03b7cd4320" class="bulleted-list"><li style="list-style-type:disc">Jak sie dzeli Biblia i przekłady</li></ul><ul id="c0839efc-42b5-4543-b758-1889c8ace3d8" class="bulleted-list"><li style="list-style-type:disc">Styl Biblijny (czym jest i cechy charakterystyka) </li></ul></div></figure><hr id="0d349a08-5086-4f8b-a2b1-59e7723eda46"/><h1 id="a9179bcb-b543-4a50-9a0b-552a028fff27" class="">Księga Rodzaju - dzieje początklu świata i ludzkości</h1><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Historie Biblijne z Księgi Rodzaju </summary><div class="indented"><ul id="7101f609-9297-4db0-9841-e14f2d35189b" class="toggle"><li><details open=""><summary>Adam i Ewa - Grzech pierworodny</summary><p id="b08c87c9-daaa-4010-865c-42dff60b2651" class="">Bóg stworzył Adama i Ewę, umieszczając ich w ogrodzie Eden. Zakazał im jedzenia owocu z drzewa poznania dobra i zła. Wąż, uosobienie szatana, zwodzi Ewę, a ona skłania Adama do złamania zakazu. Po zjedzeniu owocu oboje zdają sobie sprawę, że są nadzy, co symbolizuje utratę niewinności. Bóg nakłada na nich konsekwencje, ale obiecuje przysłać Zbawiciela. Historia ta opowiada o początkach grzechu i upadku ludzkości, ale także zawiera elementy nadziei na zbawienie poprzez Bożą łaskę.</p></details></li></ul><ul id="d837b103-8085-41b9-8ed1-206ebe727721" class="toggle"><li><details open=""><summary>Kein i Abel</summary><p id="c9f45eaa-b201-412a-853b-09c0e8665cb6" class="">Adama i Ewę miało dwóch synów: Kaina i Abla. Kain był rolnikiem, a Abel pasterzem. Oboje złożyli ofiary Bogu, ale Bóg bardziej upodobał sobie ofiarę Abla. To spowodowało zazdrość Kaina. Gdy Bóg ostrzegł Kaina przed grzechem, Kain zabił swojego brata z zazdrości. Bóg ukarał Kaina, zesłał na niego znamię oznaczającego, że nie będzie go nikt zabił w zemście. Kain opuścił rodzinę, osiedlił się, i założył miasto. Ta historia podkreśla temat zazdrości, konsekwencji grzechu oraz Bożej sprawiedliwości.</p></details></li></ul><ul id="71e9c74d-b1fb-4d1a-9a8a-68db81436574" class="toggle"><li><details open=""><summary>Potop </summary><p id="0a9898bf-7e05-4c7c-a85f-462e67c82ebc" class="">Bóg zdecydował się zniszczyć złą ludzkość poprzez potop, ale znalazł jednego sprawiedliwego - Noego. Polecił mu zbudować arkę, aby ocalić swoją rodzinę i przedstawicieli zwierząt. Potop trwał 40 dni, zalewając ziemię, ale arkę Noego uniosła się na wodach. Po ustąpieniu potopu, Noe, jego rodzina i zwierzęta opuścili arkę. Bóg zawarł przymierze, obiecując nie niszczyć ziemi wodą w ten sposób ponownie. Historia ta symbolizuje karę za grzechy, ale także akt zbawienia i nowego początku dla ludzkości.</p></details></li></ul><ul id="8bb57c9c-51aa-4abc-a45f-34ff2dcd1615" class="toggle"><li><details open=""><summary>Zniszczenie Sodomy i Gomory</summary><p id="cc237fc9-581c-4c69-b1f5-e14c57316559" class="">Dwa anioły przybyły do skorumpowanych miast, Sodomy i Gomory. Bóg zdecydował się zniszczyć je z powodu grzechów. Aniołowie ostrzegli Lota, bratanka Abrahama, aby opuścił miasto przed gniewem Bożym. Deszcz siarkowy zniszczył Sodomę i Gomorę, ale Bóg zatroszczył się o sprawiedliwych. Lota i jego córki ocalili się, ale jego żona zamieniła się w słup soli za złamanie zakazu patrzenia wstecz. Historia ta podkreśla Bożą sprawiedliwość i troskę o wiernych.</p></details></li></ul><ul id="0a12dd2e-6ffc-49c3-ac1f-3285a87fea27" class="toggle"><li><details open=""><summary>Wieża Babel</summary><p id="36f156e9-f210-481f-913d-5efd8dd15c90" class="">Ludzie po Potopie postanowili zbudować Wieżę Babel, aby osiągnąć niebo i uczynić z siebie wielkie imię. Bóg zmylił ich języki, co przerwało projekt. Ludzie rozeszli się, tworząc różne narody. Historia ta przypomina o konsekwencjach próby ludzi przewyższania Boga i pokazuje, jak Bóg interweniuje, aby wprowadzić swoje plany.</p></details></li></ul><ul id="88aee6fa-dc0c-468a-abde-88f8da0af179" class="toggle"><li><details open=""><summary>Ofiara Izaka</summary><p id="f177ce0b-ec4e-4ad8-9e0a-bba14aa3f8e5" class="">Bóg przetestował wierność Abrahama, prosząc go o ofiarę jego syna Izaka. Abraham był gotów posłuchać, ale Bóg zatrzymał go i dostarczył barana jako zastępstwo. Historia ta podkreśla bezwarunkową posłuszeństwo Abrahama i stanowi zapowiedź późniejszego zbawienia, gdzie Bóg dostarczy ofiarę za grzechy ludzkości.</p></details></li></ul><p id="8fe1a36e-21d4-499d-be13-81b34f44727a" class="">
+</p></div></details><p id="59372703-9284-416a-86a3-6e86d77438fb" class="">Porównanie stworzenie świata w księdze rodzaju a w mitologii greckiej </p><table id="731b8b16-a1a7-4c89-b4fe-11772230d79a" class="simple-table"><thead class="simple-table-header"><tr id="d53f836a-c44a-4ab8-a5e2-0ae966c21263"><th id="OhcN" class="simple-table-header-color simple-table-header"></th><th id="E;&gt;}" class="simple-table-header-color simple-table-header">Mitologia</th><th id="ST:M" class="simple-table-header-color simple-table-header">Biblia</th></tr></thead><tbody><tr id="cbeaae5a-6f31-43e8-8383-cb51c695f290"><th id="OhcN" class="simple-table-header-color simple-table-header">Ilość bogów/a</th><td id="E;&gt;}" class="">Wielu bogów (politeizm)</td><td id="ST:M" class="">Jeden Bóg (monoteizm)</td></tr><tr id="d5a43ece-efd2-41c1-8e33-597d2ffd735a"><th id="OhcN" class="simple-table-header-color simple-table-header">Wiedza bogów/a</th><td id="E;&gt;}" class="">Bogowie nie są wszechwiedządzący</td><td id="ST:M" class="">Bóg jest wszechwiedzący</td></tr><tr id="7eb318a4-097d-4389-9623-9b5978e28a28"><th id="OhcN" class="simple-table-header-color simple-table-header">Moc potęga boga/ów</th><td id="E;&gt;}" class="">Bogowie mają ograniczone zdolności oparte o swój patronat</td><td id="ST:M" class="">Bóg jest wszechmocny</td></tr><tr id="1e6b383f-8296-46a2-b68e-0bb26ca8631e"><th id="OhcN" class="simple-table-header-color simple-table-header">Nieśmiertelność boga/ów</th><td id="E;&gt;}" class="">Bogowie są nieśmiertleni lecz kiedyś każdy z nich się narodził i każdy umrze</td><td id="ST:M" class="">Bóg jest był i będzie jest alfą i omegą początkiem i końcem</td></tr><tr id="6f31cf3e-66a7-4a43-805e-cfc81eae4cb2"><th id="OhcN" class="simple-table-header-color simple-table-header">Stworzenie świata</th><td id="E;&gt;}" class="">Świat wyłonił się z chaosu wraz z bogami i wszystkim innym</td><td id="ST:M" class="">Bóg stworzył świat w umowne 7 dni z niczego</td></tr><tr id="c0b05314-6c74-4a4e-a437-edef13ea2e9e"><th id="OhcN" class="simple-table-header-color simple-table-header">Powstanie człowieka</th><td id="E;&gt;}" class="">Człowieka stworzył tytan Prometeusz który został za to brótalnie ukarany przez bogów</td><td id="ST:M" class="">Bóg stworzył człowieka na swoje podobieństwo, a kobiete z piersi adama.</td></tr></tbody></table><hr id="09dedb4d-6227-496b-b1a0-0d2eff04f127"/><h1 id="d60c9920-9687-49f8-9ff2-82b5d6a213a2" class="">Księga Hioba - Rozważania o cierpieniu </h1><p id="4da6f439-ba77-43f3-ace3-94d62cad48a9" class="">Księga Hioba jest źródłem ponadczasowego motywu niezawinionego cierpnienia, Hiob nie robiąc nic złego, będąc pokornym sługą bożym został ukarany przez boga wieloma nieszczęściami</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Streszczenie Księgi Hioba</summary><div class="indented"><p id="4411ab4e-3678-4dce-bdb3-d1b603178f30" class="">Księga Hioba opowiada historię człowieka imieniem Hiob, który żył w Uz. Był on człowiekiem bogobojnym i sprawiedliwym. Pewnego dnia, Szatan kwestionuje jego prawość, twierdząc, że Hiob jest dobry tylko dlatego, że Bóg błogosławił go materialnie. Bóg pozwala Szatanowi na próbę Hioba poprzez pozbawienie go majątku, zdrowia i dzieci. Przez cały ten czas Hiob utrzymuje swoją prawość, pomimo bólu i cierpienia. W końcu Bóg mówi do Hioba, wyjaśniając, że człowiek nie zawsze jest w stanie zrozumieć Boże działanie. Hiob pokornie przyjmuje słowa Boga, a Bóg przywraca mu zdrowie, majątek i daje mu nowe dzieci.</p></div></details><hr id="2c91503a-b257-4b18-b1a9-120ad94cc0f5"/><h1 id="dd32cffe-dc57-4db8-9f75-781469a29c7e" class="">Księga Koheleta - Dociekanie sensu ludzkiego życia </h1><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Streszczenie / Znaczenie Księgi Koheleta</summary><div class="indented"><p id="a6fdbb82-0ebd-455c-a983-991bb66f8c50" class="">Księga Koheleta jest zbiorem refleksji i mądrości starożytnego króla, który podsumowuje swoje doświadczenia i obserwacje życia. Kohelet, rozważając sens i wartość ludzkiego życia, dochodzi do wniosku, że wszystko jest marnością i pogoń za wiatrem. Mimo to, zaleca czerpanie radości z prostych rzeczy, takich jak praca, jedzenie i picie, ponieważ są one darem od Boga. Kohelet podkreśla także nieuniknioność śmierci i zachęca do cieszenia się życiem, zanim nadejdzie dzień ciemności. Na koniec księga przypomina, że najważniejsze jest bojaźń Boża i przestrzeganie jego przykazań.</p><p id="2282f5c9-d675-4665-a642-eecabed5bd4d" class="">
+</p></div></details><p id="a2cae3db-63f5-4545-ad72-80f32faa5189" class="">Venitas - Hevel - Marność</p><p id="c6ce62f9-a3ca-44a3-8d74-d4b252afb81a" class="">“Venitas Venitatum et omnia Venitas” - Marność nad marnościami wszystko marność.</p><hr id="59b5e4d1-0036-49c9-a408-b415cf334c22"/><h1 id="649508d2-6a9c-4fea-9c66-f367ec83bd5e" class="">Księga Psalmów - Poezja biblijna</h1><p id="9b2121ad-ebb0-40ea-9cd8-58920b13d232" class="">Środki stylistyczne zawarte w Księdze Psalmów:</p><ul id="55de5a62-8ef6-45b7-86fb-39f4c6e486f0" class="bulleted-list"><li style="list-style-type:disc">Metafora - przenośnia.</li></ul><ul id="c642bed3-2ad4-49ea-840a-43f0c2efa555" class="bulleted-list"><li style="list-style-type:disc">Ożywienie - animizacja.</li></ul><ul id="f765fb8f-ccc6-434e-bc13-3036f4cc2a65" class="bulleted-list"><li style="list-style-type:disc">Uosobienie - personifikacja.</li></ul><ul id="bb90e32b-9ff1-4bd9-b942-7a591a1e2369" class="bulleted-list"><li style="list-style-type:disc">Anomatopeja.</li></ul><ul id="c1df1ccf-fd1a-4547-ae66-ff60109bfb3f" class="bulleted-list"><li style="list-style-type:disc">Apostrofa.</li></ul><ul id="fdd3bdfa-1aa8-4f5a-9166-7b00bfebb9f0" class="bulleted-list"><li style="list-style-type:disc">Porównanie.</li></ul><ul id="46815e1c-e0cf-4896-bb2f-f6bd94ac985d" class="bulleted-list"><li style="list-style-type:disc">Anafora.</li></ul><ul id="ddab502b-8a1b-4586-b41c-a4d337e06e21" class="bulleted-list"><li style="list-style-type:disc">Pytanie retoryczne.</li></ul><p id="8e1c0da1-615e-4449-8239-c21edbdffa88" class="">Rodzaje psalmów:</p><ul id="ff3e1e9d-7806-4eb4-a8bc-411a792ee54e" class="bulleted-list"><li style="list-style-type:disc">Psalmy pochwalne - chwalą cechy boga i dziękują za jego dobroć. np Psalm 100</li></ul><ul id="56aad00a-6405-472d-92ce-69d6c5269411" class="bulleted-list"><li style="list-style-type:disc">Psalmy błagalne - błagają boga o różne rzeczy / łaskę za popełniony grzech</li></ul><hr id="21330e9d-d50d-4f8a-9de1-4b79c00212a5"/><h1 id="367a7c7f-080f-4869-b7ff-f278cc48c609" class="">Pieśń nad Pieśniami - Biblijne oblicza miłości</h1><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Streszczenie Pieśni nad Pieśniami</summary><div class="indented"><p id="e402e84d-8817-4c90-9d42-477e4e6bb333" class="">Pieśń nad Pieśniami jest księgą w Starym Testamencie, której autorem jest tradycyjnie uważany król Salomon. Jest to zbiór pięknych i namiętnych poematów miłosnych, które wyrażają głębokie uczucia między mężczyzną a kobietą. Poematy są pełne namiętnych i zmysłowych opisów, które przekazują silne pragnienie i dążenie do jedności.</p><p id="22c1bd45-81fb-4652-a0aa-6ef9912cc3df" class="">W Pieśni nad Pieśniami, miłość jest przedstawiana jako silna, namiętna i nieunikniona. Jest to uczucie, które nie zna granic i nie można go zatrzymać.</p><p id="b65699b1-af7f-44af-8ff2-0f66275c70a0" class="">Opisuje ukochaną kobietę jako piękną i pożądaną, a ukochanego mężczyznę jako silnego i pociągającego. Wyraża także silne pragnienie bliskości i jedności. Pieśń nad Pieśniami jest pełna tęsknoty i pragnienia, ale także radości i spełnienia.</p></div></details><p id="f8013114-0d9a-46e0-bf76-fe249e71405e" class="">Znaczenie</p><p id="31ff3a04-2d35-4f53-9296-eefd1f8939d3" class="">Intepretacje tego co i jakie znaczenie ma poezja miłosna w biblii:</p><ol type="1" id="e0fe45c6-5f90-445b-bac1-7a7d4978aa4c" class="numbered-list" start="1"><li>Tradycja żydowska - alegoria Boga i narodu Izraela w której Bóg jest Oblubienicem a lód narodu wbranego Oblubienicą co można rozumieć jako miłość boga to swojego narodu oraz głęboka więź i oddanie</li></ol><ol type="1" id="73b4893f-dcdd-4b57-bb20-02ba50ca362d" class="numbered-list" start="2"><li>Tradycja chrześcijańska - alegoria kościoła chrześcijańskeigo i Jezusa Chrystusa która według interpretacji z Listu do Efezjan 5:5-33 pokazuje Jezusa jako Oblubieńca który kocha miłuje i ma głęboką więź z Oblubienicą którą jest kościół chrześcijański który uwielbia Chrystusa</li></ol><ol type="1" id="aad51bf4-77be-4365-b698-6313f8bf4ac9" class="numbered-list" start="3"><li>Zbiór starożytnej poezji - Pieśń nad Pieśniami jest również traktowana jako tekst zbierający starożytną poezje o boskim darze miłości.</li></ol><h2 id="ccdbbdc2-4832-4b73-a0f9-bb24d40f5783" class="">Obraz miłości w hymnie “do miłości” Świętego Pawła</h2><ul id="85f5707d-dde0-48fb-ba17-6a4ba1c76247" class="toggle"><li><details open=""><summary>Hymn do miłości</summary><p id="d4f9ae6d-fa5f-4149-a96c-a8e1a6d6bd18" class="">Gdybym mówił językami ludzi i aniołów,</p><p id="e00de437-f781-4e63-aa6a-62f9d982e754" class="">a miłości bym nie miał,</p><p id="421e6a58-2ef8-4002-be00-da704e41ecd0" class="">stałbym się jak miedź brzęcząca</p><p id="72214a97-e5b0-4aab-ae3f-ee7d8cff9ab6" class="">albo cymbał brzmiący.</p><p id="2682c3b1-9e75-4a02-970b-cc8ec60a9c02" class="">Gdybym też miał dar prorokowania</p><p id="67c8c886-da94-4549-9123-8ea9ac5dc035" class="">i znał wszystkie tajemnice,</p><p id="858f5aaa-ff13-4b5c-9899-0326ea138ce0" class="">i posiadał wszystką wiedzę,</p><p id="a9e316f8-bad2-42bf-8610-60740727f5fb" class="">i wszelką (możliwą) wiarę, tak iżbym góry przenosił,</p><p id="9d21d6c0-dc1b-40a6-a834-ee25db1b2070" class="">a miłości bym nie miał, byłbym niczym.</p><p id="adf72214-7fa3-4194-8f53-2f3d206797ce" class="">I gdybym rozdał na jałmużnę całą majętność moją,</p><p id="5899b68f-6805-4b7e-ae8b-e4fc32d85d25" class="">a ciałowystawił na spalenie,</p><p id="5b1f7db2-adab-4ab7-a79d-69a4d0be3369" class="">lecz miłości bym nie miał,</p><p id="0b2cb9ca-56e6-4ddd-bd94-ed0799aadedc" class="">nic bym nie zyskał.</p><p id="278b618d-679f-4f10-ac93-eece80712bb7" class="">Miłość cierpliwa jest,</p><p id="95c21c0c-5d6e-4ef4-96c3-c2711b5508a2" class="">łaskawa jest.</p><p id="fc66bd70-efbb-467c-bd51-dfbe5aa8f844" class="">Miłość nie zazdrości,</p><p id="5bf3a18b-d296-4242-b753-293f4cb4b958" class="">nie szuka poklasku,</p><p id="5d00c26a-e7c6-45b7-a5ff-088ef375008b" class="">nie unosi się pychą;</p><p id="42f8d8f6-d0c7-436a-bf33-84017dd1e72c" class="">nie dopuszcza się bezwstydu,</p><p id="6d9f3566-c14e-4b8a-8c49-0f7712e54846" class="">nie szuka swego,</p><p id="ecc88182-d320-4e9f-8233-c75308d9d214" class="">nie unosi się gniewem,</p><p id="18c03706-ec7c-426d-b7fe-3a6bc890b488" class="">nie pamięta złego;</p><p id="a78ebb58-ad10-444a-a0f8-e375b696fd32" class="">nie cieszy się z niesprawiedliwości,</p><p id="c244360d-e677-4032-83aa-f7822463e873" class="">lecz współweseli z prawdą.</p><p id="a591c08a-0f4c-4497-8254-236461d202da" class="">Wszystko znosi,</p><p id="c1b0d7e8-0244-4e1b-878d-9e5ec642b490" class="">wszystkiemu wierzy,</p><p id="4b6e89a2-b65a-482b-be99-27d0a5562094" class="">we wszystkim pokłada nadzieję</p><p id="5ab99c3b-6daa-48a8-9450-54fcfc6590a8" class="">wszystko przetrzyma.</p><p id="d3711970-c6eb-480a-b16e-38c7aba81af8" class="">Miłość nigdy nie ustaje,</p><p id="8808a0ae-b9b8-47a2-863a-944e3a3a729b" class="">(nie jest) jak proroctwa, które się skończą,</p><p id="d9f1c204-fd19-4476-878f-367ae7cf49dc" class="">albo jak dar języków, który zniknie,</p><p id="de6a9163-d0f1-411a-9902-fa61677f9cd8" class="">lub jak wiedza, której zabraknie.</p><p id="493aaa31-e423-4119-9e1a-1c07cd34a48b" class="">(...)</p><p id="89b7c5f9-6f14-4b70-bf7e-84e428b697ac" class="">Tak więc trwają wiara, nadzieja, miłość - te trzy:</p><p id="aa9ef643-b8c7-4465-acb8-9ee1215db467" class="">z nich zaś największa jest miłość.</p></details></li></ul><p id="76385bfe-ab8f-4d09-a599-fa134843bb5e" class="">“Hymn do miłości” - jest on fragmentem Listu Świętego Pawła do Koryntian (1 Kor 13,1−13)</p><p id="6bfa9866-e7ec-4518-8b2d-3ab86e286da3" class=""> W pierszych trzech strofach podmiot liryczny stwierdza że wszystkie umięjętności czy bogactwo jest niczym w porównaniu do miłości. </p><p id="2e8feb80-eab5-4d6d-9e7a-b3d92a172b50" class="">W drugiej części Paweł apostoł wymienia cechy miłości:</p><ul id="963fd48c-aeb2-40db-81a3-3dcba6827ea8" class="bulleted-list"><li style="list-style-type:disc">Cierpliwa</li></ul><ul id="a4b12fdf-2a31-4c91-bc60-88f517951f23" class="bulleted-list"><li style="list-style-type:disc">Miłośierna</li></ul><ul id="bd0568eb-e654-4973-a47f-9d6885d3337f" class="bulleted-list"><li style="list-style-type:disc">Dobra</li></ul><ul id="58c92b9c-f438-4f8f-904f-09be129682eb" class="bulleted-list"><li style="list-style-type:disc">Łaskawna</li></ul><ul id="683bac65-2202-42ba-9222-a62d346fc268" class="bulleted-list"><li style="list-style-type:disc">Spokojna</li></ul><ul id="bc906a51-ee12-445d-bd3a-9028879eb5fe" class="bulleted-list"><li style="list-style-type:disc">Moralna</li></ul><ul id="03699fa8-a843-4b95-bc78-0cd30cffd468" class="bulleted-list"><li style="list-style-type:disc">Niepamiętliwa</li></ul><ul id="70dc34b6-ac03-4924-aebe-60c045baeef6" class="bulleted-list"><li style="list-style-type:disc">Bezpychy</li></ul><ul id="ad50e01e-fdb7-4464-9815-ee87517645e2" class="bulleted-list"><li style="list-style-type:disc">Nieatencyjna</li></ul><p id="1e846cfc-f8b1-4c5b-88f5-f2fc6f34fa94" class="">Święty Paweł zwraca również uwage na trzy ważne wartości: wiare, nadzieje, i miłość z której to najważniejsza i mocniejsza niż pozostałe jest miłość.</p><hr id="8361d6e3-ff06-4c2c-8d1d-b933b71228c1"/><h1 id="b7d38ee9-cad4-4278-b7c8-6da935679a5d" class="">Przepowieści Biblijne</h1><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Definicja Przepowieści</summary><div class="indented"><p id="6f72906f-69d7-4e7b-9de2-3f8435361557" class="">Przypowieść to krótkie, alegoryczne opowiadanie mające na celu przekazanie moralnej lub duchowej prawdy. Często zawiera ona skomplikowane metafory lub alegorie i jest używana jako pedagogiczne narzędzie.</p></div></details><h2 id="70deabb1-1939-4845-b548-2da30972de56" class="">Obowiązkowe przepowieści</h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Przepowieść o synu marnotrawnym </summary><div class="indented"><ul id="40d8c4ce-0781-4144-a4fb-bcf56c7660d6" class="toggle"><li><details open=""><summary>Treść</summary><p id="88227711-eba4-465a-9dd1-1eeef497df2e" class="">Ojciec miał dwóch synów. Młodszy poprosił ojca o przynależną mu cześć majątku i opuścił dom. Wszystko jednak roztrwonił, żyjąc rozrzutnie i zaczął cierpieć niedostatek. W krainie, w której przebywał, nastał głód. Zapragnął wówczas pożywić się czymkolwiek, choćby tym, co jadły świnie czyli strąkami. A więc został świniopasem (dla Żydów było to najbardziej hańbiące zajęcie, gdyż świnie uważali za nieczyste). Ale nawet tego nikt mu nie chciał dać. Wtedy pomyślał sobie: „Iluż to najemników mojego ojca ma pod dostatkiem chleba, a ja tu z głodu ginę!”. Postanowił wówczas wrócić do ojca, przyznać, że zgrzeszył przeciw niemu i Bogu, i prosić, żeby uczynił go choćby jednym z najemników. Kiedy tylko ojciec ujrzał wracającego do domu syna, wzruszył się, rzucił mu się na szyję i ucałował. Syn przyznał się do winy, a ojciec kazał swym sługom przynieść najlepszą szatę którą mieli, pierścień na ręce i sandały na nogi, i wyprawić ucztę, by wszyscy mogli radować się z powodu jego powrotu. W ten czas starszy syn przebywał na polu. Gdy wracał usłyszał muzykę dobiegającą z jego domu. Zapytał się więc sługi, dlaczego jest tak głośno. On odpowiedział mu, że jego brat przybył i ojciec kazał zabić utuczone cielę i wyprawić ucztę. Wtedy drugi syn, gdy to usłyszał oburzył się, ponieważ cały czas trwał przy ojcu i pomagał mu gdy on potrzebował pomocy. Czuł się więc niedoceniony i niepotrzebny, jednakże ojciec pouczył starszego syna, by cieszył się z powrotu brata, który był umarły, a znów ożył, zaginął, a odnalazł się.</p></details></li></ul><ul id="7a10901e-973c-4d79-968c-9a7692db6eb3" class="toggle"><li><details open=""><summary>Interpretacja / znaczenie przenośne</summary><p id="7b8adafb-0c7f-42e0-9314-680044498fff" class="">Przypowieść o synu marnotrawnym jest alegorią miłosierdzia i nieograniczonego przebaczenia Boga. Młodszy syn, który opuszcza dom i marnotrawi swój majątek, symbolizuje każdego człowieka, który grzeszy i odchodzi od Boga. Jego powrót do domu i żal za swoje czyny to obraz pokuty i nawrócenia. Starszy syn, który jest zazdrosny o radość ojca z powrotu młodszego brata, reprezentuje tych, którzy nie rozumieją pełni miłosierdzia Boga i są niechętni do przebaczenia innym. Ojciec w przypowieści to obraz Boga, który zawsze czeka na nasze nawrócenie z otwartymi ramionami, gotowy do przebaczenia, niezależnie od wielkości naszych grzechów. Ta przypowieść pokazuje, że Bóg zawsze pragnie naszego powrotu do Niego i jest gotowy przyjąć nas z otwartymi ramionami, mimo naszych błędów i grzechów.</p></details></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Przepowieść o miłosiernym samarytaninie</summary><div class="indented"><ul id="3c1b55f8-6bcf-4823-ab8d-64b52373397d" class="toggle"><li><details open=""><summary>Przepowieść</summary><p id="b0dae62c-fcc3-4f4b-9f41-bb0f095c0cae" class="">Oto powstał jakiś uczony w Prawie i wystawiając Jezusa na próbę, zapytał: «Nauczycielu, co mam czynić, aby osiągnąć życie wieczne?»</p><p id="5eda0df2-aba9-4ba7-a1c1-755976b73ef7" class="">Jezus mu odpowiedział: Co jest napisane w Prawie? Jak czytasz?</p><p id="11e86de2-cadc-4a72-81ab-f5fda7c519db" class="">«On rzekł: Będziesz miłował Pana, Boga swego, całym swoim sercem, całą swoją duszą, całą swoją mocą i całym swoim umysłem; a swego bliźniego jak siebie samego».</p><p id="17436190-bbb8-4e62-a75d-093986569cb5" class="">Jezus rzekł do niego: «Dobrześ odpowiedział. To czyń, a będziesz żył».</p><p id="841f187a-d6ba-4f76-988b-c284da6bb38d" class="">Lecz on, chcąc się usprawiedliwić, zapytał Jezusa: «A kto jest moim bliźnim?»</p><p id="28100d27-fec7-4ba6-8a69-00eaa6b9d077" class="">Jezus nawiązując do tego, rzekł: «Pewien człowiek schodził z Jerozolimy do Jerycha i wpadł w ręce zbójców. Ci nie tylko że go obdarli, lecz jeszcze rany mu zadali i zostawiwszy na pół umarłego, odeszli. Przypadkiem przechodził tą drogą pewien kapłan; zobaczył go i minął. Tak samo lewita, gdy przyszedł na to miejsce i zobaczył go, minął.</p><p id="53753446-de2a-4844-b239-d78a792cd104" class="">Pewien zaś Samarytanin, będąc w podróży, przechodził również obok niego. Gdy go zobaczył, wzruszył się głęboko: podszedł do niego i opatrzył mu rany, zalewając je oliwą i winem; potem wsadził go na swoje bydlę, zawiózł do gospody i pielęgnował go.</p><p id="01258171-4d00-4a57-a74d-9fcf004a46c7" class="">Następnego zaś dnia wyjął dwa denary, dał gospodarzowi i rzekł: Miej o nim staranie, a jeśli co więcej wydasz, ja oddam tobie, gdy będę wracał.</p><p id="10bf08b1-8b99-4d07-998b-296a6e668f68" class="">Któryż z tych trzech okazał się według twego zdania, bliźnim tego, który wpadł w ręce zbójców?»</p><p id="9af1773a-5ce0-4c27-8ca4-c8f3851111ed" class="">On odpowiedział: «Ten, który mu okazał miłosierdzie».</p><p id="3d9a5d8a-38bb-4f05-820f-15455b848d86" class="">Jezus mu rzekł: «Idź, i ty czyń podobnie».</p></details></li></ul><ul id="3676497a-1aaf-4833-b9c0-143e20d8dec9" class="toggle"><li><details open=""><summary>Treść</summary><p id="51138a8c-b66f-4787-b494-acc703a94209" class="">Przypowieść o miłosiernym samarytaninie opowiada o człowieku, który został napadnięty przez zbójców na drodze z Jerozolimy do Jerycha. Napastnicy go okradli, zostawiając na pół umarłego. Przechodzący tą drogą kapłan i lewita, pomimo widoku cierpiącego człowieka, postanowili go ominąć. Jednakże Samarytanin (uważany za wrogą nację dla żydów w tamtym czasie), który również przechodził tą drogą, postanowił pomóc. Zatroszczył się o rannego, opatrzył jego rany i zapewnił mu schronienie. Na koniec, Jezus, który opowiadał tę historię, zwrócił się do słuchaczy z pytaniem, który z trzech mężczyzn okazał się bliźnim napadniętego. Odpowiedzią było, że to Samarytanin, który okazał miłosierdzie. </p></details></li></ul><ul id="2cb70d54-e8c9-4d0a-9c03-7c6c69f6c1a9" class="toggle"><li><details open=""><summary>Interpretacja / znaczenie przenośne</summary><p id="3c1cef27-7037-4989-a890-db1e86cf4dfe" class="">Przypowieść o miłosiernym samarytaninie jest jednym z najbardziej znanych nauczania Jezusa i stanowi esencję chrześcijańskiego rozumienia miłosierdzia i miłości bliźniego. Samarytanin, który pomógł człowiekowi poranionemu przez zbójców, staje się symbolem osoby, która potrafi przekroczyć bariery społeczne, religijne i narodowościowe, aby pomóc drugiemu człowiekowi w potrzebie.</p><p id="e28dde6f-eaad-46c6-b818-679124a9611b" class="">Jezus przez tę przypowieść pokazuje, że bliźnim jest każda osoba, której możemy pomóc, niezależnie od jej pochodzenia, wyznania czy statusu społecznego. Ważne jest tu również to, że postawa samarytanina była kontrastem do postawy kapłana i lewity, którzy pomimo swojego religijnego statusu, nie okazali miłosierdzia człowiekowi w potrzebie.</p><p id="71ee1254-0f61-463a-bdeb-06886c2e3d96" class="">Przypowieść o miłosiernym samarytaninie przekazuje również ważną lekcję o prawdziwej naturze miłosierdzia - to nie tylko współczucie, ale przede wszystkim konkretne działanie na rzecz drugiego człowieka. Samarytanin nie tylko zlitował się nad poranionym człowiekiem, ale podjął konkretne kroki, aby mu pomóc - opatrzył jego rany, zapewnił mu schronienie i opiekę.</p><p id="1d52554a-f5e9-460d-b804-4927a0835fa6" class="">Ta przypowieść jest wyrazem uniwersalnego przesłania miłości bliźniego, które przekracza wszelkie granice i podziały. Jezus pokazuje, że prawdziwym bliźnim jest ten, kto okazuje miłosierdzie i nie przechodzi obojętnie obok cierpienia drugiego człowieka.</p></details></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Przepowieść o siewcy</summary><div class="indented"><ul id="eb0cbfac-0277-4202-ad0e-d6cf90db5a75" class="toggle"><li><details open=""><summary>Przepowieść</summary><p id="9f2e2059-a726-4e1c-9b7b-f56d4cd2080d" class="">Owego dnia Jezus wyszedł z domu i usiadł nad jeziorem.</p><p id="1dfb6f29-935b-49d4-9264-61df95e3347e" class="">Wnet zebrały się koło Niego tłumy tak wielkie, że wszedł do łodzi i usiadł, a cały lud stał na brzegu.</p><p id="b8aa67e0-131a-44c1-86a2-8b4cbb230e32" class="">I mówił im wiele w przypowieściach tymi słowami</p><p id="6fefd6bb-974d-46ac-9887-695c1f3decfa" class="">«Oto siewca wyszedł siać. A gdy siał, niektóre [ziarna] padły na drogę, nadleciały ptaki i wydziobały je. Inne padły na miejsca skaliste, gdzie niewiele miały ziemi; i wnet powschodziły, bo gleba nie była głęboka. Lecz gdy słońce wzeszło, przypaliły się i uschły, bo nie miały korzenia. Inne znowu padły między ciernie, a ciernie wybujały i zagłuszyły je. Inne w końcu padły na ziemię żyzną i plon wydały, jedno stokrotny, drugie sześćdziesięciokrotny, a inne trzydziestokrotny. Kto ma uszy, niechaj słucha!».</p></details></li></ul><ul id="f7bb8de0-dc57-4f04-8391-5a06bff81547" class="toggle"><li><details open=""><summary>Treść</summary><p id="ec99b0a7-302e-4bc6-85cb-e95587370a75" class="">Przepowieść o siewcy to jedna z przypowieści Jezusa, której treść jest następująca: Pewien siewca wyszedł, aby siać ziarno. Część ziaren upadła na drogę, gdzie została zjedzona przez ptaki. Inne ziarna spadły na skały, które nie miały wystarczająco gleby, więc szybko wyrosły, ale kiedy słońce wyżarło ziemię, rośliny uschły i umarły, ponieważ nie miały głębokiego korzenia. Niektóre ziarna upadły między ciernie, które wyrosły szybciej i udusiły młode rośliny. Jednak niektóre ziarna upadły na żyzną glebę, gdzie wydały obfity plon - niektóre sto, niektóre sześćdziesiąt, a inne trzydzieści ziaren na jedno posiane ziarno.</p></details></li></ul><ul id="c06e6793-8564-4041-a39b-c3e9a1555631" class="toggle"><li><details open=""><summary>Interpretacja / znaczenie przenośne</summary><p id="cd58ff43-1879-4cea-9ac7-b7eac5c5e2d3" class="">Interpretacja przypowieści o siewcy jest metaforą dotyczącą rozsiewania nauki Bożej, czyli Słowa Bożego, które Jezus Chrystus przekazał ludziom. Każde miejsce, na które spada ziarno, reprezentuje różne postawy człowieka wobec Słowa Bożego.</p><ol type="1" id="180ed954-c67b-45a0-bd55-b2acd582741b" class="numbered-list" start="1"><li>Ziarno, które spada na drogę i jest zjadane przez ptaki, symbolizuje osoby, które słyszą naukę Bożą, ale nie zrozumieją jej, a zatem nie przynoszą owoców.</li></ol><ol type="1" id="7c323069-bfd4-4504-b1c5-046211ce54a6" class="numbered-list" start="2"><li>Ziarno, które spada na skały i szybko rośnie, ale usycha, gdy słońce je spali, symbolizuje osoby, które początkowo z entuzjazmem przyjmują Słowo Boże, ale nie mają głębokich korzeni wiary, więc kiedy napotykają na trudności, ich wiara słabnie.</li></ol><ol type="1" id="b044d94c-842a-4d5b-bd8d-1a606fc704cf" class="numbered-list" start="3"><li>Ziarno, które spada między ciernie, które rosną i duszą je, reprezentuje osoby, które słuchają Słowa Bożego, ale są tak zaaferowane troskami i pokusami świata, że nie pozwalają Słowu przynieść owoców w ich życiu.</li></ol><ol type="1" id="142a774e-8396-4916-8272-382adde2c0a1" class="numbered-list" start="4"><li>Ziarno, które spada na dobrą ziemię i przynosi obfity plon, symbolizuje osoby, które słuchają Słowa Bożego, rozumieją je i wprowadzają je w życie, przynosząc obfite owoce.</li></ol><p id="7a95835b-1b17-4831-b333-a3db130dc9a6" class="">W ten sposób przypowieść o siewcy przypomina nam, że Słowo Boże ma moc przynieść obfite owoce, ale tylko wtedy, gdy jest przyjmowane z otwartym sercem i prawdziwą wiarą.</p></details></li></ul></div></details><hr id="ec565167-865b-4521-9ac2-d8f23a0c376e"/><h1 id="af5746b1-a605-414f-bb21-8362fd4947e8" class="">Apokalipsa Świętego Jana</h1><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Streszczenie </summary><div class="indented"><p id="41b2a2d9-abe5-435b-a7da-b34f4828d506" class="">Apokalipsa Świętego Jana, zwana również Objawieniem Świętego Jana, to ostatnia księga Nowego Testamentu. Została napisana przez Jana na wyspie Patmos i zawiera serię wizji, które mają miejsce podczas &quot;ostatnich dni&quot;.</p><p id="03239acc-b495-488c-b714-47ddb5bb57f3" class="">Księga rozpoczyna się od siedmiu listów do siedmiu kościołów w Azji Mniejszej. Jan przekazuje im słowa Pana, które są pełne rad, krytyki, ostrzeżeń i zachęty.</p><p id="9af60a8e-a8bc-446f-8396-e569ba0de722" class="">Następnie Jan ma wizję tronu Bożego, otoczonego przez cztery stworzenia pełne oczu i dwadzieścia cztery starszych. Na tronie siedzi Bóg, trzymając w ręku księgę zapieczętowaną siedmioma pieczęciami. Jezus, przedstawiony jako Baranek, jest jedynym, który może otworzyć pieczęcie. Kiedy otwiera je, rozpoczynają się różne katastrofy. Cztery pierwsze pieczęcie uwalniają Czterech Jeźdźców Apokalipsy, symbolizujących wojnę, głód, śmierć i piekło.</p><p id="718c97a3-0d08-4ad1-aed7-e81c2d14c08d" class="">Kiedy otwiera się siódma pieczęć, rozpoczynają się siedem trąb. Podczas gdy aniołowie trąbią, niszczące plagi są wylewane na ziemię.</p><p id="da27ea61-a056-4a6c-8341-950eb263a62c" class="">Jan widzi również wielką czerwoną smoczą bestię, która walczy z niewiastą obleczoną w słońce. Smok, identyfikowany jako szatan, jest pokonany i wyrzucony z nieba.</p><p id="db2628ab-aa66-43cd-929d-2a8716bc489f" class="">Wizje Jana zakończą się obrazem Nowego Jeruzalem, miasta Bożego, które zstępuje z nieba. Miasto jest cudowne, z ulicami ze złota i bramami z perły. Bóg mieszka w mieście z ludźmi, i nie ma tam już śmierci, smutku ani bólu.</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Znaczenie</summary><div class="indented"><p id="ebd8a2a9-e4fc-4cef-b38f-79880f45e8c3" class="">Apokalipsa Świętego Jana, będąca jednym z najbardziej symbolicznych i mistycznych tekstów Nowego Testamentu, ma wielowymiarowe znaczenie:</p><ol type="1" id="a67472e0-a54c-47be-aba3-b8160ca55d34" class="numbered-list" start="1"><li>Po pierwsze, Apokalipsa jest księgą eschatologiczną, odnoszącą się do &quot;ostatnich dni&quot; i końca świata. Przedstawia serię wizji dotyczących ostatecznej bitwy między dobrem a złem, kiedy to siły zła, reprezentowane przez smoka i bestię, zostaną pokonane, a Bóg ustanowi swoje ostateczne i wieczne królestwo. W tym sensie, Apokalipsa daje wyznawcom chrześcijaństwa nadzieję na ostateczne zwycięstwo dobra nad złem.</li></ol><ol type="1" id="e7f07208-7269-4ee7-a689-93978697f6a7" class="numbered-list" start="2"><li>Po drugie, Apokalipsa jest księgą proroczą, przekazującą wiadomości o przyszłych wydarzeniach i duchowych prawdach. Wizje Jana mają na celu pouczenie, ostrzeżenie i zachęcenie wiernych, dając im wgląd w boski plan i cel historii.</li></ol><ol type="1" id="c3e0dce2-4996-472d-b389-4b9cec50f7a0" class="numbered-list" start="3"><li>Po trzecie, Apokalipsa jest księgą symboliczną, która używa bogatego i złożonego języka symboli, aby przekazać głębokie duchowe prawdy. Symbole te, takie jak Czterej Jeźdźcy Apokalipsy, Baranek, bestia, czy Nowe Jeruzalem, mają głębokie duchowe znaczenie i są przedmiotem intensywnego studiowania i interpretacji.</li></ol><p id="a6cc6a45-ccf3-43f3-a976-1b7326f4c5c4" class="">Wreszcie, Apokalipsa jest księgą liturgiczną, która odgrywa centralną rolę w chrześcijańskim kultie i teologii. Jej wizje nieba, tronu Bożego, chwały Baranka i Nowego Jeruzalem są często używane w chrześcijańskim liturgii i hymnach, pomagając wiernym lepiej zrozumieć i doświadczyć rzeczywistości duchowych.</p></div></details><p id="3de5bbdd-35c0-4b9f-99b9-7ee6aa65d2be" class="">Symbole zawarte w apokalipsie świętego Jana:</p><ul id="300dc5f9-fdba-4f87-8d17-c78e00b3d26b" class="bulleted-list"><li style="list-style-type:disc"><strong>Baranek - </strong>Jezus Chrystus, który odniósł zwycięstwo, ale nie siłą oręża, tylko poprzez pokorę i ofiarę</li></ul><ul id="88aa223d-3765-4697-9187-b14d69e44bc9" class="bulleted-list"><li style="list-style-type:disc"><strong>Smok </strong>- szatan</li></ul><ul id="69b9360a-70e6-467a-96d9-2c37cc9b8cf7" class="bulleted-list"><li style="list-style-type:disc"><strong>Bestia </strong>o liczbie 666 - ucieleśnienie zła, zaprzeczenie boskiej doskonałości</li></ul><ul id="ad76b727-8ae9-4b40-940a-207d68254cfd" class="bulleted-list"><li style="list-style-type:disc"><strong>Czterech jeźdźców Apokalipsy </strong>- jeździec z łukiem do zwycięstwo, z mieczem - wojna. z wagą - głód, z trójzębem - śmierć</li></ul><ul id="20ba288f-d491-4f1e-8a87-48089b8cfc5a" class="bulleted-list"><li style="list-style-type:disc"><strong>Babilon </strong>- zepsucie, miejsce, gdzie panuje grzech</li></ul><ul id="1544495c-0120-4c1a-9231-019b25ca56ef" class="bulleted-list"><li style="list-style-type:disc"><strong>Nowe Jeruzalem - </strong>rzeczywistość po zwycięstwie dobra nad złem</li></ul><ul id="c5f2eff0-7769-453b-93e3-3a058043dc32" class="bulleted-list"><li style="list-style-type:disc">Wielka nierządnica - grzech, rządza</li></ul><ul id="8a2fdb71-9e1b-4ba8-815f-c70b530c76a3" class="bulleted-list"><li style="list-style-type:disc"><strong>Niewiasta - </strong>Matka Boska, ale też lud Boży</li></ul><ul id="6a8087ef-bd84-41e5-83fd-261a65ec35ad" class="bulleted-list"><li style="list-style-type:disc"><strong>Liczby:</strong><ul id="734a7a48-8233-4344-87fe-ed13e44126d1" class="bulleted-list"><li style="list-style-type:circle"><strong>7 </strong>- boska doskonałość, pełnia</li></ul><ul id="f906c4e5-dd04-494d-a0a1-a12a897cf812" class="bulleted-list"><li style="list-style-type:circle"><strong>6</strong> - niedoskonałość</li></ul><ul id="8939f50d-6c85-4e4f-b954-aaca4562279e" class="bulleted-list"><li style="list-style-type:circle"><strong>12 </strong>- Izrael</li></ul><ul id="bd7fa47c-6cae-4e10-80c6-609b32774a34" class="bulleted-list"><li style="list-style-type:circle"><strong>4</strong> - świat stworzony przez Boga, ale też wielorakość</li></ul><ul id="926969ab-69e3-4961-b39a-d13ef36be5e3" class="bulleted-list"><li style="list-style-type:circle"><strong>tysiąc </strong>- wiele</li></ul></li></ul><hr id="ebfc1294-ca88-45e8-a6b5-3ea8c70eb781"/><h1 id="4bbd4707-85ff-44a1-8bdd-6615eeb65a06" class="">Związki frazeologiczne wywodzące się z Biblii</h1><p id="cbc6efde-9da6-4775-8198-d6e7dc342783" class="">Biblizmy - Frazeologizmy pochodzące z Biblii</p><ul id="c3438736-7a27-4771-8a69-02db2f3273ce" class="toggle"><li><details open=""><summary>Zakzany owoc </summary><ul id="71d8bbff-6b7a-4ae7-af5c-151e19b35320" class="bulleted-list"><li style="list-style-type:disc">Znaczenie: Odwołuje się do sytuacji, w której coś jest zabronione lub niedozwolone, ale jednocześnie kuszące lub atrakcyjne, co prowokuje do złamania zakazu.</li></ul><ul id="217c00bf-b5be-4e88-9dd2-a68692435efb" class="bulleted-list"><li style="list-style-type:disc">Pochodzenie: Wywodzi się z opowieści biblijnej o Adamie i Ewie w Raju, gdzie Bóg zakazał im jedzenia owocu z drzewa poznania dobra i zła. Jednak Ewa została skuszona przez węża, aby zasmakować zakazanego owocu, co doprowadziło do wygnania z Raju.</li></ul></details></li></ul><ul id="5f12f434-e2dc-471c-a41b-7e3d89653e2b" class="toggle"><li><details open=""><summary>Sodoma i Gomora</summary><ul id="96c3ea0e-eef3-4d81-8ac3-edb4d2648e7d" class="bulleted-list"><li style="list-style-type:disc">Znaczenie: Odwołuje się do zepsucia, deprawacji lub gwałtownej kary, często w kontekście moralnego upadku.</li></ul><ul id="4656bcd6-d054-4783-99c1-f37d16ea0246" class="bulleted-list"><li style="list-style-type:disc">Pochodzenie: Sodoma i Gomora to dwa biblijne miasta, które zostały zniszczone przez Boga za swoją grzeszność i deprawację. Opowieść ta jest znana z Księgi Rodzaju w Starym Testamencie.</li></ul></details></li></ul><ul id="8d068cfc-fd1c-4267-be7f-ccf26b09220c" class="toggle"><li><details open=""><summary>Wieża Babel</summary><ul id="a8f9bec9-bdb6-4d5c-aa9c-689ff0c04176" class="bulleted-list"><li style="list-style-type:disc">Znaczenie: Odnosi się do sytuacji, w której próba osiągnięcia nadmiernego zjednoczenia prowadzi do chaosu lub dezorganizacji.</li></ul><ul id="08c0a1e2-005e-43d4-af2b-c96d905f152e" class="bulleted-list"><li style="list-style-type:disc">Pochodzenie: Historia Wieży Babel pochodzi z Księgi Rodzaju. Ludzie starali się zbudować wieżę, która sięgałaby do nieba, aby uczynić ich imię sławne. Jednak Bóg przeszkodził im w tym, zmylając ich języki i rozproszając ich po całej ziemi.</li></ul></details></li></ul><ul id="c4ff818a-b886-4acf-a9d1-c9baece2b8de" class="toggle"><li><details open=""><summary>Solomonowy wyrok</summary><ul id="cf1ecf62-b12f-43f9-9c37-9960f0d6af81" class="bulleted-list"><li style="list-style-type:disc">Znaczenie: Odnosi się do bardzo mądrego lub sprawiedliwego wyroku.</li></ul><ul id="19f7cbee-bbfc-4d58-bf0f-236972f25e24" class="bulleted-list"><li style="list-style-type:disc">Pochodzenie: Solomon był biblijnym królem Izraela, którego mądrość była podziwiana. Jego najbardziej znany wyrok dotyczył sytuacji, w której dwie kobiety twierdziły, że dziecko należy do nich. Solomon zaproponował przecięcie dziecka na pół, aby zadowolić obie kobiety. Prawdziwa matka zgodziła się oddać dziecko, aby je ocalić, co potwierdziło, że ona jest jego prawdziwą matką.</li></ul></details></li></ul><ul id="85132ec6-253a-4c49-bf34-870cd1df40ac" class="toggle"><li><details open=""><summary>Hiobowe wieści </summary><ul id="d9328381-9d72-4062-b815-41a5fc886372" class="bulleted-list"><li style="list-style-type:disc">Znaczenie: Odnosi się do złych wiadomości lub nieszczęść.</li></ul><ul id="de595b59-f0b7-4ae6-a7b9-19e08802d40e" class="bulleted-list"><li style="list-style-type:disc">Pochodzenie: Hiob był postacią biblijną z Księgi Hioba, który doświadczył wielu tragedii, ale zachował wiarę w Boga. Jego imię stało się synonimem cierpienia i prób.</li></ul></details></li></ul><ul id="e07ba92b-6ed9-4420-8ff1-1a81f8e759d7" class="toggle"><li><details open=""><summary>Manna z niba</summary><ul id="e5432244-15dd-4a5e-8eda-1ff32bcb2469" class="bulleted-list"><li style="list-style-type:disc">Znaczenie: Odnosi się do niezwykłego bądź nieoczekiwanego źródła zaopatrzenia lub pomocy.</li></ul><ul id="31f1fd8e-e413-4fda-a0df-2d3b4c8b08a3" class="bulleted-list"><li style="list-style-type:disc">Pochodzenie: W Starym Testamencie, w Księdze Wyjścia, opisane jest, jak Bóg zsyłał mannę na lud Izraela, gdy podróżowali przez pustynię. Była to boska żywność, która pojawiała się codziennie rano, aby nakarmić ludzi.</li></ul></details></li></ul><ul id="6aa4bb65-9530-497b-b468-6966c4cc9f94" class="toggle"><li><details open=""><summary>Plagi Egipskie</summary><ul id="a309bbc5-8216-4a23-8222-50a79b634516" class="bulleted-list"><li style="list-style-type:disc">Znaczenie: Odnosi się do serii dziesięciu plag, które Bóg zesłał na Egipt jako kary za odmowę wypuszczenia Izraelitów z niewoli.</li></ul><ul id="f0ff6fe3-ee2f-4069-ba41-d3e3d9cb3128" class="bulleted-list"><li style="list-style-type:disc">Pochodzenie: Opisane są one w Księdze Wyjścia i obejmują takie plagi jak krew w Nilu, żaby, komary, muchy, czy śmierć pierworodnych.</li></ul></details></li></ul><ul id="5bd7ed70-0469-47f2-82c8-48fb31c59e77" class="toggle"><li><details open=""><summary>Pocałunek Judasza</summary><ul id="26b2f077-13d7-447d-889b-5cd085f83434" class="bulleted-list"><li style="list-style-type:disc">Znaczenie: Odnosi się do obłudy, fałszywego przyjaźni lub zdrady, szczególnie w kontekście zdrady bliskiej osoby.</li></ul><ul id="a1290c86-a3c3-4d8b-a80c-975999c47fa8" class="bulleted-list"><li style="list-style-type:disc">Pochodzenie: W Nowym Testamencie, Judasz Iskariota zdradził Jezusa, identyfikując Go pocałunkiem, co doprowadziło do ujęcia i ukrzyżowania Chrystusa.</li></ul></details></li></ul><ul id="5a0b644c-1c0c-44b5-b7d2-699f49811215" class="toggle"><li><details open=""><summary>Sądny dzień </summary><ul id="ce0e85b7-51b3-420f-ada6-93ba99345e5a" class="bulleted-list"><li style="list-style-type:disc">Znaczenie: Odnosi się do przyszłego dnia sądu, w którym ludzie zostaną osądzeni za swoje uczynki przed Bogiem.</li></ul><ul id="08cc7860-dadc-4794-92b7-32f452bbbbb6" class="bulleted-list"><li style="list-style-type:disc">Pochodzenie: Jest to termin używany w Biblii, szczególnie w Nowym Testamencie, aby opisać dzień, w którym ludzie staną przed sądem Bożym, aby rozliczyć się ze swojego życia.</li></ul></details></li></ul><ul id="d9c90260-c5ff-4a74-a3ed-c1cef806181b" class="toggle"><li><details open=""><summary>Kainowe znamie</summary><ul id="c57fa0ee-e2e9-4879-921c-b1dd92258887" class="bulleted-list"><li style="list-style-type:disc">Znaczenie: Odnosi się do wiadomości o zbrodni lub tragedii.</li></ul><ul id="9a1724fd-78c2-49bd-b7a3-c380e510e9c6" class="bulleted-list"><li style="list-style-type:disc">Pochodzenie: Historia Kaina i Abla pochodzi z Księgi Rodzaju. Kain zabił swojego brata Abla, co sprawiło, że jego imię stało się synonimem zbrodni i przemocy.</li></ul></details></li></ul><ul id="846ce867-6038-4d9d-b88a-a71b0370edae" class="toggle"><li><details open=""><summary>Ziemia obiecana</summary><ul id="c26a6c75-10ed-4f77-9532-f85f67daad27" class="bulleted-list"><li style="list-style-type:disc">Znaczenie: Odnosi się do krainy obiecanej przez Boga Izraelitom, czyli ziemi Kanaan.</li></ul><ul id="41f72a55-d164-4414-9ba3-67008201186e" class="bulleted-list"><li style="list-style-type:disc">Pochodzenie: W Starym Testamencie, Bóg obiecał Izraelitom ziemię, która obfituje w mleko i miód, czyli ziemie Kanaan, jako ich dziedzictwo.</li></ul></details></li></ul><ul id="c5784d13-a619-4325-a53b-46a32674b841" class="toggle"><li><details open=""><summary>Złoty cielec</summary><ul id="462435ac-9c65-4524-99a5-444b1061bfbd" class="bulleted-list"><li style="list-style-type:disc">Znaczenie: Odnosi się do kultowego bałwanstwa lub fałszywego bóstwa.</li></ul><ul id="79dbb2d9-45aa-4606-9d8d-6bec9af7565d" class="bulleted-list"><li style="list-style-type:disc">Pochodzenie: Opowieść o złotym cielcu pochodzi z Księgi Wyjścia, gdzie Izraelici zrobili złotego cielca i oddawali mu cześć, gdy Mojżesz był na górze Synaj otrzymując przykazania od Boga.</li></ul></details></li></ul><ul id="617ee912-4571-4aa5-a783-c3cce4292432" class="toggle"><li><details open=""><summary>Miłosierny Samarytanin</summary><ul id="eaf7e433-f91f-4220-84fc-7719122c87eb" class="bulleted-list"><li style="list-style-type:disc">Znaczenie: Odnosi się do osoby, która okazuje miłosierdzie lub pomaga innym, zwłaszcza w potrzebie.</li></ul><ul id="a7085374-7f21-452f-8bb3-9c41342ec338" class="bulleted-list"><li style="list-style-type:disc">Pochodzenie: Jest to przypowieść Jezusa opisana w Ewangelii Łukasza, gdzie Samarytanin pomaga rannemu człowiekowi na drodze, podczas gdy duchowni przechodzą obok niego obojętnie.</li></ul></details></li></ul><ul id="8a21373e-4a93-4d8b-b190-726bce96a0a4" class="toggle"><li><details open=""><summary>Judaszowe Srebrniki</summary><ul id="95170eff-a9a3-4491-bece-6c37041dbd05" class="bulleted-list"><li style="list-style-type:disc">Znaczenie: Odnosi się do wynagrodzenia za zdradę lub niegodziwość.</li></ul><ul id="bb934027-8aaa-4f3a-9f3a-5f3c7b3874e4" class="bulleted-list"><li style="list-style-type:disc">Pochodzenie: Judasz, jeden z dwunastu apostołów Jezusa, zdradził Go za trzydzieści srebrników, co doprowadziło do Jezusowego ujęcia i ukrzyżowania.</li></ul></details></li></ul><ul id="ff722da5-bd10-4c6e-912d-2608c10bab1e" class="toggle"><li><details open=""><summary>Alfa i Omega</summary><ul id="8ab46618-7c31-4f3e-b400-b514eb3ea64f" class="bulleted-list"><li style="list-style-type:disc">Znaczenie: Odnosi się do początku i końca, czyli wszystkiego.</li></ul><ul id="a618c82b-18c6-4f76-823c-d67e9b455459" class="bulleted-list"><li style="list-style-type:disc">Pochodzenie: Jest to termin używany w Nowym Testamencie, w Księdze Objawienia, gdzie Jezus nazywa samego siebie „Alfa i Omega”, czyli początek i koniec.</li></ul></details></li></ul><ul id="1b568553-c9b2-4ced-b667-27cc5898325c" class="toggle"><li><details open=""><summary>4 Jeźdźców Apokalipsy</summary><ul id="98ff6ea5-24a5-4547-8cb3-cdea66566ac8" class="bulleted-list"><li style="list-style-type:disc">Znaczenie: Odnosi się do czterech postaci opisanych w Księdze Objawienia, które przynoszą nieszczęście, śmierć i zniszczenie na ziemi w czasie apokalipsy.</li></ul><ul id="3be125fb-d359-4563-a4ff-b9f70233420e" class="bulleted-list"><li style="list-style-type:disc">Pochodzenie: Jest to opisane w Księdze Objawienia, gdzie czterej jeźdźcy symbolizują wojnę, głód, zarazę i śmierć, które niszczą świat.</li></ul></details></li></ul><ul id="6c2f13ab-1628-4249-aae3-408c8ca45ab2" class="toggle"><li><details open=""><summary>Zamienić się w słóp soli</summary><ul id="dbef4080-5fb8-4165-8876-51f244f5b335" class="bulleted-list"><li style="list-style-type:disc">Znaczenie: Odnosi się do nagłej lub katastrofalnej przemiany, często w kontekście kar za grzechy.</li></ul><ul id="f0a60de8-b29c-45b4-a657-80d6a7ae0502" class="bulleted-list"><li style="list-style-type:disc">Pochodzenie: Opisane w Księdze Rodzaju, żona Lota została ostrzeżona, aby nie oglądała się na zniszczenie Sodomy i Gomory, lecz zrobiła to i została zamieniona w słup soli.</li></ul></details></li></ul><ul id="87e755d1-84e0-4f92-8c06-7e952f7ef5ac" class="toggle"><li><details open=""><summary>Ciemności Egipskie</summary><ul id="1f739aed-7a6d-4108-a6e0-36535edfb66b" class="bulleted-list"><li style="list-style-type:disc">Znaczenie: Odnosi się do potężnych ciemności, często symbolicznych lub dosłownych.</li></ul><ul id="14a8abc1-ab71-4087-89d9-96b1e19d3bef" class="bulleted-list"><li style="list-style-type:disc">Pochodzenie: Jedna z dziesięciu plag egipskich, opisanych w Księdze Wyjścia, gdzie Egipt został spowity w gęste ciemności przez trzy dni.</li></ul></details></li></ul><ul id="b6589894-9a59-4a56-8614-1af4680cab22" class="toggle"><li><details open=""><summary>Sól ziemi</summary><ul id="92081a56-a4a7-4cd9-9ad1-ecb0102e15da" class="bulleted-list"><li style="list-style-type:disc">Znaczenie: Odnosi się do osoby lub grupy osób, która przyczynia się do wartości i stabilności społeczeństwa.</li></ul><ul id="f79ca071-cfa8-4f98-9544-cd06550c41ea" class="bulleted-list"><li style="list-style-type:disc">Pochodzenie: Termin pochodzi z Ewangelii Mateusza, gdzie Jezus nazywa swoich uczniów „sólą ziemi”, co oznacza, że mają oni misję przynosić światło i smak życia.</li></ul></details></li></ul><ul id="9d7ae66c-3a1d-4d85-9aa6-a1ed6f821014" class="toggle"><li><details open=""><summary>Niebieski ptak</summary><ul id="55371ecf-ad67-4601-905c-160ddbc6a820" class="bulleted-list"><li style="list-style-type:disc">Znaczenie: Odnosi się do osoby, która pojawiła się niespodziewanie lub na własną rękę.</li></ul><ul id="848c87e5-e2df-41cc-8d8c-21e6390e25af" class="bulleted-list"><li style="list-style-type:disc">Pochodzenie: W Starym Testamencie, w Księdze Rodzaju, przedstawiono gołąbka jako znak pokoju po potopie.</li></ul></details></li></ul><ul id="7e189537-b3cc-437a-9f41-65b682f506e2" class="toggle"><li><details open=""><summary>Rzucać perły przed wieprze </summary><ul id="8f6bb0b3-eae3-453f-abc8-501cffe4ed2a" class="bulleted-list"><li style="list-style-type:disc">Znaczenie: Odnosi się do marnowania cennych rzeczy lub wysiłku na niegodne osoby.</li></ul><ul id="2cf5efe7-46e4-4dd5-b4fd-cf37108a6f28" class="bulleted-list"><li style="list-style-type:disc">Pochodzenie: Jest to przypowieść Jezusa opisana w Ewangelii Mateusza, gdzie mówi, że nie warto marnować cennych rzeczy na niecne osoby.</li></ul></details></li></ul><ul id="f002d5d0-bca1-4379-920f-e1ab7ef4e7cd" class="toggle"><li><details open=""><summary>Umywać ręce</summary><ul id="8b1c3d81-e606-45e3-9425-f7cdfe0a43fe" class="bulleted-list"><li style="list-style-type:disc">Znaczenie: Odnosi się do odmowy odpowiedzialności za coś, do czego się przyczyniono lub co się wydarzyło.</li></ul><ul id="9ef086bc-f8ce-41d4-8511-ddb41b0b37f7" class="bulleted-list"><li style="list-style-type:disc">Pochodzenie: Wywodzi się to z Nowego Testamentu, gdzie Piłat umył ręce, aby wykazać, że jest niewinny w sprawie Jezusa, pomimo że go skazał na śmierć.</li></ul></details></li></ul><ul id="293b62d6-24d6-4527-8372-7c4dfb28ccc8" class="toggle"><li><details open=""><summary>Nie rzucać słów na wiatr</summary><ul id="43757c57-9fae-409d-944a-a1491f8109d9" class="bulleted-list"><li style="list-style-type:disc">Znaczenie: Odnosi się do dbałości o słowa i obietnice oraz ich skuteczne wykorzystanie.</li></ul><ul id="ecbdec8c-ceba-4297-85e8-9c55a5748d9e" class="bulleted-list"><li style="list-style-type:disc">Pochodzenie: Pomimo braku bezpośredniego odniesienia w Biblii, idea ta pasuje do zasad moralnych i mądrości znalezionych w różnych fragmentach Pisma Świętego.</li></ul></details></li></ul><p id="30abd2c6-e8f7-42d9-b109-d5da874fd208" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

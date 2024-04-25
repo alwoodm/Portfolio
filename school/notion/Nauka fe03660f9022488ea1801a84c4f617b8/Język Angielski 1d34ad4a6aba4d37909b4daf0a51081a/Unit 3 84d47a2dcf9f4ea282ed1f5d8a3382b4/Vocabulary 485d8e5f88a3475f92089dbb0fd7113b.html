@@ -1,0 +1,679 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Vocabulary</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="485d8e5f-88a3-475f-9208-9dbb0fd7113b" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🔡</span></div><h1 class="page-title"><strong><strong>Vocabulary</strong></strong></h1><p class="page-description"></p></header><div class="page-body"><ul id="c7adba1d-4c0a-4157-94dc-d9533b98a60d" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">3A</span><div class="indented"></div></li></ul><ul id="a631dcbe-182f-4057-b671-3e39e649282b" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">3B</span><div class="indented"></div></li></ul><ul id="cadbdc41-86d2-4a66-9691-ba5e5bb33ce1" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">3C</span><div class="indented"></div></li></ul><ul id="af758ebd-a554-4380-a879-28aa6a4ad81a" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">3F</span><div class="indented"></div></li></ul><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">3A x - 36</summary><div class="indented"><ul id="71fcfe2e-1a60-43e2-b091-c3f386e54648" class="toggle"><li><details open=""><summary>amateur</summary><ul id="3ed4a6bf-5892-4b44-b98c-c5a9f791f110" class="bulleted-list"><li style="list-style-type:disc">amator</li></ul><ul id="23830668-33cc-45c0-93f8-afb1cff3b942" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="0d86882a-f3ed-4a38-badf-73f8ab28ec3d" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="c9c45a0f-4d47-41c5-8345-523ef81e2e58" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="6bf6c69c-f586-4bfb-8f4e-4928faaa3626" class="toggle"><li><details open=""><summary>athlete</summary><ul id="b7c558d8-fb85-4e38-8b24-794844b2784e" class="bulleted-list"><li style="list-style-type:disc">atleta</li></ul><ul id="e9c0d039-c813-4d6d-9448-e00e70cd763b" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="208634c5-8fef-425d-995e-bd870f3eca1c" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="34f30dc9-4508-4f63-aff1-ee66887f64e6" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="f1032a86-40b9-46b2-82d1-9cb7ce4cfb0c" class="toggle"><li><details open=""><summary>attempt</summary><ul id="0196a77b-d552-4d92-9e6b-a5633629c708" class="bulleted-list"><li style="list-style-type:disc">próba</li></ul><ul id="76bb7b1f-4d82-4932-9326-e1ada4b71e3e" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="3d1312f9-e725-4a2c-a3bd-ff7758eab717" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="cd2f67af-5bed-4e98-ba64-3ffc996bf525" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="efaaf646-8c09-47e2-b5ef-64c7405a064c" class="toggle"><li><details open=""><summary>break your wrist/heel</summary><ul id="863217e1-120d-436a-8ecd-fa4b2b0f85bc" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="540a540d-3411-4159-991d-711e271a5eb9" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="8aa569b9-374d-424f-ac33-6f8832fcd0a8" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="83966492-3edd-4907-8146-afb054b1b484" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="d9f28c06-83f0-4b88-ade5-c9d71ada76bb" class="toggle"><li><details open=""><summary>carry on</summary><ul id="74a87057-ef48-468f-8d35-61397d10f654" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="b83179d1-b797-4ce8-a10b-ce04724a0830" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="8b20b474-de69-41f2-8c5a-a311c3c732c0" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="7659517f-8719-46b2-b0d1-3d4789606094" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="a305db67-cee4-4e80-9ec3-112bc433c971" class="toggle"><li><details open=""><summary>challenge</summary><ul id="7096dafb-8b14-4f90-a6e4-14ff7681dfca" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="0070fb1e-b0ca-4f86-bce4-8affd666e0c6" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="1b1cb15a-8ea3-4ad3-bd4c-c15aad4c7da6" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="b1ea1f4b-f697-4a50-9951-1fee05ecbeb0" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="213b4153-4a57-4da4-8f3f-581f9e00347c" class="toggle"><li><details open=""><summary>championships</summary><ul id="ac5d081f-f588-4f3b-8541-47994f0021ec" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="162dfd8d-51f2-49fa-b37f-cd1a9c43492e" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="60f3a128-01b3-4374-be8a-8c1f4edf979f" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="2503e29e-6d75-4819-b871-b8fc3f5200e4" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="3eac1159-5051-439f-b55a-f613db3bfedc" class="toggle"><li><details open=""><summary>cheer on</summary><ul id="65d24cc4-1776-44f6-a4dc-4155a5dfc7da" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="d5474225-18a5-409b-8fa1-7f9f54ec6974" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="29b189a1-3cea-42fd-a6ed-9de1e751a506" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="d0589fcc-1e65-4515-ba38-45e3c365a920" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="7dbea204-eaa7-4f4e-adac-b2d705302a61" class="toggle"><li><details open=""><summary>course</summary><ul id="abd0bf6f-2e80-45ad-ac1c-5b8849b479af" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="d56e5e8d-ff30-4956-9112-bde5e65f4bc6" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="29780c42-efaf-414e-a725-4af88e5c6a44" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="31f07e6b-bef5-4206-8071-7f7143537eed" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="1e8f33c2-29ed-4387-ae7a-da8190cad803" class="toggle"><li><details open=""><summary>crutches</summary><ul id="3c68ac7b-dc75-4b1c-9182-408c1a7306de" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="a9a3115b-52e4-47e2-88df-739ba1255c74" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="7efaf808-230a-4787-93c0-c04b466b1191" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="31eff1fc-fc69-4d88-b6b3-3bbc63e3a1af" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="7dd01cf3-9fba-4f16-9368-7e4858605e58" class="toggle"><li><details open=""><summary>dedication</summary><ul id="f3930ec2-46a5-4aea-bb25-06db937467ee" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="83319490-7e38-412c-829c-c5f294997e22" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="da315497-3ad0-4e6a-a979-24d5362636fe" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="fc6bad5b-cd48-48f3-bae3-3830d4cd52e1" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="56549cf8-f5b3-4031-9688-af25544e6c08" class="toggle"><li><details open=""><summary>determined to do sth</summary><ul id="7c5b6b85-21e4-4de5-bacb-a1c98bb7c995" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="ed48611f-3d91-49c2-92cb-fc3a035b95e6" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="14c9e920-5849-483d-bb86-4f612043018e" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="32f0f306-ef60-4218-9a65-ced65202bd39" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="7ee47fda-37d4-41a6-9936-71ed629a1ead" class="toggle"><li><details open=""><summary>disabled</summary><ul id="2bff7735-a97f-45ea-8c13-a70e014a17bb" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="2d326563-0750-45c7-b7e2-6f9d5402a5fc" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="0329ed64-863e-4589-98e9-38a69c475093" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="c50229c9-b678-41e2-836f-65e041289a27" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="2dc164b1-3a0d-4393-836a-d36af8f88d98" class="toggle"><li><details open=""><summary>disease</summary><ul id="5e3e8757-578e-4fec-9c00-0016181e04df" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="a0295ab2-7043-4e6d-9256-cca47d1e665f" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="e057917d-4508-4d8e-b5d2-12e144ca80ff" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="c043431d-f038-420a-8981-cc1a099a0dba" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="32661d04-33bd-4e02-a56f-7f1db9f69aa1" class="toggle"><li><details open=""><summary>enter/win a competition</summary><ul id="25f55935-5cb0-48a6-9e70-1d14248d079e" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="7196d7cb-8197-4d1e-bcfc-b0a4aebfa041" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="1b35aae8-38f7-4124-920d-22abf069d6af" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="f8ac03c4-1e97-4367-ae2f-ff409a7bdba5" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="bcf80201-bc98-4b3e-84d9-482d19faba2f" class="toggle"><li><details open=""><summary>flip/backflip</summary><ul id="0e36b88a-6ab0-4540-9b3b-02481409a62f" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="cb49efb8-0922-42b6-a3b7-8f0087a74217" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="6ef77755-d468-42e1-a0e6-6329728fa9cf" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="6d4f2451-72ee-43c6-adb9-92297482d7ef" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="7c7dbd95-5405-430b-8c87-e3188f202ce0" class="toggle"><li><details open=""><summary>gap</summary><ul id="1e5fb720-9dc7-49fd-99d2-a4024714ffe1" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="5355b6d0-a55c-46e5-9167-3abb683861b3" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="6e7cbf8b-c2c2-488a-aa3b-bcaa24589233" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="31566b6f-acfb-4ece-b253-c009f7177332" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="8861eec8-5db6-4a33-bd43-8293d6cf0636" class="toggle"><li><details open=""><summary>have/suffer an injury</summary><ul id="9472990d-7aaf-408f-b456-bd4e502451c1" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="1e89c6bf-41bb-4c8e-a683-ad61265fd727" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="86498d9a-5846-40fa-8978-1c7b84eb59e2" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="beeb0097-5039-494a-a637-baea36cbd359" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="557956d2-ae2a-4b58-b5fc-7fd6b2af85e1" class="toggle"><li><details open=""><summary>injure</summary><ul id="2925cfb1-e412-4439-8f97-788ad9c4111a" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="e4ada69d-fb92-406b-abbb-e3144dacd27d" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="9ef3e819-4b11-414d-bf20-c99afaf85819" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="52352b4e-4f5d-48e1-9edb-f87daa39fc8e" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="a457fbb2-c5cb-4ba6-b767-75e746db1cb4" class="toggle"><li><details open=""><summary>inspire</summary><ul id="40fa137d-c8bd-4813-93b1-80fb4586f932" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="0fef4d03-d768-4e46-acb6-ca7e1743dc93" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="b7f88ac2-3723-451c-8880-e6bc38bebb02" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="01d63c36-bc5d-4b0e-a391-59ccb762a31a" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="b656d7fd-b1c1-44be-836f-19a9c33df447" class="toggle"><li><details open=""><summary>overcome</summary><ul id="a2e30b6b-b5bf-4ee9-b7f8-c2a646be4b61" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="384e94da-a471-47e6-a1a6-7b433257f913" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="42a657d9-3011-4682-a79f-4178696a232a" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="90d69e1c-a1dc-4269-85db-690c17659a5f" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="62862012-1418-4897-9904-03b82fb119b6" class="toggle"><li><details open=""><summary>Paraolympics</summary><ul id="0c47f14f-8fb0-4429-98ca-dc10c89056cb" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="1bb6378f-234c-4732-b491-ccc44ffe6cbe" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="8f67717b-baea-4ae9-b5e5-da3d343d6c04" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="68b1493f-06b0-48e0-9ed3-cf24caffb40e" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="05038a79-6d80-4766-96f3-f068cc235b31" class="toggle"><li><details open=""><summary>passion</summary><ul id="b9777313-3700-4f3c-a6e6-f6dbc7331e9a" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="3af203c8-e882-469d-b83c-88e7cae3664b" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="41ddd024-03c1-4a63-9f8e-9f4c70bbe831" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="18088483-899b-4be7-9dbe-c28a7d49d05f" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="93b70408-6c9c-4ed8-8560-5a769a5cc4bd" class="toggle"><li><details open=""><summary>pay off</summary><ul id="c4aa3209-b349-4a81-a710-dc4b76b62540" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="91cda825-bfbd-4476-9a62-56f48412ca34" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="1b9dde0b-158c-4260-b2c8-ed7006a589aa" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="b796f40b-48e1-40e1-95f5-0111781eccfd" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="4db14088-66e4-414a-867c-341e5f55952f" class="toggle"><li><details open=""><summary>qualify for sth</summary><ul id="9f60ef92-811d-4e2c-8f98-81b23ca7ec6d" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="652e39ba-6ee9-4564-911b-fc1f72d9070e" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="699e76b4-baa4-49af-afdc-e58883d1e0f9" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="e029a500-8436-417f-a27f-5c4ec5ec62ef" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="f7a49f62-9d28-4ac7-b823-f77978f37e4f" class="toggle"><li><details open=""><summary>ramp</summary><ul id="044d142e-cc00-466d-a92d-3dff3af06ebe" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="dcc41950-bbf8-45f5-9689-df862e14e28e" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="f1dcf748-25b2-4e60-930e-debf716b9a37" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="0d240ee9-ab68-4acc-9a80-7ebb8fa5bcd0" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="0801f76e-d8b5-4e1f-927a-2009cab1a7cc" class="toggle"><li><details open=""><summary>recover</summary><ul id="5d49151d-4b53-489b-b8e7-cc5eb23ae21f" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="d6608eff-2e05-4b8a-84f1-0c085682799f" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="b94a7369-b616-4ae2-ab20-0fece85242e1" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="1992aefa-2a74-4df3-8664-d3406c29206b" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="dd2b0770-497e-480b-8d37-4181fa9f718d" class="toggle"><li><details open=""><summary>run</summary><ul id="a33f0796-78dc-4af6-b254-9e1834847d20" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="c4420603-9796-410a-ac08-8d9566eb3a52" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="065aba7f-95af-4a25-9822-e4f701d0a43f" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="797b0d2d-41e0-43cc-bfde-8af545acacc3" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="51677ee2-ea47-4c08-85d5-a5c1f84d1ba5" class="toggle"><li><details open=""><summary>set a record</summary><ul id="8c0b12f4-43dd-4b53-b558-c26a27ee2eb0" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="87d911cf-5e4d-4238-84e8-4246934e5d6f" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="41e39776-5d5e-413c-9be8-ac258f2f4dba" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="64f7883b-1b18-4354-a6f0-cd5165e80c46" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="72adac56-2f3a-43f8-80c0-02cc7931bc59" class="toggle"><li><details open=""><summary>skate park</summary><ul id="44bf07eb-f5d6-4f16-9494-b64d9cf25cc3" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="8cb39437-51b2-4609-8aab-ebf92498bfcc" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="2f898b05-1b8f-4e25-bbc1-5ef2d8abac2a" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="73662c1f-3325-4006-bf9b-4c8db9dcde72" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="92dd8986-5016-4031-bad9-4e5ecdb09671" class="toggle"><li><details open=""><summary>snowboarder</summary><ul id="68b0a6d2-093d-42e5-81c7-15c917571662" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="9ee2bc2f-a9a0-455b-8518-77a70583d26a" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="3cfa30c2-9f1b-475e-94b3-7b5845a464fc" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="b869b5f6-9da3-4aca-a395-a33733ec28ff" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="326153cb-baae-4126-8672-1f34eaba8696" class="toggle"><li><details open=""><summary>start out as somebode</summary><ul id="3d6d3756-8db0-4152-b0f0-211351a78a31" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="80baa9e7-1339-406b-996e-9801d3b6a4d1" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="462aa855-2625-4d03-839e-c244fd44ceaf" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="68e3a4ff-6de8-4dbe-a9ee-6d9163d90bef" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="8ce2cffa-eff6-495e-a94f-0c3b6595d381" class="toggle"><li><details open=""><summary>succeed</summary><ul id="fffedee1-1f5e-4975-8925-b948c697ca39" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="e0cc3084-83ce-4359-ac9f-4e3b6a62aedc" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="22445a9d-f630-4246-b415-1100047a78c5" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="0c367668-848c-44f8-b409-81fd9bc78d2a" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="25152f0a-a580-4fbf-8970-6667ac5335c1" class="toggle"><li><details open=""><summary>take home a medal</summary><ul id="b3e6a2bd-e3c9-44d5-a57f-2901b48a31ba" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="41e73d8e-f06b-42e3-be53-5d8b09630b28" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="b772126c-8167-4e16-b01a-c3b68eafc89b" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="411c7e2d-723b-4976-b3c4-3909b32ee842" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="2b91a016-f1da-4174-9772-2a157480d58c" class="toggle"><li><details open=""><summary>turn professional</summary><ul id="26db0876-02b0-495d-a8df-ed80eec24acb" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="a307d91b-206c-46b8-a934-fee8c6bb7ef4" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="6e32b192-e6f0-44a3-9304-290fee7e94bc" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="ed2808ce-0f3e-422b-a498-bd291fc39967" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="0688373d-1c07-47a2-9614-b976e54750fb" class="toggle"><li><details open=""><summary>wheelchair motocross (WCMX)</summary><ul id="07938b12-d8d3-4a0a-b764-ee133fcc2b03" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="169d3700-8903-4f46-9b6b-72a4827c20f2" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="c418bce2-7cec-471c-a939-ac899ea6b059" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="7b3e43e8-aafb-4875-a312-f6a778beb12b" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="49e06736-9421-4f46-bfc2-e06e32c33499" class="toggle"><li><details open=""><summary>world-class</summary><ul id="e832c489-ed4e-455f-9485-d904c6989a45" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="0be7c62b-9177-4578-ac6e-6fdb7e0a05fe" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="441c5b5f-a95b-48ab-bfac-2b1a8ea6086a" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="c234058f-25a9-44c3-b012-f8d0e4f4f6cd" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">3B 36 - 43</summary><div class="indented"><ul id="f519c9cb-d9e8-4beb-be0d-e10df8877146" class="toggle"><li><details open=""><summary>athletics track</summary><ul id="5d452afb-baf7-461a-9a69-91bd9fb5b18d" class="bulleted-list"><li style="list-style-type:disc">bieżnia</li></ul><ul id="10ad09cf-d7f9-474f-bc1e-b656ac0c8be6" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="b4479a13-8d97-4bc3-8f8c-c39bb97ea71d" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="ad78a2c9-df55-46f6-925c-b58e46d1e225" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="db2647c0-55f5-4aa2-b406-b7f6b2af73d7" class="toggle"><li><details open=""><summary>award-winning</summary><ul id="fc75e19a-ab64-438c-aded-92480d580d98" class="bulleted-list"><li style="list-style-type:disc">zwycięzca nagród / nagradzany</li></ul><ul id="f93e9876-716c-4f11-8deb-ca739a2a18fe" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="30ed143a-521a-41a1-95fe-df8b9d9e220c" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="46ca1062-0c24-4437-ba1a-d82d1c1a0cd4" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="d01e7529-fdd1-4ac7-8e80-4af971f209c1" class="toggle"><li><details open=""><summary>bang your head</summary><ul id="95075124-6925-4d5c-84cc-e4915fac34ff" class="bulleted-list"><li style="list-style-type:disc">uderzyć się w głowe</li></ul><ul id="d3f5c088-9d32-49a3-8402-f32f69baa0f8" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="12de19e8-4bf8-43d6-80f7-96f4795bbfa8" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="ac36311b-3dee-4cb1-9a38-b5fae9990ac9" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="d7033b45-1522-4901-b4ad-1de575afd7e6" class="toggle"><li><details open=""><summary>basketball court</summary><ul id="4e3aac12-66c3-4cea-9b6d-fde245619302" class="bulleted-list"><li style="list-style-type:disc">boisko do koszykówki</li></ul><ul id="bba68465-b465-41c7-811a-5ce91e48e29e" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="ca41f2ae-810f-4557-8115-40d60ba45e1f" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="bba45a71-6cfd-4728-804b-b2976a1285ad" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="723d6b01-def0-4208-b49f-c85cd8d6b88f" class="toggle"><li><details open=""><summary>boxing ring</summary><ul id="158d209d-9d3c-4195-838e-627e27a9225f" class="bulleted-list"><li style="list-style-type:disc">Ring do boxowania</li></ul><ul id="197004f7-fc52-4811-ae1a-13f53b6d7fd1" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="3cba436a-e421-433c-970e-e3136bacd704" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="4ac3b562-3593-48c2-8ed9-167257773a8c" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="fafd7552-a3a4-4d80-912f-dc52f5e9a978" class="toggle"><li><details open=""><summary>break your leg</summary><ul id="d549d544-fc0a-442b-b808-ff741713220a" class="bulleted-list"><li style="list-style-type:disc">złamać noge</li></ul><ul id="1d9404ca-d847-453d-9ad7-a4ee3f99ccd2" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="da2e3984-a303-4d8c-b18a-8aa1adc1917e" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="444f6c3f-e52f-4a61-b452-a71291a1f377" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="3f5b90c1-de59-4f38-bab0-d24b94653bcf" class="toggle"><li><details open=""><summary>build up your muscles</summary><ul id="fcb3eb25-eb8b-40bb-bad8-535b0a0a73f4" class="bulleted-list"><li style="list-style-type:disc">budować mięśnie</li></ul><ul id="a7e092a8-bf73-4790-8866-bc0ad13a6a22" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="77ad3f5e-bb89-4a3c-a557-2f1d9289f9f9" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="25c28563-12d7-4ed4-8ade-73881caba878" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="f150307d-c09d-42e8-80d6-f56ce49c86aa" class="toggle"><li><details open=""><summary>changing room</summary><ul id="0f4583f7-2c12-41e2-9778-61d419421393" class="bulleted-list"><li style="list-style-type:disc">Szatnia / przebieralnia</li></ul><ul id="3dfa018a-0639-425c-b254-cb7cca358076" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="d504e8d3-20fb-4b95-a67f-c447e961820a" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="83a33e2b-9014-4bad-9f17-26efcda872a2" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="411d6bd7-3bf1-4101-82dc-f9b38eb5074c" class="toggle"><li><details open=""><summary>chill</summary><ul id="359a0d6c-ac63-4e2a-a662-f2a12f4c8d10" class="bulleted-list"><li style="list-style-type:disc">odpoczywać / relaksować</li></ul><ul id="5afc1be1-d5dc-4a4d-ba3d-90471db53eb9" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="8207f16f-4d0e-410a-a937-f5e773e07735" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="f7134b34-d541-49b6-b131-e436c20bbaf6" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="594c2131-b107-4f71-9087-b8a9340a7511" class="toggle"><li><details open=""><summary>climb the stairs</summary><ul id="0a0bc161-0c33-4bbe-aca7-03f4bca0db42" class="bulleted-list"><li style="list-style-type:disc">wchodzic po schodach</li></ul><ul id="7d5806ca-3dfb-4060-b15b-dc8ac8a30fc3" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="874adb74-ecec-4c8b-bd1c-f9e474b2de10" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="0f07c92f-6ce1-4071-9876-82357c4dadef" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="ef9e7b1f-9a97-4325-9a58-478f6f9d1cd4" class="toggle"><li><details open=""><summary>dislocate your shoulder</summary><ul id="d2adcbde-76d6-4fe0-918c-5a45d81cb9ba" class="bulleted-list"><li style="list-style-type:disc">przemieścic ramie</li></ul><ul id="1b78737e-e4a1-40e2-bbbc-2164d31091f5" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="edc91e95-6536-48fa-95ec-140689ee67c6" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="bb1ac19c-67b5-45f1-afb2-75a33303984e" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="148c04bc-d97e-4d9d-8822-3ccf54bb7080" class="toggle"><li><details open=""><summary>do exercises</summary><ul id="f4f9675b-7527-41d4-99f8-c26b29383041" class="bulleted-list"><li style="list-style-type:disc">ćwiczyć / wykonywac ćwiczenia</li></ul><ul id="8c7c1d08-ba30-4eb9-b473-5af373922b1a" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="4b491073-ce57-479c-a359-be8346a74207" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="043cb061-fb6c-44fd-95d3-ee81a7c791db" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="b7ad999e-5e2f-4359-988e-cd022010fb7c" class="toggle"><li><details open=""><summary>do somebody the world of good</summary><ul id="9d56a2b8-870b-42b1-9490-365a7621af72" class="bulleted-list"><li style="list-style-type:disc">sprawić że ktoś poczuje się lepiej</li></ul><ul id="3a2d4d10-525f-4ff5-a74b-f138582a060a" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="40f22431-0937-4f88-9f23-667840518470" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="cd4a0f9c-fd1b-418b-a69f-027473db305b" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="6596fea2-2a26-457e-97af-3e17d022a453" class="toggle"><li><details open=""><summary>exhausted</summary><ul id="a6f6304c-be6d-4fa4-a115-fe3bbedc9399" class="bulleted-list"><li style="list-style-type:disc">wicieńczony /wykończone</li></ul><ul id="a9cb02c5-43b9-4f0a-bd85-ebc0d515bac5" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="7240305b-364f-45aa-b2a1-7d7eeda8feb2" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="6dcb5ed7-83b4-4094-8c33-95db6b138863" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="1a53edcc-4f26-4c06-9964-17b9c8d2ecb3" class="toggle"><li><details open=""><summary>fitnesss coach</summary><ul id="a90011e6-a05a-4d26-87c2-a6e7d785a36a" class="bulleted-list"><li style="list-style-type:disc">Trener fitnesu</li></ul><ul id="de0d39fa-686c-44ff-bc94-0531a9abe556" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="b9a969d1-798d-4931-a8d5-389ae5487c0c" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="06f9783f-2b2c-4f7a-bf2e-366f3bafbdec" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="10b23f69-dd87-4de4-b907-26d4c5063eae" class="toggle"><li><details open=""><summary>footbal pitch</summary><ul id="de7763b0-69d6-4dba-a68f-8110d0c57a9c" class="bulleted-list"><li style="list-style-type:disc">boisko do piłki nożnej</li></ul><ul id="950a4559-ad11-4e95-b6c9-1647661c83d9" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="130d588b-6cef-43ce-8181-0aefa38555d3" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="6fe55f92-70f5-4ad6-887a-399433656d69" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="97d016c7-c00f-46a6-ab8a-90db1de3b647" class="toggle"><li><details open=""><summary>full-size</summary><ul id="9a8b124b-be8f-47a1-bedd-1b9ce4df910e" class="bulleted-list"><li style="list-style-type:disc">pełno wymiarowy</li></ul><ul id="c302de91-b782-4e71-a75b-ecba79c304d0" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="e2cb0639-3b8e-4389-8cfd-170d2bde6bcd" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="0fd2e2d0-fe25-4834-a396-6b239124e0bd" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="5590c0e7-b53a-4843-9719-7deaba52b4a7" class="toggle"><li><details open=""><summary>get into shape</summary><ul id="ec465bf6-03c1-4ae6-a701-450e39175842" class="bulleted-list"><li style="list-style-type:disc">nabrać dobrej kondycji / formy</li></ul><ul id="8f04f924-d59b-49be-81ee-47e874b10c67" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="e79b97b7-6ddc-40eb-8caa-7d9417457f10" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="9f4de677-ad22-4b6f-8424-4aa2226f4802" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="a71930eb-1e6e-42e3-9a79-ab0b5f14992f" class="toggle"><li><details open=""><summary>get out of breath</summary><ul id="c607f3cb-b994-47e5-ad9e-44c75590c17c" class="bulleted-list"><li style="list-style-type:disc">Zabraknąc oddechu / mieć zadyszkę</li></ul><ul id="d3a4eb41-cfa6-43e9-90a2-51f9985368d4" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="45044080-9607-4f16-8470-27cc172d056f" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="1d259fb5-e2d3-4117-bd83-56a8d7561829" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="728307f7-08dc-4e3c-99f4-5edac0b2c48d" class="toggle"><li><details open=""><summary>get/keep fit</summary><ul id="2083d85a-0ab6-40ca-b147-95356e3a490e" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="3f77872b-3ac1-4ef9-aff7-913eda02ed61" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="219434e1-0f71-49e2-95af-4be8042ae6d8" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="8acc079a-9aef-4bd2-96c3-08ee5661167f" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="b4e5aef8-c8f3-467a-8c25-31c76d333abe" class="toggle"><li><details open=""><summary>gymnasium</summary><ul id="6a719d63-7666-4bcc-9d8b-e6989c03f5b0" class="bulleted-list"><li style="list-style-type:disc">siłownia</li></ul><ul id="ebfbdc65-8eaf-4822-937b-cbcd15c1e193" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="1cd62aa2-b25a-43af-adf3-46c6e63d406b" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="a811e3ef-a431-4a3d-bc3a-9c625e71c508" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="638e71e4-592b-4841-a25f-f8c8395cf13e" class="toggle"><li><details open=""><summary>hockey</summary><ul id="d8ecfe86-b9e4-4c0f-a226-d54ca569ec1e" class="bulleted-list"><li style="list-style-type:disc">hokej</li></ul><ul id="28237f78-aee5-41d7-8e57-2768e63acdb9" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="81d56932-46fd-40ab-b463-9ab6f548692a" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="ec8e371c-3aba-4e79-a733-10672c6aaebb" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="03a8c378-f6a5-414e-902f-d06fbbd19744" class="toggle"><li><details open=""><summary>Jacuzzi</summary><ul id="17b194ab-a075-4c4a-b21d-7df783b69b76" class="bulleted-list"><li style="list-style-type:disc">Jacuzzi</li></ul><ul id="a0893294-e3f5-4105-ad3d-311e6664130e" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="134cd1a6-cc89-4907-9720-1cd077eaa27b" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="5ce870a1-1750-4d09-a996-8335248a58f8" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="a6198c1c-1c53-4394-8b0b-4bfab6cb81ba" class="toggle"><li><details open=""><summary>leisure centre</summary><ul id="73b2ac6d-40d6-4b5d-a6ff-c01b843a450d" class="bulleted-list"><li style="list-style-type:disc">Centrum rekreacyjne</li></ul><ul id="95c5c460-43d1-4d24-8737-43a93b07a4df" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="c49d2933-f045-417c-95fe-904159b5262a" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="bf2477fe-d1f9-478e-9216-9aadd23a4a23" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="7faa5898-3d36-4cac-a836-f96dee5aae8b" class="toggle"><li><details open=""><summary>lift weghts</summary><ul id="f2907ba3-753f-4551-b3de-818cab1de059" class="bulleted-list"><li style="list-style-type:disc">podnosić ciężary</li></ul><ul id="3ee626e4-a06c-4243-ab44-66b52a107600" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="ea96b517-f4a8-4f41-82c3-9b5dab4f6794" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="31d4066b-32d7-49fe-9ba9-62e51cabf793" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="ed734d36-f370-4695-be56-cd5a632a8e8b" class="toggle"><li><details open=""><summary>make the most of sth</summary><ul id="ae564b57-9ea4-4527-9b36-af6ffeface46" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="02b41f37-df39-4273-b210-34511627f378" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="d33e2933-9524-4e7d-ac4c-9bca677e8d28" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="c3fa7dff-598a-442a-9f03-296a1b7ccf4e" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="a1439cfd-9fdf-4343-bedc-ce81320108ac" class="toggle"><li><details open=""><summary>membership</summary><ul id="e58fa745-c545-4314-9028-33fcd2eaea32" class="bulleted-list"><li style="list-style-type:disc">członkostwo</li></ul><ul id="ceacaa91-6b82-4a2c-bb3f-9e8f29c185ba" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="392e785c-5fd9-453a-91b6-85bd2f1a5817" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="74e7bc07-2e93-4ce6-99f8-2cdc67fe03c6" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="c3a0e647-5b12-4559-8416-bbdd6f1f70a8" class="toggle"><li><details open=""><summary>motivation</summary><ul id="bc0e2299-6a67-41c2-a330-d88ed9097a97" class="bulleted-list"><li style="list-style-type:disc">motywacja</li></ul><ul id="f70f744d-1e63-4ccb-9f3e-f9a38728636c" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="a3ee4a03-c056-445b-9f15-8a52213f6050" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="ed983aa9-123d-44b7-9f74-ebe0df2c31d7" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="b1ea3232-afc8-480b-9606-d7dfc97478b1" class="toggle"><li><details open=""><summary>out of shape</summary><ul id="529e3aac-3b63-490b-b729-5943b60df402" class="bulleted-list"><li style="list-style-type:disc">bez formy / kondycji</li></ul><ul id="27072323-dc02-4c22-ae88-eff8264a7aa4" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="116c3563-7f5e-4384-abd1-51a2217476ed" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="bc348853-f7cf-4000-9960-d98a0d17e065" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="3978a130-91ce-453c-ac90-7e7305253251" class="toggle"><li><details open=""><summary>outdoor</summary><ul id="fa0cd2bc-efff-45f3-94c2-abd07e15a8dd" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="cbb7a013-1822-4494-82a0-8b9a64f97569" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="8053ce86-8bc2-4c77-91ac-05ab2fee8b06" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="d81193ca-c008-4623-84a3-575b421ef54a" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="22ed70bd-c3ac-44fb-a7f3-cb243981b943" class="toggle"><li><details open=""><summary>personalised</summary><ul id="c329e4ad-b210-4f43-9b1a-e937c81ea550" class="bulleted-list"><li style="list-style-type:disc">spersonalizowane</li></ul><ul id="b8212cfb-4cad-429b-b64a-a2356073a68c" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="5242f743-cb42-447b-a04c-12c0280a5f74" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="7a9316a8-ce4f-48c9-b52c-476e87bcc684" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="f1f182b8-829a-46f8-a934-764ae4ff694d" class="toggle"><li><details open=""><summary>pull a muscle</summary><ul id="12129153-854c-4824-a423-da55e20b7c1f" class="bulleted-list"><li style="list-style-type:disc">naciągnąć mięsień</li></ul><ul id="33be7d73-ded5-4298-9796-18e18d38eadd" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="77f87b45-3360-4a10-aebe-10799b6a6f55" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="e3226ba1-6c6f-4ff2-9abf-64e22f109f6a" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="406eeb0f-5c33-46f3-ba85-bf0aa5a00f52" class="toggle"><li><details open=""><summary>rock climbing wall</summary><ul id="16d51ac8-dcfc-4722-9fef-b97d08cb8e18" class="bulleted-list"><li style="list-style-type:disc">ścianka wspinaczkowa</li></ul><ul id="8f1eda63-db32-449e-9fe6-2f404958392c" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="c37dc0f6-5006-4a49-853e-07a783c6e9ce" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="4aeb3d8b-cd85-4a7f-af1e-0085c3318a5c" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="2b195260-1909-4940-a492-0c2939c94224" class="toggle"><li><details open=""><summary>rowing machine</summary><ul id="19556172-5518-403d-b1b8-7b9f8354cb54" class="bulleted-list"><li style="list-style-type:disc">Wioślarz</li></ul><ul id="c103d278-421a-418c-bdd9-04fb0101aa4f" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="b9d0f851-3338-461c-8a2d-dd605036fc9e" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="b04b0d7c-390b-4acc-a138-fa22891fbf8d" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="fbdbbf98-3552-47b8-a6ef-167b163b1f55" class="toggle"><li><details open=""><summary>sauna</summary><ul id="538f535d-3a7e-41b8-a3f8-dc2787fd592e" class="bulleted-list"><li style="list-style-type:disc">sauna</li></ul><ul id="dd9f1a79-3944-436b-a45c-cbc243b8c5bb" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="a091d354-e2bd-472c-88c9-b7d9fed9c178" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="f7fff30d-0e0e-4e0a-8e0d-43447955ce00" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="06d8b653-4f27-4ad0-9984-df8327bb75d6" class="toggle"><li><details open=""><summary>school gym</summary><ul id="e6bc2e29-20ef-478d-9263-cfd7b5691c43" class="bulleted-list"><li style="list-style-type:disc">siłownia szkolna</li></ul><ul id="8eadcba9-8f76-4328-b2d2-43c08702d0a3" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="70b36873-48b6-4718-bb5d-ea1e37e0bbe8" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="dbff4177-e3ac-4e3e-87ac-20d53abf759e" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="12ba2932-4930-41a4-bd0b-d4d35017c115" class="toggle"><li><details open=""><summary>sporty</summary><ul id="b86211e3-73eb-44d4-8f29-b8fbb60f779d" class="bulleted-list"><li style="list-style-type:disc">wysportowany / lubiący uprawiac sport</li></ul><ul id="7588d6be-23cb-4250-ae24-2f3770a58437" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="830447ec-a698-436b-954a-d6d71ddaadac" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="2cefd778-1b0c-408c-a137-8bd4a65442ce" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="e800f597-dfeb-47e0-a878-4bd2bbca8e48" class="toggle"><li><details open=""><summary>sprain your wrist</summary><ul id="228de328-ed76-4db6-9ca9-c3a816d773e1" class="bulleted-list"><li style="list-style-type:disc">zwichnąc nadgarstek</li></ul><ul id="0a5817e8-4da3-45f6-959e-cb439e108126" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="c81f3382-9048-45ab-a234-dbb2fd3f29f6" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="955b4a9b-dbe0-4c79-98b3-38c3c311b4dd" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="27fb125c-9386-4362-b15e-898ab8e7be2f" class="toggle"><li><details open=""><summary>state-of-the-art</summary><ul id="95b81ced-bce2-4920-af34-d04fb579d87b" class="bulleted-list"><li style="list-style-type:disc">supernowoczesny</li></ul><ul id="ed3bec77-548e-4f86-a25f-00d29f4fcf9f" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="b576e28e-273f-43a1-b600-3e41d97919b9" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="b57f6bed-279f-491f-bfb4-53678c5b68eb" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="d9caafa1-4456-41f3-a315-8ca326ebdf74" class="toggle"><li><details open=""><summary>steam room </summary><ul id="8e06b1b0-c892-4106-96c4-d2a3d2e1a87b" class="bulleted-list"><li style="list-style-type:disc">łaźnia parowy</li></ul><ul id="2468693a-ce19-4829-8b9d-91ef5ef7c6ee" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="8e86ff5e-1c30-447e-9aa5-608da16b1a6a" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="4416415d-e5ce-475f-843c-c20c15276c61" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="d6b7a287-46b2-47c7-be83-adc2786ee75b" class="toggle"><li><details open=""><summary>swimming pool</summary><ul id="c2749cbc-7396-4c7d-b28e-1cd780df39a5" class="bulleted-list"><li style="list-style-type:disc">basen</li></ul><ul id="8295fba4-6ea3-44a4-846a-14b8c8ca5b14" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="fdb16cc2-b545-480a-96c6-df046de8e1d5" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="9c62de71-c354-4e91-bae7-40fe703ecacd" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="616a8e59-a37d-4b43-8ea4-3206f6f14d82" class="toggle"><li><details open=""><summary>tennis/squash court</summary><ul id="e7daa9c7-6e8e-49ee-b464-d4e24e584b5d" class="bulleted-list"><li style="list-style-type:disc">kort do tenisa squasha</li></ul><ul id="b68928b4-e30f-4fe9-b354-aa3e9f1e5eeb" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="22c16d21-b5bf-40af-ac76-5073971675c6" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="0ab14e3f-b079-403c-844d-b4dc9f08ed8a" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">3C 26-26</summary><div class="indented"><ul id="eba278de-991b-4f32-b405-00d090114f37" class="toggle"><li><details open=""><summary>ambulance service</summary><ul id="af9d392c-7dbd-4153-8340-ecc7d09a4420" class="bulleted-list"><li style="list-style-type:disc">pogotowie ratunkowe</li></ul><ul id="0cb2121e-cdd5-4ed6-aa91-6a7062f6e821" class="bulleted-list"><li style="list-style-type:disc">a emergency service to help you after accident</li></ul><ul id="b64f742a-f34b-4270-84f3-8aedaa52da84" class="bulleted-list"><li style="list-style-type:disc">The ambulance service arrived quickly to attend to the injured person.</li></ul><ul id="cc9cbd91-17d0-4e90-8ca6-2f732f2e105a" class="bulleted-list"><li style="list-style-type:disc">Pogotowie ratunkowe szybko dotarło by pomóc poszkodowanej osobie</li></ul></details></li></ul><ul id="a8b701dc-7953-4115-acc4-979ed7366015" class="toggle"><li><details open=""><summary>badly hurt</summary><ul id="ee9a81a8-c1a9-4c4e-bb6d-797943d09639" class="bulleted-list"><li style="list-style-type:disc">ciężko / poważnie zraniony</li></ul><ul id="fbb2853b-6326-41ce-88f5-a7c2dde289fa" class="bulleted-list"><li style="list-style-type:disc">someone who has really bad and hard injury</li></ul><ul id="a28210c3-be45-4d3d-9afa-9c4d11a93b5d" class="bulleted-list"><li style="list-style-type:disc">He was badly hurt in the accident and required immediate medical attention</li></ul><ul id="eae6cbb1-8bd4-476b-a608-cc2a177068fa" class="bulleted-list"><li style="list-style-type:disc">On był poważnie zraniony w wypadku i potrzemował pilnej pomocy medycznej.</li></ul></details></li></ul><ul id="0ba29a60-e17f-4368-9b90-8af7b44b92be" class="toggle"><li><details open=""><summary>bleed</summary><ul id="b547755e-c179-458c-8073-7e9cc2fd915b" class="bulleted-list"><li style="list-style-type:disc">krawić </li></ul><ul id="9b8248fc-f1dd-4b14-8bc6-136c45e581da" class="bulleted-list"><li style="list-style-type:disc">the process when we lose blood</li></ul><ul id="e8c3d16c-7a9e-451e-92eb-940208dc5094" class="bulleted-list"><li style="list-style-type:disc">His hand was bleeding to much and we must go to the hospital</li></ul><ul id="99c02d12-efaa-4234-8dd2-17e652c84b0d" class="bulleted-list"><li style="list-style-type:disc">Jego ręka zbyt bardzo krawiła i musieliśmy go zabrać do szpitala</li></ul></details></li></ul><ul id="c9469615-b827-4849-ba15-a79a0c342132" class="toggle"><li><details open=""><summary>burn down</summary><ul id="f522d499-6ab3-4536-af10-1491cd0b0870" class="bulleted-list"><li style="list-style-type:disc">spłonąć spalić się</li></ul><ul id="7f413b60-8920-4ef5-9e8d-68f690b7cd3c" class="bulleted-list"><li style="list-style-type:disc">When for example house took fire and ruined</li></ul><ul id="3f8b3e79-635a-46bc-b8bb-b35366722693" class="bulleted-list"><li style="list-style-type:disc">When we heard the fire alarm, we discovered that the nearest shop is burned down.</li></ul><ul id="5fe74974-9f57-4dc0-bcfe-6f1fd2d6bf67" class="bulleted-list"><li style="list-style-type:disc">Kiedy usłuszeliśmy alarm pożarowy, odkryliśmy że najbliższy sklep spłonął.</li></ul></details></li></ul><ul id="258f6980-944f-4ff3-bcde-fdb0f1bb2c1c" class="toggle"><li><details open=""><summary>burn (your hand)</summary><ul id="666e3f7e-a8b4-4b7b-8ecd-49f3de999a80" class="bulleted-list"><li style="list-style-type:disc">Oparzyć sobie dłoń</li></ul><ul id="5bd34b51-7ac8-4f78-a4d7-c49bbf24afc3" class="bulleted-list"><li style="list-style-type:disc">when we touch something really hot</li></ul><ul id="c9ce2b16-2ed4-448b-83ec-6a2bddd46082" class="bulleted-list"><li style="list-style-type:disc">This cup of tea is too hot, and I burn my hand.</li></ul><ul id="01375a53-c769-4538-bf03-5dbde63e8f5e" class="bulleted-list"><li style="list-style-type:disc">Ta filiżanka herbaty była za gorąca i poparzyłem sobie dłoń</li></ul></details></li></ul><ul id="ba1e0287-b149-4d64-a213-2e16edc9a2df" class="toggle"><li><details open=""><summary>call an ambulance</summary><ul id="20434bf5-982e-4e17-8954-0b63c0c60ea1" class="bulleted-list"><li style="list-style-type:disc">zadzwonić na pogotowie </li></ul><ul id="0b2bf373-b5d0-47e0-91b2-b77cda4d446e" class="bulleted-list"><li style="list-style-type:disc">call to emergency services</li></ul><ul id="31bb05ce-b6b7-4ed7-87af-0e8d05879742" class="bulleted-list"><li style="list-style-type:disc">We must call an ambulance because my grandma was unconscious.</li></ul><ul id="a677bf40-331c-4882-9a62-14602dc6c1e1" class="bulleted-list"><li style="list-style-type:disc">Musialiśmy zadzwonić na pogotowie ponieważ moja babcia była nieprzytomna </li></ul></details></li></ul><ul id="0f6dadaa-b7e2-4109-9f74-b218e3273e05" class="toggle"><li><details open=""><summary>concussion</summary><ul id="37f26179-6be5-4b99-a393-c3f4ab1fd4bf" class="bulleted-list"><li style="list-style-type:disc">wstrząśnienie muzgu</li></ul><ul id="06b4a6e5-296f-4e99-8957-89ab1a9a3937" class="bulleted-list"><li style="list-style-type:disc">when someone banged his head too much</li></ul><ul id="9a2ccb88-59a2-468d-a57c-7f996afa123f" class="bulleted-list"><li style="list-style-type:disc">He suffered a concussion after falling down the stairs.</li></ul><ul id="19cae3ae-d8d7-4b49-9c27-5ba0dafdb648" class="bulleted-list"><li style="list-style-type:disc">Doznał wstrząśnienia mózgu po spadnięciu ze schodów.</li></ul></details></li></ul><ul id="5b9f70a3-5ce3-446f-b778-f5f645eb5051" class="toggle"><li><details open=""><summary>cuts and bruises</summary><ul id="43f49581-31c6-4d96-94bb-9f35dd6d6a7e" class="bulleted-list"><li style="list-style-type:disc">skaleczenia i siniaki</li></ul><ul id="a0088c64-5ce2-47bb-8688-c9ccc02370da" class="bulleted-list"><li style="list-style-type:disc">small injuries on your skin</li></ul><ul id="73b6ff7a-8161-4008-9589-7e3dc7d80e01" class="bulleted-list"><li style="list-style-type:disc">After his fell down from the ladder, he has many cuts and bruises.</li></ul><ul id="276ae19e-fc25-473e-8c6a-be249bf575f3" class="bulleted-list"><li style="list-style-type:disc">Bo tym jak spadł ze schodów, miał wiele skaleczeń i siniaków.</li></ul></details></li></ul><ul id="a847795b-1a59-4c85-b2a4-b2025d8be273" class="toggle"><li><details open=""><summary>dial</summary><ul id="07790add-1ef1-454f-a09c-5a82a0b01f86" class="bulleted-list"><li style="list-style-type:disc">wybrać numer telefonu</li></ul><ul id="01a4bb4e-e0c3-4a7c-9100-30606ce0c382" class="bulleted-list"><li style="list-style-type:disc">when we call to someone whe must to dial his number</li></ul><ul id="facca2d3-50b1-48ff-891c-e51c9ded8f19" class="bulleted-list"><li style="list-style-type:disc">I was dialling a number for my friend&#x27;s mother to inform her that her son is in hospital</li></ul><ul id="a01fe9b2-0dd8-4fd0-9693-92b8916dafb8" class="bulleted-list"><li style="list-style-type:disc">Wybierałem numer do matki mojego przyjeciala aby ponformować ją że jej syn jest w szpitalu.</li></ul></details></li></ul><ul id="b6b6458f-832a-4583-8ec7-5a64b8477a54" class="toggle"><li><details open=""><summary>elbow</summary><ul id="3e391047-e87e-4c29-8aad-fab50b4a1a16" class="bulleted-list"><li style="list-style-type:disc">łokieć</li></ul><ul id="eb69a90e-8d48-4dea-a748-0ed506caa44f" class="bulleted-list"><li style="list-style-type:disc">the part of our body in hands</li></ul><ul id="36677e33-52e5-4957-81b5-204ea8ca5151" class="bulleted-list"><li style="list-style-type:disc">She injured her elbow while playing tennis.</li></ul><ul id="b1056407-2ce3-48cf-a9d5-1741de73e6d5" class="bulleted-list"><li style="list-style-type:disc">Ona zraniła sobie łokieć podczas gry w tenisa.</li></ul></details></li></ul><ul id="25165b6c-fcdb-4e32-bc99-d45086cb7774" class="toggle"><li><details open=""><summary>emergency number</summary><ul id="5508312f-2b7b-40eb-a1d7-a30a7122da36" class="bulleted-list"><li style="list-style-type:disc">Numer ratunkowy</li></ul><ul id="7408c26a-6047-4345-9b08-1b8a8c9bff3a" class="bulleted-list"><li style="list-style-type:disc">A number for an ambulance service. In polish 999</li></ul><ul id="fe197e20-3034-46f1-984f-9d19e3c316c7" class="bulleted-list"><li style="list-style-type:disc">I must dial an emergency number because my mother is unconscious.</li></ul><ul id="d231d2d0-9026-474b-a53d-52a27970c674" class="bulleted-list"><li style="list-style-type:disc">Muszę zadzownic pod numer alarmowy ponieważ moja matka jest nieprzytomna</li></ul></details></li></ul><ul id="1ae8e35d-6134-4111-bfcf-3af57d312892" class="toggle"><li><details open=""><summary>faint</summary><ul id="aac3b1e5-85cc-4d74-82de-70b3eb67784d" class="bulleted-list"><li style="list-style-type:disc">zemdleć</li></ul><ul id="4a4464e8-1f17-4fe4-afdc-61f105da6fe8" class="bulleted-list"><li style="list-style-type:disc">a procces after someone is uncoscious</li></ul><ul id="b00182e5-76bd-448b-ac00-a90fcfa75abf" class="bulleted-list"><li style="list-style-type:disc">I faint during car accident.</li></ul><ul id="13986bcd-9d33-498f-80cf-df6077398e94" class="bulleted-list"><li style="list-style-type:disc">Zemdlałem podczas wypadku samochodowego</li></ul></details></li></ul><ul id="ded50193-1024-41e3-b894-9bf4b268f047" class="toggle"><li><details open=""><summary>feel relieved</summary><ul id="ce2faeeb-1752-47c8-9492-ee459c2f9568" class="bulleted-list"><li style="list-style-type:disc">odczuwać ulge</li></ul><ul id="290b348f-bdd9-45d8-b021-b248eecf41f8" class="bulleted-list"><li style="list-style-type:disc">the emotion when hospital call to mother to say about his son is in hospital and say’s that’s everythink okay</li></ul><ul id="28b34d52-76fc-45e2-862e-afefbf6c065c" class="bulleted-list"><li style="list-style-type:disc">I feel relieved after I heard that I didn&#x27;t break my leg.</li></ul><ul id="81e2d360-da4b-41eb-87ac-21a2ca092eb0" class="bulleted-list"><li style="list-style-type:disc">Czuje ulge po tym jak się dowiedziałem że nie złamałem nogi.</li></ul></details></li></ul><ul id="33754925-690c-4b92-9cec-0c136718e559" class="toggle"><li><details open=""><summary>fire alarm</summary><ul id="1d57584f-d676-4a40-aecc-212ee82d722f" class="bulleted-list"><li style="list-style-type:disc">Alarm pożarowy</li></ul><ul id="e4cd159a-1d55-47e4-bc7b-743457c0f083" class="bulleted-list"><li style="list-style-type:disc">An alarm who’s inform you that something is took fire and burning</li></ul><ul id="025785df-c832-403d-becf-0b9074f59133" class="bulleted-list"><li style="list-style-type:disc">When we heard the fire alarm, we discovered that the nearest shop is burned down.</li></ul><ul id="e631d4b0-0d01-474d-a8c2-ccf96cb1cbaf" class="bulleted-list"><li style="list-style-type:disc">Kiedy usłuszeliśmy alarm pożarowy, odkryliśmy że najbliższy sklep spłonął.</li></ul></details></li></ul><ul id="3120154d-4eee-4978-a0f9-0ea16e9862c5" class="toggle"><li><details open=""><summary>fire service</summary><ul id="97f7b16f-3457-4eda-b270-6e83565e5c2f" class="bulleted-list"><li style="list-style-type:disc">Straż pożarna</li></ul><ul id="f433af1a-4778-4cb3-a35a-b0992901a9b3" class="bulleted-list"><li style="list-style-type:disc">Emergency service that help </li></ul><ul id="30ade40a-a4df-45a2-8137-3cdcc07c0316" class="bulleted-list"><li style="list-style-type:disc">The fire department had to come to our school because the fire alarm went off</li></ul><ul id="5914ed4c-aa27-406f-a2a0-53a2c4a57728" class="bulleted-list"><li style="list-style-type:disc">Straż pożarna musiała przyjechac do szkoły ponieważ włączył się alarm przeciwpożarowy</li></ul></details></li></ul><ul id="992680f2-644e-4697-b3c2-81097dcc7adb" class="toggle"><li><details open=""><summary>heart attack</summary><ul id="1e36efdc-ab1f-40ac-840b-7c1618568051" class="bulleted-list"><li style="list-style-type:disc">zawał serca</li></ul><ul id="ffe5bc6f-b7b7-4f49-8ea4-b2149aa19d49" class="bulleted-list"><li style="list-style-type:disc">attack for our hearth</li></ul><ul id="1c02b093-03f3-4a7d-9906-3e596ba69b12" class="bulleted-list"><li style="list-style-type:disc">My grandpa must have driven to the hospital because he had a heart attack.</li></ul><ul id="27d53d68-3731-42e7-9115-e4a1c300a8e0" class="bulleted-list"><li style="list-style-type:disc">Mój dziadek musiał jechać do szpitala ponieważ miał zawał serca</li></ul></details></li></ul><ul id="285ca831-d0e4-4bbe-b1f2-a8c38e174f2e" class="toggle"><li><details open=""><summary>hurt your head</summary><ul id="1c52fb4e-9367-442b-a0bd-abbb00dc772c" class="bulleted-list"><li style="list-style-type:disc">zranić się w głowe</li></ul><ul id="effb3baa-8dcb-4361-a054-95a76625dd4c" class="bulleted-list"><li style="list-style-type:disc">when we bang our head we propability had hurt our head</li></ul><ul id="0e6e7313-76d8-4555-a4ff-eb9a38509979" class="bulleted-list"><li style="list-style-type:disc">When I fell over, I hurt my head.</li></ul><ul id="841b5dfd-8193-45c2-9936-4239499f683c" class="bulleted-list"><li style="list-style-type:disc">Kiedy się przewróciłem, zraniłem się w głowe.</li></ul></details></li></ul><ul id="142a8657-2386-44d7-b6c7-94302214d735" class="toggle"><li><details open=""><summary>in shock</summary><ul id="3e1f377c-eb8c-4b3d-9006-6e5896f1ddb7" class="bulleted-list"><li style="list-style-type:disc">w szoku</li></ul><ul id="e22cd961-a9a6-46e3-b479-7cf8d96be655" class="bulleted-list"><li style="list-style-type:disc">when we heard </li></ul><ul id="2e730ee7-1278-40ec-9ae3-26c3ace62887" class="bulleted-list"><li style="list-style-type:disc">My mother was in shock when she heard that I am in hospital.</li></ul><ul id="3a5f458a-e0ec-4fb7-bfa6-120b4b9fff2b" class="bulleted-list"><li style="list-style-type:disc">Moja mama była w szoku kiedy dowiedziała się że jestem w szpitalu.</li></ul></details></li></ul><ul id="ca79eaa8-d0ad-42a9-a1e1-50daa8b8fe38" class="toggle"><li><details open=""><summary>knock down</summary><ul id="94ed7932-5b6e-4dc9-b113-7fc344b25266" class="bulleted-list"><li style="list-style-type:disc">Potrącić</li></ul><ul id="a662d0cc-0c3d-47b1-a036-bd592027ab5d" class="bulleted-list"><li style="list-style-type:disc">When someone driving a car and punch you</li></ul><ul id="2c47c0be-eb1a-4b02-9042-e116cfbb93be" class="bulleted-list"><li style="list-style-type:disc">I had a car accident, and I knocked down someone.</li></ul><ul id="abd60f93-1d0d-4feb-a3e2-661092a4f2ec" class="bulleted-list"><li style="list-style-type:disc">Miałem wypadek samochodowy i kogoś potrąciłem</li></ul></details></li></ul><ul id="05e5f047-bfa5-49c6-9480-4b7193ecda2f" class="toggle"><li><details open=""><summary>lose some blood</summary><ul id="26d579f8-a712-414f-9817-a6e50a998b33" class="bulleted-list"><li style="list-style-type:disc">Stracic trochę krwi</li></ul><ul id="b1ce5461-18fc-4a9b-b91f-56a8f3e5246f" class="bulleted-list"><li style="list-style-type:disc">When we bleeding to much</li></ul><ul id="75f3b0fb-4aab-4592-8448-1766982a5a09" class="bulleted-list"><li style="list-style-type:disc">I lost some blood because I was in a car accident and someone hit me.</li></ul><ul id="449571f7-0f2e-42ae-9723-d9d4de683ce7" class="bulleted-list"><li style="list-style-type:disc">Straciłem trochę krwi ponieważ miałem wypadek samochodowy i ktoś mnie potracił</li></ul></details></li></ul><ul id="99ba7206-b8fb-44ff-ba12-65718701b145" class="toggle"><li><details open=""><summary>painful</summary><ul id="c6e851bf-de84-4da7-9a8d-306e8cceabe8" class="bulleted-list"><li style="list-style-type:disc">bolesne</li></ul><ul id="4e648032-bc3b-4219-ad28-c37857e3c004" class="bulleted-list"><li style="list-style-type:disc">something really bad for us, negative </li></ul><ul id="e21e9e30-3962-4447-9950-16ad8feca353" class="bulleted-list"><li style="list-style-type:disc">When i was playing soccer I broke my leg. It was be really painfull</li></ul><ul id="f55954b2-40fa-4d2d-8841-87271f75a24c" class="bulleted-list"><li style="list-style-type:disc">Kiedy grałem w piłke nożną złamałem noge. To było bardzo bolesne</li></ul></details></li></ul><ul id="fdc654ae-d911-4706-a7ba-756de834841c" class="toggle"><li><details open=""><summary>report a crime</summary><ul id="9996af97-d3a8-408a-8a7b-129f483ea1ae" class="bulleted-list"><li style="list-style-type:disc">zgłosic przestępstwo</li></ul><ul id="43d46e1a-349e-4b51-9aae-b2b3b69ef190" class="bulleted-list"><li style="list-style-type:disc">when we call or in other way inform emergency about something illegal</li></ul><ul id="9d81edb9-7f71-4542-be76-2b7f9e5d54b4" class="bulleted-list"><li style="list-style-type:disc">I must call the police to report a crime because I met a narcotics dealer yesterday.</li></ul><ul id="c0ab4a55-04d0-450a-b0f7-81296f0c2b4f" class="bulleted-list"><li style="list-style-type:disc">Musze zadzwonić na policje aby poinformać ich o przestępstwie ponieważ spotakłem wczoraj handlarza narkotyków</li></ul></details></li></ul><ul id="d6c27429-b0a4-4f83-a60e-fd5768dc63d9" class="toggle"><li><details open=""><summary>ring</summary><ul id="a7957272-0ee0-4c11-a580-90e7d38cfec4" class="bulleted-list"><li style="list-style-type:disc">zadzwonić</li></ul><ul id="75ea9fc7-9d66-4493-829f-a83e4ab5333a" class="bulleted-list"><li style="list-style-type:disc">call</li></ul><ul id="bd23ddf0-c30a-474f-a7ac-bb018e7441af" class="bulleted-list"><li style="list-style-type:disc">The mother must ring the school to inform why her son was absent for four days.</li></ul><ul id="4520dc08-3ae9-4f85-bd50-8e383310da14" class="bulleted-list"><li style="list-style-type:disc">Matka musiała zadzwonic do szkoły aby poinformowac dlaczego jej syn jest nieobecny od czterech dni</li></ul></details></li></ul><ul id="55e2af08-f391-4581-a037-b6042e6feca9" class="toggle"><li><details open=""><summary>see double</summary><ul id="2900cb2c-f1b4-4ee4-a562-144f987a5f24" class="bulleted-list"><li style="list-style-type:disc">widzieć podwójnie</li></ul><ul id="b7c656b3-9915-4ad1-9ee9-970c0f9c1489" class="bulleted-list"><li style="list-style-type:disc">see everythink twice</li></ul><ul id="df8102bd-3cef-46e4-9b2d-4b14c67bc37b" class="bulleted-list"><li style="list-style-type:disc">After I banged my head i seeing double</li></ul><ul id="287b6b1b-f00d-4fa5-83ab-503a03969451" class="bulleted-list"><li style="list-style-type:disc">Po tym jak uderzyłem się w głowe widziałem podwójnie </li></ul></details></li></ul><ul id="7b786304-294f-4288-bfbf-5cdbde1ab89e" class="toggle"><li><details open=""><summary>set fire to something</summary><ul id="2d00bc69-d3f9-4eec-947a-e9a5b8b49ac8" class="bulleted-list"><li style="list-style-type:disc">podłożyć ogień podpalić</li></ul><ul id="715194f0-0989-49b5-bb5a-73c41ac2b121" class="bulleted-list"><li style="list-style-type:disc">a start the procces of spreading fire </li></ul><ul id="5bf6d06d-574e-4e95-a05f-cb8c0664e0ad" class="bulleted-list"><li style="list-style-type:disc">I set a fire to a local store yesterday.</li></ul><ul id="76e671de-6193-4d2b-970e-d031456ef9eb" class="bulleted-list"><li style="list-style-type:disc">Wczoraj podpaliłem lokalny sklep</li></ul></details></li></ul><ul id="a81c9566-0001-49b8-977b-43e141ff05bb" class="toggle"><li><details open=""><summary>unconscious</summary><ul id="90c05421-579f-4d88-a6ce-bbf066b5bfcc" class="bulleted-list"><li style="list-style-type:disc">nieprzytomny</li></ul><ul id="2f16189e-2df4-440c-9b74-ccf8f7556a17" class="bulleted-list"><li style="list-style-type:disc">After somebody fainted</li></ul><ul id="27854321-0058-4540-bcac-95ff3d46e38d" class="bulleted-list"><li style="list-style-type:disc">My university must call the emergency service because one of the students is unconscious.</li></ul><ul id="eb8bbe08-0184-4e88-abfd-6e6b1532b275" class="bulleted-list"><li style="list-style-type:disc">Moja uczelnia musi zadzwonić na pogotowie ratunkowe ponieważ jeden ze studentów jest nieprzytomny</li></ul></details></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">3F 42 - 58</summary><div class="indented"><ul id="08ab5685-61e5-4389-87ea-6e9c28d9a943" class="toggle"><li><details open=""><summary>affordable</summary><ul id="252e677b-346e-465e-b2b2-5ed3eaa28aa1" class="bulleted-list"><li style="list-style-type:disc">przystępny / w przystępnej cenie</li></ul><ul id="e2614f6f-13d0-4ebc-a7cd-0e58a1f0519a" class="bulleted-list"><li style="list-style-type:disc">when cost is good</li></ul><ul id="18db737b-4efc-406f-8946-0585a3a635b4" class="bulleted-list"><li style="list-style-type:disc">I bought apples because the shopkeeper offered them at an affordable price.</li></ul><ul id="67a467c6-def7-4e3a-982c-1246913cdea0" class="bulleted-list"><li style="list-style-type:disc">Kupiłem jabłka ponieważ sprzedawca oferował je w przystępnej cenie</li></ul></details></li></ul><ul id="6100d251-51cc-467d-8328-af7f6cf56c9d" class="toggle"><li><details open=""><summary>appetite for sth</summary><ul id="581404e4-ed43-4b0a-870d-01db5cd6f56b" class="bulleted-list"><li style="list-style-type:disc">apetyt na coś</li></ul><ul id="2913c91d-cd17-4e77-9ac4-a7a4dbec1469" class="bulleted-list"><li style="list-style-type:disc">when we have to eat something we like</li></ul><ul id="4d6f2f62-986a-41ec-a5e5-8fece3ded144" class="bulleted-list"><li style="list-style-type:disc">Today I have an appetite for fish.</li></ul><ul id="4455e4cb-a91b-4c08-821b-87df5411838d" class="bulleted-list"><li style="list-style-type:disc">Dzisiaj mam apetyt na rybe</li></ul></details></li></ul><ul id="537c09da-76d9-4110-9439-01f79e0d70da" class="toggle"><li><details open=""><summary>ban</summary><ul id="a30fef0a-02de-4532-9c49-939c34643fc5" class="bulleted-list"><li style="list-style-type:disc">zakazać</li></ul><ul id="c8b3e50a-1834-45f6-b119-021258262885" class="bulleted-list"><li style="list-style-type:disc">when someone block something</li></ul><ul id="255aea34-1b24-47a4-ab70-7db73aef8162" class="bulleted-list"><li style="list-style-type:disc">Selling a poisoned food is banned.</li></ul><ul id="8bce1e3f-0f64-4648-bb99-029ab2b6b6af" class="bulleted-list"><li style="list-style-type:disc">Sprzedawanie zatrutej żywności jest zakazane</li></ul></details></li></ul><ul id="ac212e16-ed6c-444a-a4ec-c3cd6885545c" class="toggle"><li><details open=""><summary>bring together</summary><ul id="f727d452-18c6-4370-9db2-4a3880e45988" class="bulleted-list"><li style="list-style-type:disc">zbliżać, łączyć</li></ul><ul id="8d711840-37fd-4c1a-bff2-7e9dae3d9b18" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="1a6b50d6-672e-4b12-b4cd-7318eb26bebc" class="bulleted-list"><li style="list-style-type:disc">A large group of people thought that the chocolate bring together.</li></ul><ul id="bacdd529-cec2-41aa-a80e-d983a4595481" class="bulleted-list"><li style="list-style-type:disc">Duża grupa ludzi uważa że czekolada łączy.</li></ul></details></li></ul><ul id="86cda826-7519-4918-894b-ba6b847366f2" class="toggle"><li><details open=""><summary>candy bar</summary><ul id="0371d99f-ab48-41ed-9a68-3f9c24203555" class="bulleted-list"><li style="list-style-type:disc">Batonik</li></ul><ul id="3e6aa24d-12c4-484a-af60-de3469ecf94d" class="bulleted-list"><li style="list-style-type:disc">snack</li></ul><ul id="225b4388-e6c0-442f-8908-94121fbbdfef" class="bulleted-list"><li style="list-style-type:disc">I have an appetite for the candy bar.</li></ul><ul id="ba97fed6-a6e9-483e-87e9-604fb68f5c41" class="bulleted-list"><li style="list-style-type:disc">Mam apetyt na batonika</li></ul></details></li></ul><ul id="381c5aa6-98fc-40f1-82eb-e6092ac57644" class="toggle"><li><details open=""><summary>catering business</summary><ul id="60731757-706b-48f1-b12a-5c9792434971" class="bulleted-list"><li style="list-style-type:disc">biznes cateringowy, firma cateringowe</li></ul><ul id="4d8b1540-eec5-4c27-93e0-9c011f8e5fe3" class="bulleted-list"><li style="list-style-type:disc">a buisness who’s sending food to you</li></ul><ul id="4231396c-11c0-4f68-8ee8-31bba53bbc92" class="bulleted-list"><li style="list-style-type:disc">This catering business has an affordable menu.</li></ul><ul id="15fbebd4-eeb3-40c4-a26b-1bb1ea5d562d" class="bulleted-list"><li style="list-style-type:disc">Ta firma cateringowa ma przystępne menu</li></ul></details></li></ul><ul id="591b429b-b934-4383-8226-0485d6455567" class="toggle"><li><details open=""><summary>comfort food</summary><ul id="6ed017e5-5d58-4d83-bc3d-b4c158b88d39" class="bulleted-list"><li style="list-style-type:disc">konfortowe jedzenie</li></ul><ul id="96281510-58de-4eb0-b425-d33d9ce02b53" class="bulleted-list"><li style="list-style-type:disc">a food that after we eat we are feeling really good and relaxed</li></ul><ul id="ab6a3d78-985f-4fa3-8fe3-b5b4ce6e5a01" class="bulleted-list"><li style="list-style-type:disc">Every time, before I am writing an exam, I eat my comfort food.</li></ul><ul id="9cf780b9-da91-4ac0-a299-3088969fc9cd" class="bulleted-list"><li style="list-style-type:disc">Za każdym razem przed egzamin jem moje komfortowe jedzenie</li></ul></details></li></ul><ul id="be112f8f-6481-4814-8d4a-1ee69156bcfc" class="toggle"><li><details open=""><summary>community</summary><ul id="a87e4db0-84e7-465c-a04b-8046f20c3576" class="bulleted-list"><li style="list-style-type:disc">społeczność</li></ul><ul id="bc77d0cc-8aea-42d9-86f3-3766670840e0" class="bulleted-list"><li style="list-style-type:disc">a group of something. For example a community of city</li></ul><ul id="55e762a7-82d7-4104-a921-0637436bdf2b" class="bulleted-list"><li style="list-style-type:disc">Our community thinks that the fizzy drinks can be really dangerous for us. </li></ul><ul id="aa7177a8-cdcb-4b6d-86ad-1e7990c4d6a9" class="bulleted-list"><li style="list-style-type:disc">Nasza społecznośc uważa że napoje gazowane moga być dla nas naprawdę niebezpieczne</li></ul></details></li></ul><ul id="20c0d5f7-3503-4f50-a9ba-6ee75222c7eb" class="toggle"><li><details open=""><summary>concernced about sth</summary><ul id="b91a79bc-21ee-4063-9472-2b2064237566" class="bulleted-list"><li style="list-style-type:disc">zaniepokojony czymś</li></ul><ul id="f76cb2b9-9ce0-4c52-b1e6-c05b5ccce6ea" class="bulleted-list"><li style="list-style-type:disc">when i feel concerned about something</li></ul><ul id="74c9a1ec-7808-4692-9785-3353a0615d2b" class="bulleted-list"><li style="list-style-type:disc">I am really concerned about what teenagers are eating.</li></ul><ul id="31747b04-1a5b-40dc-9571-853437fe3440" class="bulleted-list"><li style="list-style-type:disc">Jestem naprawde zaniepokojny tym co jedza nastolatki</li></ul></details></li></ul><ul id="fddb1203-dfa2-46f3-ab5a-092ece7acde5" class="toggle"><li><details open=""><summary>consume</summary><ul id="f2236436-3376-40b8-8dcf-782541cd521e" class="bulleted-list"><li style="list-style-type:disc">konsumować, spożywać</li></ul><ul id="505c657f-9b67-48d9-b40d-b86c4f340ea6" class="bulleted-list"><li style="list-style-type:disc">eat</li></ul><ul id="d5865c5f-4d5e-46ee-ba10-892f860b78b0" class="bulleted-list"><li style="list-style-type:disc">I consumed fantastic fish yesterday at the restaurant.</li></ul><ul id="4a882d5c-a529-4651-8123-4c1cd0588950" class="bulleted-list"><li style="list-style-type:disc">Wczoraj zjadłem fantastyczną rybę w restauracji</li></ul></details></li></ul><ul id="ff978662-c645-44a4-8551-6bd9e74f7983" class="toggle"><li><details open=""><summary>co-operetive farm</summary><ul id="7b541698-32a5-4257-ba6f-daad40970466" class="bulleted-list"><li style="list-style-type:disc">rolnicza spółka produkcyjna</li></ul><ul id="b5aaa554-6a2e-467e-aaa9-fc69d3246b97" class="bulleted-list"><li style="list-style-type:disc">farm that doing together </li></ul><ul id="ad79ac0f-1d36-4216-aac8-ff0f87da6140" class="bulleted-list"><li style="list-style-type:disc">I created with my friends a co-operetive farm</li></ul><ul id="b395f7a8-4bcb-420b-8772-8c25e7a1c7ae" class="bulleted-list"><li style="list-style-type:disc">Założyłem z moimi znajomymi rolnicza spółka produkcyjna</li></ul></details></li></ul><ul id="3af65be8-3052-42e7-b67c-ecf4a4cde9fa" class="toggle"><li><details open=""><summary>do your taxes</summary><ul id="8e937be7-a559-49a4-826c-727da7c36ade" class="bulleted-list"><li style="list-style-type:disc">wypełniać zeznania podatkowe</li></ul><ul id="6c5d00d8-d25c-4d19-8fbb-716a9e4eafc6" class="bulleted-list"><li style="list-style-type:disc">pay to goverment tax </li></ul><ul id="bb5a49f9-911c-472c-95c5-a6a5ea2e2fb2" class="bulleted-list"><li style="list-style-type:disc">Sorry i can</li></ul><ul id="95f88fea-ed7d-4a48-ba38-756b67be3e0a" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="c8c72853-45a6-476d-bc08-db5635618ec8" class="toggle"><li><details open=""><summary>economic prosperity</summary><ul id="f98308fd-1abc-41b6-a220-79173c3c895f" class="bulleted-list"><li style="list-style-type:disc">dobrobyt gospodarczy</li></ul><ul id="44c57c1f-15ca-430a-8e8f-1418dc2bfdf0" class="bulleted-list"><li style="list-style-type:disc">when the economy of country is too good</li></ul><ul id="59ddaa5a-9d45-4821-bf8e-23d83672447e" class="bulleted-list"><li style="list-style-type:disc">We have in our country economic prosperity</li></ul><ul id="3ece020e-4af9-42f7-a9f6-183275f8a265" class="bulleted-list"><li style="list-style-type:disc">Mamy w naszym kraju dobrobyt gospodarczy</li></ul></details></li></ul><ul id="e6e4b0cd-a63c-49e5-a456-85a274703475" class="toggle"><li><details open=""><summary>fake</summary><ul id="3eba5516-91bf-44f5-8997-3a7e7a8d89b5" class="bulleted-list"><li style="list-style-type:disc">fałszywe</li></ul><ul id="f0296c73-aa45-4d7b-b5d0-c072d9bef613" class="bulleted-list"><li style="list-style-type:disc">somthing no original</li></ul><ul id="95b24f7a-5530-4bed-94c8-7500a79b08be" class="bulleted-list"><li style="list-style-type:disc">This licence for selling food is fake.</li></ul><ul id="1accbca9-fd67-4e88-b2e7-e46b26cf7099" class="bulleted-list"><li style="list-style-type:disc">Ta licencja na sprzedawanie żywności jest fałszywa</li></ul></details></li></ul><ul id="09d1d543-534f-4233-9e94-fd6ab599bec4" class="toggle"><li><details open=""><summary>fast food outlet</summary><ul id="f26cf8f5-2942-40dc-87f8-c52446c49c86" class="bulleted-list"><li style="list-style-type:disc">miejsce/punkt sprzedarzy fast foodów </li></ul><ul id="af1654b8-8a79-437c-a98e-be8a64978ade" class="bulleted-list"><li style="list-style-type:disc">for example Mc Donald, KFC, Burger King</li></ul><ul id="d64f7f15-09b0-4517-afda-05dd5550d3fe" class="bulleted-list"><li style="list-style-type:disc">Burger King is a fast food outlet.</li></ul><ul id="80389f17-2a33-4ea9-98d2-d179e8898c61" class="bulleted-list"><li style="list-style-type:disc">Burger King to restauracja typu fast food</li></ul></details></li></ul><ul id="6fbff8e1-99a4-48d7-865a-ef36902e9c52" class="toggle"><li><details open=""><summary>figure out</summary><ul id="7d2f8cf2-2364-4110-ab2a-2e7302845720" class="bulleted-list"><li style="list-style-type:disc">wymyślić</li></ul><ul id="6252d6bb-836c-4d69-81b0-ead1af52e07a" class="bulleted-list"><li style="list-style-type:disc">think something</li></ul><ul id="9ddd3e07-0481-4c03-bba7-e78d3b23b514" class="bulleted-list"><li style="list-style-type:disc">I must figure out too many sentence to learn English.</li></ul><ul id="c93411ba-a4e6-4cce-983e-baa8d02dde19" class="bulleted-list"><li style="list-style-type:disc">Musze nauczyć się zbyt wielu zdań aby nauczyc się Angielskiego.</li></ul></details></li></ul><ul id="d3a59c77-89df-4b06-8dca-e59b818d8fce" class="toggle"><li><details open=""><summary>fizzy drink</summary><ul id="644a2130-1034-49e9-8a0b-de5fde084d1e" class="bulleted-list"><li style="list-style-type:disc">Napoje gazowane</li></ul><ul id="41f0662e-cc59-4f93-9ad9-7e073ab8ddee" class="bulleted-list"><li style="list-style-type:disc">For example Coca - Cola, Sprite, Pepsi</li></ul><ul id="d3f9d489-f96b-460e-b2a3-09c6492259e8" class="bulleted-list"><li style="list-style-type:disc">I don’t like fizzy drinks.</li></ul><ul id="d85dd9e2-4527-43b1-9d46-46f55c16beb0" class="bulleted-list"><li style="list-style-type:disc">Nie lubie napojów gazowanych.</li></ul></details></li></ul><ul id="a91850da-a6cc-4c2e-b8c9-93cb86328049" class="toggle"><li><details open=""><summary>foodstuff</summary><ul id="577ce483-ba29-4f66-a810-be6e92f97bbf" class="bulleted-list"><li style="list-style-type:disc">Produkty spożywcze</li></ul><ul id="df17b372-daee-46b7-8925-f3f2b94c3ab9" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="6aa1a6cc-0866-4be5-bf61-9a1b8c8aee68" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="8ca795f5-1253-4fe9-abf3-083ab5b36200" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="ea6381ef-15a1-4606-a54a-2b69e22761ab" class="toggle"><li><details open=""><summary>fresh produce</summary><ul id="cce7ce58-6ae7-4cec-a417-5d5a7c35bacb" class="bulleted-list"><li style="list-style-type:disc">Świeże produkty</li></ul><ul id="b35b67aa-1608-4f4e-8b3a-ccbb21a0bfc8" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="de64222e-7e48-472b-8692-ef05fbfd657b" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="f66a6dbb-d3d0-42dc-a06c-7485a8e7dca1" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="6d5220a2-77d1-4c4b-a65d-df7054e02ccd" class="toggle"><li><details open=""><summary>full of vitamins</summary><ul id="c57534ec-a493-4c5b-8737-9544b6d6b178" class="bulleted-list"><li style="list-style-type:disc">Pełne witamin</li></ul><ul id="5a95bba4-55f2-49cd-8845-d5742f3c81c0" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="9d8e58dc-f2db-471f-adc2-ca66a9b72b2f" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="1d533014-71c3-4737-a07f-40e8b75abef8" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="7b81d481-6e13-4bfb-b941-09b6f5184902" class="toggle"><li><details open=""><summary>ground</summary><ul id="2909644b-e623-4ee1-9ba6-79f915d67477" class="bulleted-list"><li style="list-style-type:disc">ziemia, gleba</li></ul><ul id="f7fb1fd1-3a8f-4468-817f-420a0df4c57c" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="6b2aef4a-18a2-4c78-a3c4-b06a0e05a5eb" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="7769ce46-435d-444d-bc57-cace487c13d0" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="0fd9647b-bf28-4310-b397-54413da6b95f" class="toggle"><li><details open=""><summary>grow</summary><ul id="f0e76515-c8e9-46d0-8be6-aca2dbebe223" class="bulleted-list"><li style="list-style-type:disc">uprawiać</li></ul><ul id="6314c4e1-5fe4-42cd-bbee-499493d26f50" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="fb5868d9-4199-4ba7-9d11-2cbfabaade29" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="50633d27-4db0-450d-8b8d-1d26b0d88610" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="daa6e79e-2a97-44ca-909b-97a5638847b7" class="toggle"><li><details open=""><summary>have/follow a healthy diet</summary><ul id="39d31d42-b362-419c-b1d5-454ac4c749d0" class="bulleted-list"><li style="list-style-type:disc">Miec przejść na zdrową diete</li></ul><ul id="5d100dfb-303e-4a1c-bb4d-cf4a2cbd5b8a" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="5c0203db-1e01-40bd-9422-4fe8f80a467f" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="1778e85d-9dcc-4f5a-ae0d-99559ff90732" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="d8e81c4a-8a24-46ab-86e5-4334e64b2435" class="toggle"><li><details open=""><summary>have an unhealthy diet</summary><ul id="a566edb2-4736-40ba-9097-82ff24e9a269" class="bulleted-list"><li style="list-style-type:disc">Mieć nie zdrową diete</li></ul><ul id="ff24e96f-c85a-4ceb-99ac-89d9d228d4fc" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="0f7458d9-a83e-4c73-8793-707e63d67103" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="9a1e05a3-18db-4247-adb4-a370d09e8682" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="bc21f682-ff76-409a-a066-6158a2323a70" class="toggle"><li><details open=""><summary>heart condition </summary><ul id="9c76f287-0d5f-4f6b-bacf-77cfee055d08" class="bulleted-list"><li style="list-style-type:disc">choroba serca</li></ul><ul id="eb68fa35-70af-4fdf-bdd6-2561dfca845e" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="2475ded8-280d-4fae-a7d6-3173e3561b8d" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="b6d472fb-e4cc-4d0b-b4f1-ace64596bea9" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="cf6b79ab-0366-435e-bfec-a62e47280198" class="toggle"><li><details open=""><summary>high blood pressure</summary><ul id="c90275ac-9c6e-4a5a-acc9-72d2173f937e" class="bulleted-list"><li style="list-style-type:disc">wysokie ciśnienie krwi</li></ul><ul id="8967ef0f-d699-44e4-b8d1-e9ab82e178b6" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="08c23267-892b-4ab4-bdf5-4da94c70f9c1" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="7eb894e7-8734-4213-a304-c68988c30737" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="d0333b2c-ce62-4ee2-9631-e6fad07f8d8e" class="toggle"><li><details open=""><summary>high in calories/fat/sugar/salt </summary><ul id="ea985815-cf35-4741-8415-782312e63587" class="bulleted-list"><li style="list-style-type:disc">Wysoko kaloryczne/tłucząco/cukrowo/solowo</li></ul><ul id="eeab64aa-0026-43b9-8138-c2c3aa31525d" class="bulleted-list"><li style="list-style-type:disc">has to much calories/fat/sugar/salt</li></ul><ul id="da540470-703c-49a3-93c6-a8ee0862bd66" class="bulleted-list"><li style="list-style-type:disc">The Fast Food is high in calories.</li></ul><ul id="5484dbad-c613-4c52-abd9-3624f1e16b95" class="bulleted-list"><li style="list-style-type:disc">Fast foody są wysoko kaloryczne</li></ul></details></li></ul><ul id="171cb9f7-ca4f-402f-a054-0733ed8f014b" class="toggle"><li><details open=""><summary>hot dog</summary><ul id="43abb2f5-d03b-48d1-9394-9ca8ab0dc98d" class="bulleted-list"><li style="list-style-type:disc">Hot do</li></ul><ul id="c08ad975-1f76-4f44-ba68-7ddebd9ec3df" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="ba67b694-2406-4054-a52f-55048b132e0d" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="a7a8326c-e66b-4142-8e7d-a35963f1f270" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="5a349027-4331-4b14-a6ba-d0f59f2b7980" class="toggle"><li><details open=""><summary>in favour of sth</summary><ul id="d647622b-eea1-4e2d-bd0d-4b7e8c90efa1" class="bulleted-list"><li style="list-style-type:disc">Na korzyść czegoś</li></ul><ul id="1a52367b-344b-4628-acc4-29ab61328c33" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="e9e5199f-dc12-4750-9a1c-241321b7a0b1" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="1a88e07a-a058-4846-92c3-18a6d84b2006" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="9662a6c3-869c-4db5-b691-74bcbf7ac80e" class="toggle"><li><details open=""><summary>junk food </summary><ul id="dd69e716-e0e7-4bb3-af07-45aec4791cad" class="bulleted-list"><li style="list-style-type:disc">Śmieciowe/Niezdrowe jedzenie</li></ul><ul id="bb64ff7b-6bac-4a32-a169-b9ce30e1f005" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="b08ff530-8ba0-48a6-abfd-bb74019c2192" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="86526a41-81dc-4fe7-805d-f280de746ff3" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="a7b33a0f-341e-48e7-b1cc-c6e17ff5343a" class="toggle"><li><details open=""><summary>kebab</summary><ul id="0b586273-e89d-4d66-b180-04789f1eea95" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="1d3859e4-7fc2-4aab-b112-3d06ec7b95ac" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="e9266c16-5e7b-4786-b3dc-9f1c33defb77" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="0af1867a-08ce-44f5-abb5-62107f3d8795" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="6aa9bdd6-514b-43ad-b8e3-7fc074d5e71f" class="toggle"><li><details open=""><summary>land</summary><ul id="4233b452-80df-4b69-96ff-e24a56cd3f9f" class="bulleted-list"><li style="list-style-type:disc">grunt, ziemia</li></ul><ul id="a195caf2-5956-41ed-83fb-809e7df09d8d" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="8912306a-d797-42d9-919d-b84714173fd1" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="5a972078-bad8-423f-a077-d0cd59bd3790" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="14154722-21b0-4f3c-8973-e81844e75e34" class="toggle"><li><details open=""><summary>misunderstand</summary><ul id="aa232ab8-fd54-48d8-8181-6759976169e3" class="bulleted-list"><li style="list-style-type:disc">źle zrozumieć / nieporozumienie</li></ul><ul id="1e35473b-7c7d-4e13-abdd-8335d614af59" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="e6f5cdf2-33a4-4265-81d2-afea258a0486" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="446f5573-46bc-422f-9db8-a80c75254dce" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="dacb78b0-b592-4ac0-92cf-94cc4280082a" class="toggle"><li><details open=""><summary>native American</summary><ul id="685fd8bc-b4d7-4853-a201-9a8edc813e03" class="bulleted-list"><li style="list-style-type:disc">Natywni amerykanie</li></ul><ul id="609a1af2-ae6c-47c4-8b10-db8f29cc0358" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="a32b63db-d870-440d-9999-45a79cd9b720" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="d7bfe4d5-8c47-45a9-bb34-2303241a7e5c" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="e0ad84a7-e2b5-4035-89df-0b3e5d974371" class="toggle"><li><details open=""><summary>non-profit association</summary><ul id="bad8c34f-6a6e-4ce7-8db0-fbbaf7b04e76" class="bulleted-list"><li style="list-style-type:disc">Stworzyszenie typu non profit</li></ul><ul id="7d1bb997-89eb-45fb-b9b9-d470033f9d4f" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="7ca971a9-96a6-462a-93ce-20f6f98296ad" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="6bd81f5b-8f8f-4403-937b-c6cd4544e103" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="0eaf582a-4877-4b68-9545-90d61336b3a4" class="toggle"><li><details open=""><summary>nutrition</summary><ul id="4148738d-6520-4f13-a4a0-59f29e134411" class="bulleted-list"><li style="list-style-type:disc">odżywianie</li></ul><ul id="88c91322-0fb4-4f7a-b8a8-102ae2073d24" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="7a797b3c-9cb8-4fcd-abb9-5ac1ac23af4e" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="47a09610-bd26-4d8d-b022-9421f2fba125" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="820b7872-ce95-402b-926f-29d898ddf089" class="toggle"><li><details open=""><summary>obesity</summary><ul id="3b8fc155-04b6-4b7f-ae4f-728f308f15dc" class="bulleted-list"><li style="list-style-type:disc">otyłość</li></ul><ul id="427dd0b7-3732-42a5-88fc-aee6502df909" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="a1dd1c1d-5039-4eb0-99f3-0e23948cc78c" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="37afeafc-ef95-4d1d-8d14-abb2e2a2a553" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="6a3dab48-db50-4117-8a30-203fb6ee0518" class="toggle"><li><details open=""><summary>pick</summary><ul id="31e5ebc7-fdfd-4dc2-8bd6-ccea9463c4de" class="bulleted-list"><li style="list-style-type:disc">zbierać</li></ul><ul id="e716f5f0-e165-43dd-88a1-5c79d9dbb2c0" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="2fa96a62-700a-4184-a26c-056ebd455543" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="ffca9234-9215-4dd6-8640-fc58301b671e" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="7b0078da-4a98-4679-bf0d-13098ca4e186" class="toggle"><li><details open=""><summary>poison</summary><ul id="8ec38f63-9214-4e56-bac9-7aa283ecc554" class="bulleted-list"><li style="list-style-type:disc">Trucizna</li></ul><ul id="7f1030c1-3424-458e-a57d-9a62583839fc" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="e0b7cfd1-c5f6-4fc2-93e5-3189fdac3646" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="24fcfe51-4a78-4c69-bd77-1998bd5f6562" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="c8738bdf-6c4e-4623-a258-ffb3109c9053" class="toggle"><li><details open=""><summary>poor diet</summary><ul id="3b55119b-f7ba-45bc-88c9-b7a5bcbbcbb8" class="bulleted-list"><li style="list-style-type:disc">uboga/ biedna dieta</li></ul><ul id="49ec4a09-b944-43c8-bce1-f166fd9a2e16" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="09f5d173-97d2-4a23-90af-83cbe798fcbb" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="9bb7c29c-0bda-408a-94a5-881fa0ff03d0" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="baf889f4-daa0-4753-8993-1aa528091678" class="toggle"><li><details open=""><summary>processed food</summary><ul id="96c0c3fb-f8c8-4689-b7fb-a6ccce756011" class="bulleted-list"><li style="list-style-type:disc">Przetworzone jedzenie</li></ul><ul id="5382fe92-6309-4841-87cd-1122b49dfe21" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="900cd1ac-899e-4d67-9ec9-d447e61201a1" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="271011c8-492b-40b8-9e63-200ca9b8cb2f" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="90448bdf-7fb0-4583-b1af-58324f5c7247" class="toggle"><li><details open=""><summary>raw ingredients</summary><ul id="f55daff0-77fd-4857-9903-51e9f546f18f" class="bulleted-list"><li style="list-style-type:disc">Surowe składniki</li></ul><ul id="266f7905-2a9e-4b7c-9621-2d2e09670e8c" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="e6931339-5bbe-444d-99b2-968d9fb12e83" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="f3d981df-9e48-47e0-88ff-491cc66addfc" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="c8ef2d01-823b-47f0-8c10-94071da562c0" class="toggle"><li><details open=""><summary>ready-made</summary><ul id="efc9cf44-1f3e-4f7f-a337-690adbcdfeca" class="bulleted-list"><li style="list-style-type:disc">gotowy do spożycia</li></ul><ul id="d2421722-0af5-42f3-abce-4625fac0ddcc" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="bee95db2-4350-4f7a-b907-140626a02a25" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="e0f5d155-b05f-44d7-a822-cc70afb1b1bc" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="b1c2b53b-86c1-4b13-ad37-dbed005f17b3" class="toggle"><li><details open=""><summary>rent </summary><ul id="a0a943a2-c729-41cf-bbc3-ddecf5460350" class="bulleted-list"><li style="list-style-type:disc">wynajmować</li></ul><ul id="093d8b5d-25fd-45b8-9cfb-7d520aa988b1" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="ba8c3a2c-bd0f-438b-bd4f-1a1620e255f4" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="13b2a39e-f98e-4d62-8f43-848ca0f7075c" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="b82f4b9e-43a4-4df6-99ad-8b28843a3868" class="toggle"><li><details open=""><summary>solution</summary><ul id="2dc6e6bf-da31-42a8-a194-e6ad01a4a469" class="bulleted-list"><li style="list-style-type:disc">rozwiązanie / solucja</li></ul><ul id="4d0c5ecd-ac3a-40ba-8c62-35329ab6620a" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="118dfeee-3345-4205-80f3-1553cd0cab65" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="f6a466fc-f458-48c8-9ff7-f58fcdd29285" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="a8d8799c-741c-4ad6-877e-b234c9c41c9a" class="toggle"><li><details open=""><summary>step</summary><ul id="1e98ab47-028c-44b1-85ee-78cc1f76fc96" class="bulleted-list"><li style="list-style-type:disc">krok, etap</li></ul><ul id="fd6ce19d-ce25-486c-9a73-ac59e9119009" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="714901d2-7175-415e-8218-2e3b0b6481a3" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="dba8562c-fe15-4e89-90f1-22e9bf5443d2" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="054dde86-992e-4010-beef-1ffe6d6a5f38" class="toggle"><li><details open=""><summary>still water</summary><ul id="d1bff317-da97-45bd-b386-13ec35ac8025" class="bulleted-list"><li style="list-style-type:disc">bieżąca/niegazowana woda </li></ul><ul id="a35eb8e6-ea19-461e-93e5-711a65b51b62" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="92a4678c-5430-4b0f-81aa-fcad9848456f" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="bb9c225f-98b9-4b98-a01f-93e0a8e24466" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="64e8c416-d889-43cb-84d0-fde8b643078b" class="toggle"><li><details open=""><summary>strengthen</summary><ul id="2e7d03cb-5b28-40c1-b8d9-04c2f5af8268" class="bulleted-list"><li style="list-style-type:disc">wzmacniać / umacniać</li></ul><ul id="532da9b5-5db9-41bf-9c98-1e473ec24687" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="f912c088-0d9f-41e4-9020-dfd44e8652a2" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="3d570bc5-f4d0-4c3a-83c8-39f0629cc735" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="25c8b4d6-a40a-488a-9880-7cea1717444d" class="toggle"><li><details open=""><summary>supporter</summary><ul id="6b68565a-0c31-43b3-adb6-85826564b75e" class="bulleted-list"><li style="list-style-type:disc">zwolennik</li></ul><ul id="62d2967f-8757-4e2b-8b57-8277ccb923eb" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="eb53c727-8ea4-4a32-ba0a-efbdf34f4674" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="83ad1695-2d3a-4865-9657-f0a0d7bd076e" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="c6b28cf1-4da5-4003-828e-e364f56150f0" class="toggle"><li><details open=""><summary>swap sth for sth</summary><ul id="72de17e3-fe3a-4f65-8b9c-c338f25003f1" class="bulleted-list"><li style="list-style-type:disc">zamienić coś na cois</li></ul><ul id="4ed11ac8-1159-4fa7-acc6-54e79fabbb9c" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="85c33d59-acb7-42bd-ad5b-b47fba51643e" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="3e0d8499-d3d1-4788-a753-387202aa61ba" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="c7285011-a1c2-40f3-97c4-affeb1f016c4" class="toggle"><li><details open=""><summary>take off</summary><ul id="8bd54359-b392-4678-bb33-a6c84cde7945" class="bulleted-list"><li style="list-style-type:disc">odnieść nagły sukces</li></ul><ul id="a604b707-d245-4b09-a9ee-bbe2aa800919" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="581b1e38-5fe1-4e7d-af79-3ba8cb66259a" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="420b8923-74ed-4a75-8f5c-6f0e8c97f091" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="845924b3-0592-428f-8844-abf339ea903b" class="toggle"><li><details open=""><summary>teaspoon</summary><ul id="b8aa553b-b474-467a-933a-b83c6e7bdc30" class="bulleted-list"><li style="list-style-type:disc">Łyżeczak do herbaty</li></ul><ul id="8dd85f63-3dad-43d6-a929-4e33a7c99ea2" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="71abde59-14cd-437a-b928-9d94316cdb0a" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="b96fc2dd-ba1f-436f-881e-ff91df8950ca" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="372a44e7-ebb4-4151-90a3-e85f34608834" class="toggle"><li><details open=""><summary>tool</summary><ul id="07515af4-1ba7-41fa-8444-57ba8f2bd9a9" class="bulleted-list"><li style="list-style-type:disc">Narzędzie</li></ul><ul id="3686d218-5341-4bc3-b35c-e726063b7ddb" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="2b3cf90f-1b85-4a35-8dd5-9fb57dbbaa0e" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="7ee12802-8970-409b-8b22-c5fcef9fee1d" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="d56c5287-7929-4c32-b1cd-819df7ebe197" class="toggle"><li><details open=""><summary>unused</summary><ul id="9e188d98-aa40-4af6-ba54-38dc331f1d09" class="bulleted-list"><li style="list-style-type:disc">Nieużywane / Niewykorzystywane</li></ul><ul id="789640c1-9b26-4c69-aea1-2d250e13aedd" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="3049acb9-3b5f-46fd-8f7c-362618318780" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="84975a3b-28b7-474c-b88d-3827cc3c65f8" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="40885c69-11f0-404e-b33e-7a1134121586" class="toggle"><li><details open=""><summary>urban</summary><ul id="54a9c30c-9ddc-4bcc-814a-321f82616dd7" class="bulleted-list"><li style="list-style-type:disc">miejski</li></ul><ul id="ab1adf3d-fce3-4b66-af18-28c3c3cb9724" class="bulleted-list"><li style="list-style-type:disc">something is from city, like urban food, city food</li></ul><ul id="e81d436b-5f5d-442a-896c-0dead134c58c" class="bulleted-list"><li style="list-style-type:disc"></li></ul><ul id="f5a5cda1-e7ca-408a-bb51-b9e574e495c0" class="bulleted-list"><li style="list-style-type:disc"></li></ul></details></li></ul><ul id="7a35b06e-da5c-44e2-a7de-9254ec990ffe" class="toggle"><li><details open=""><summary>vegan</summary><ul id="bcebbb34-4510-4b7e-99fa-9eb80f24d3ed" class="bulleted-list"><li style="list-style-type:disc">Wegański</li></ul><ul id="ef13975f-e64f-4ab6-a347-2566f46220ed" class="bulleted-list"><li style="list-style-type:disc">something non meat</li></ul><ul id="407de95c-0de3-4444-97a9-6be6ce48a97f" class="bulleted-list"><li style="list-style-type:disc">I must go on a vegan diet.</li></ul><ul id="6d44e06f-250a-4944-b973-f201d935731d" class="bulleted-list"><li style="list-style-type:disc">Muszę przejśc na diete wegańska</li></ul></details></li></ul><ul id="2ba2a956-d3f4-4416-b8d4-412c1c89f616" class="toggle"><li><details open=""><summary>wealth</summary><ul id="a8070a5d-8850-4c23-9141-d4b9be536a8a" class="bulleted-list"><li style="list-style-type:disc">Bogactwo</li></ul><ul id="c0b2de44-72cf-4ebd-8172-eeb876c398bf" class="bulleted-list"><li style="list-style-type:disc">in money rich</li></ul><ul id="fba6153c-6df6-49c8-aab9-34aea68aa74b" class="bulleted-list"><li style="list-style-type:disc">This food has wealth of vitamins</li></ul><ul id="80b95be3-a59c-4ec0-a892-bbd42186b1e9" class="bulleted-list"><li style="list-style-type:disc">To jedzenie ma mnóstwo witamin</li></ul></details></li></ul><ul id="3d888642-94b7-420c-bc4e-906d4176c777" class="toggle"><li><details open=""><summary>workshop</summary><ul id="f670db2e-00e4-47a0-a9aa-7677fe806184" class="bulleted-list"><li style="list-style-type:disc">warsztaty</li></ul><ul id="f686647c-e68f-4a54-be35-5526099a11c6" class="bulleted-list"><li style="list-style-type:disc">Other typy of lesson / group lesson to learn in practise something</li></ul><ul id="c90ca2a8-ae51-4348-85a1-e95155d99a6e" class="bulleted-list"><li style="list-style-type:disc">I will go to the culinary workshop tomorrow. </li></ul><ul id="eeac30ff-9ba0-4053-be6f-49e91cce0149" class="bulleted-list"><li style="list-style-type:disc">Jutro pójde na warsztaty kulinarne</li></ul></details></li></ul></div></details><p id="d92b1393-2716-41d6-88ff-74e29d99e896" class="">
+</p><p id="b3495fd3-88d4-44a1-b2e2-3d052dde01fd" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

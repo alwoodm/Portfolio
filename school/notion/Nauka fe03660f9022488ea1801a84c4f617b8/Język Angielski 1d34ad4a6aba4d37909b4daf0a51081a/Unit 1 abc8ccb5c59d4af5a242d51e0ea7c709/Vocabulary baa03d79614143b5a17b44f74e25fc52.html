@@ -1,0 +1,678 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Vocabulary</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="baa03d79-6141-43b5-a17b-44f74e25fc52" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🔠</span></div><h1 class="page-title">Vocabulary</h1><p class="page-description"></p></header><div class="page-body"><ul id="cea871d2-e8fe-40c1-8578-a08fbf07d7c5" class="bulleted-list"><li style="list-style-type:disc">to some degree - to some extend (wpewnym stopniu)</li></ul><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">Appearance</summary><div class="indented"><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Phisical Appearance</summary><div class="indented"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Hair / facial Hair</summary><div class="indented"><ul id="bd5de4da-610e-4a67-915d-44dc98311ea7" class="bulleted-list"><li style="list-style-type:disc">balding - łysiejący</li></ul><ul id="d718c2e9-78eb-48b6-aa67-07c18fd1bbf4" class="bulleted-list"><li style="list-style-type:disc">clean-shaven - gładko ogolony</li></ul><ul id="5eeada58-67f7-41ff-8e28-1cdc5baf60b3" class="bulleted-list"><li style="list-style-type:disc">moustache - wąsy</li></ul><ul id="e3c30a3b-4fd8-4b7e-b7b7-e00655543953" class="bulleted-list"><li style="list-style-type:disc">straight - proste</li></ul><ul id="d4111d49-d6c1-4ee6-8440-36f7174eeda3" class="bulleted-list"><li style="list-style-type:disc">culry - kręcone</li></ul><ul id="d7df0242-99d7-4426-91ea-fd124e2752d9" class="bulleted-list"><li style="list-style-type:disc">wavy - pofalowane</li></ul><ul id="72a22c24-54d5-4412-b260-8ad7ec8849aa" class="bulleted-list"><li style="list-style-type:disc">medium-length</li></ul><ul id="1b66b5c1-7f4e-4246-b296-d77def3fc3e8" class="bulleted-list"><li style="list-style-type:disc">unshaven - nieogolony</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Opinions</summary><div class="indented"><ul id="98210587-908e-401b-9238-fa2460bf39ca" class="bulleted-list"><li style="list-style-type:disc">elegant - elegancki</li></ul><ul id="c87aa3cb-3224-4f64-9510-6bf3f4147924" class="bulleted-list"><li style="list-style-type:disc">fashionable - modny</li></ul><ul id="d6ae4d72-22d2-467f-947f-0d0dde1137f9" class="bulleted-list"><li style="list-style-type:disc">glamorous - przepiękny</li></ul><ul id="f879ca9f-79cf-450b-a821-01fa7d374582" class="bulleted-list"><li style="list-style-type:disc">handsome - przystojny</li></ul><ul id="82bd9ec2-2925-42f9-9f90-71138fad66d3" class="bulleted-list"><li style="list-style-type:disc">stunning - oszałamiający</li></ul><ul id="62f21793-8eaa-45ae-9b08-5923c0f6c4a9" class="bulleted-list"><li style="list-style-type:disc">stylish - stylowy</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Body</summary><div class="indented"><ul id="da987fb7-5365-4910-92b4-6cb7a723279a" class="bulleted-list"><li style="list-style-type:disc">1broad shoulders - szerokie ramiona</li></ul><ul id="f3b9f76e-9d65-4355-96b8-6be3f1276f03" class="bulleted-list"><li style="list-style-type:disc">full figur - pełna figura</li></ul><ul id="ad699c87-b2b1-40e8-9652-d2e71b1989de" class="bulleted-list"><li style="list-style-type:disc">heavily-build - ciężko zbudowany</li></ul><ul id="ba744bd1-834d-45da-bacd-e23d958940de" class="bulleted-list"><li style="list-style-type:disc">muscular - muskularny</li></ul><ul id="d317c9d7-8bd5-4e28-a073-0537f6fc135c" class="bulleted-list"><li style="list-style-type:disc">overweight - nadwaga</li></ul><ul id="9738f7ee-1382-4135-882e-000fb1cbd45e" class="bulleted-list"><li style="list-style-type:disc">pale/dark/tanned skin - blada / ciemna / opalona skóra</li></ul><ul id="80f1f1ea-a4cd-4cd1-837f-4cc9332fc318" class="bulleted-list"><li style="list-style-type:disc">skinny - chudy</li></ul><ul id="514c4e1d-d5d6-4498-8c51-d560667ec474" class="bulleted-list"><li style="list-style-type:disc">slim - szczupły</li></ul><ul id="21dbf43b-e497-4f93-aa63-9d22c258acd9" class="bulleted-list"><li style="list-style-type:disc">thin waist - cienka talia</li></ul><ul id="00403ebf-7541-4452-bb29-4e8091812dd9" class="bulleted-list"><li style="list-style-type:disc">well-built - dobrze zbudowany</li></ul><ul id="e9f01592-d7c4-4b27-856c-66a1b1680f9c" class="bulleted-list"><li style="list-style-type:disc">wide hips - szerokie biodra</li></ul></div></details></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Clothes</summary><div class="indented"><ul id="2b51999e-a10a-4fb0-bfff-56402f7a526a" class="bulleted-list"><li style="list-style-type:disc">bow tie - muszka</li></ul><ul id="6a073c71-d939-477f-85e7-f7fc3575d288" class="bulleted-list"><li style="list-style-type:disc">tie - krawat</li></ul><ul id="45fcd8b4-48d2-43ae-95a4-d0362a055da9" class="bulleted-list"><li style="list-style-type:disc">faded - wyblakłe</li></ul><ul id="2469ef04-edc2-4866-bd61-5a342b42ccad" class="bulleted-list"><li style="list-style-type:disc">ripped - pofalowane</li></ul><ul id="a134b133-34e0-4c48-b7a0-ba9264c67beb" class="bulleted-list"><li style="list-style-type:disc">jeans - dżinsy </li></ul><ul id="2f76ad1a-3fe4-482e-a974-c1feb4595b9f" class="bulleted-list"><li style="list-style-type:disc">fake fur jacket - kurta z sztucznego futra</li></ul><ul id="fef30c96-98c5-4ac6-be1a-50dc5edda369" class="bulleted-list"><li style="list-style-type:disc">high-heeled shoes - buty na wysokim obcasie</li></ul><ul id="bb19f932-62e2-47c5-9851-7bc4d602a83a" class="bulleted-list"><li style="list-style-type:disc">loose-fitting dress - odchudzająca sukienga</li></ul><ul id="5cc06d36-b06a-4ae0-9c7f-dab052c7c369" class="bulleted-list"><li style="list-style-type:disc">matching handbag - pasująca torebka</li></ul><ul id="7b83162a-392a-46a8-bad4-cc8438540ef8" class="bulleted-list"><li style="list-style-type:disc">nulon jacket - nylonowa kurtka</li></ul><ul id="a0e3cb92-a149-4af4-a82c-553ce855a189" class="bulleted-list"><li style="list-style-type:disc">plain white shirt - płaska biała koszula</li></ul><ul id="28b3b25e-4468-4a27-b93a-c2c8abcddc18" class="bulleted-list"><li style="list-style-type:disc">trainers - buty sportowe</li></ul><ul id="bbf252b9-d7e4-4a0d-83e9-9935d9f7ae53" class="bulleted-list"><li style="list-style-type:disc">shiny suit - błyszczący garnitur</li></ul><ul id="1fe87a39-80c9-4fe3-b931-7656fced4821" class="bulleted-list"><li style="list-style-type:disc">sunglasses - okulary przeciwsłoneczne</li></ul><ul id="b2e2bedb-76da-422d-92a8-3918a3ac45ea" class="bulleted-list"><li style="list-style-type:disc">t-shirt with a logogo on it - t-shirt z logo na wierzchu </li></ul><ul id="b4d0a1a2-c282-4958-8102-f2f6f818a071" class="bulleted-list"><li style="list-style-type:disc">tight trousers  - obcisłe spodnie</li></ul><ul id="36bb1b4b-8812-4ef0-be81-3dc6a1a67a5d" class="bulleted-list"><li style="list-style-type:disc">wide leather belt - szeroki skórzany pasek</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Other</summary><div class="indented"><ul id="bee164b8-5c59-4e83-ab1d-7e399fdb2797" class="bulleted-list"><li style="list-style-type:disc">bags under the eyes - worki pod oczami</li></ul><ul id="87a5bc3a-be09-4618-9ea2-88b1cc588525" class="bulleted-list"><li style="list-style-type:disc">double chin - podbrudek</li></ul><ul id="bb6c1edc-3b00-472f-935b-f08613ea361d" class="bulleted-list"><li style="list-style-type:disc">full lips - pełne usta</li></ul><ul id="6307e374-3a04-4bc6-8900-d5091f6f333d" class="bulleted-list"><li style="list-style-type:disc">long eyelashes - długie ręsy</li></ul><ul id="f8d6c989-f10b-43c5-8d96-4a4be92b8063" class="bulleted-list"><li style="list-style-type:disc">shaped eyebrown - poszarpana brew</li></ul><ul id="2378ab49-c380-45cf-9293-1f05ae573e42" class="bulleted-list"><li style="list-style-type:disc">smooth skin - gładka skóra</li></ul><ul id="ef24d1c8-ae3e-4d05-9b07-12c5323e01ca" class="bulleted-list"><li style="list-style-type:disc">wrinkles - zmarszczki</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">The power of appearance</summary><div class="indented"><ul id="097d5704-dc3a-4dd0-98be-afa5233d3ed5" class="bulleted-list"><li style="list-style-type:disc">admire - look up to (podziwiać) </li></ul><ul id="df33eeff-6ca6-4490-a1cb-d733815fcf12" class="bulleted-list"><li style="list-style-type:disc">take part in - join in (dołączyć)</li></ul><ul id="67e15862-c2c0-4111-879e-f9a933968e65" class="bulleted-list"><li style="list-style-type:disc">think she’s better than - look down on (wywyższać się)</li></ul><ul id="41eb86cc-a2d6-43a4-a3ba-95e456965ea4" class="bulleted-list"><li style="list-style-type:disc">start - set up</li></ul><ul id="f1d95d9a-8719-43d8-b0cc-efd60a7d6269" class="bulleted-list"><li style="list-style-type:disc">made a mistake - get it wrong (popełnić błąd)</li></ul></div></details></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">A super recognisation</summary><div class="indented"><ul id="b0ff6cde-91b6-4fa8-bcbc-35eca8b44cb3" class="bulleted-list"><li style="list-style-type:disc">crack down on - rozprawić się z czymś </li></ul><ul id="918309a3-67de-46ed-8ed5-9afec88f44b4" class="bulleted-list"><li style="list-style-type:disc">home in on - focus on. concetrate (skupić się)</li></ul><ul id="df4992b0-c063-4d39-84af-1ba704ee8b36" class="bulleted-list"><li style="list-style-type:disc">i don’t have a clue - I have no idea (nie miec pomysłu)</li></ul><ul id="94af6096-0ded-4326-ac0c-82a5430d3747" class="bulleted-list"><li style="list-style-type:disc">was all down to - hard work odf the team (spowadza się do)</li></ul><ul id="41cff866-2658-487f-aeed-583c83e138ee" class="bulleted-list"><li style="list-style-type:disc">pick out -indentify / recognize (poznać)</li></ul><ul id="1fa730e2-4ae0-4eb5-8cb0-bc046983b060" class="bulleted-list"><li style="list-style-type:disc">makes up for = compensaed for something (zrekompensować)</li></ul><ul id="f56d1c0d-7d56-4602-83af-7b20d978e8fa" class="bulleted-list"><li style="list-style-type:disc">tracked down = too look for somebody and find it (szukać kogoś i go znaleźć)</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">A might to remember</summary><div class="indented"><ul id="1eacf19d-2de3-4478-8866-5e953c664902" class="bulleted-list"><li style="list-style-type:disc">dress up as - przebrac się za kogoś</li></ul><ul id="3784a0e6-ac8f-41bd-8ed7-51140a641f2f" class="bulleted-list"><li style="list-style-type:disc">get dressed - put on clothes / ubrać się </li></ul><ul id="edd72a22-901d-4f38-ae4a-63037be4fb7b" class="bulleted-list"><li style="list-style-type:disc">get dressed up - put on elegant clothes (ubrać się elegancko)</li></ul><ul id="f32293c9-0eb8-475d-b9ba-f7fb55f83586" class="bulleted-list"><li style="list-style-type:disc">get undressed - take off clothes / rozebrać się</li></ul><ul id="bad3f6c0-6776-42f9-a61a-996ad83f226b" class="bulleted-list"><li style="list-style-type:disc">look overdressed- look to elegant (wyglądać za elegancko)</li></ul><ul id="2e264f14-be73-4feb-8ed1-120409067173" class="bulleted-list"><li style="list-style-type:disc">underdressed - wearing not enough cloth (nieodpowiednie buranie , za mało elganckie)</li></ul></div></details><p id="a6188cb7-ce3f-4795-89a6-11f068775c55" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
