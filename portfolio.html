@@ -5,9 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
+  <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script/portfolio.js" defer></script>
+  </head>
 
 <body>
   <!-- Header -->
@@ -40,15 +41,14 @@
   <!-- Main -->
   <div class="container mt-4">
     <div class="row justify-content-center">
-      <div class="col-md-6">
+      <div class="col-md-10"> <!-- Zmieniono klasę na col-md-10 -->
         <div class="row">
           <div class="col-md-6 mb-4">
             <div class="card h-100">
-              <img src="..." class="card-img-top" alt="...">
+              <img src="img/Guugle_UI.png" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Guugle</h5>
-                <p class="card-text">Guugle to humorystyczna prosta przeglądarka internetowa stworzona na podstawie
-                  silnika wyszukiwarki google. Charakteryzująca się szybkością działania oraz wszechstronną funkcjonalnością</p>
+                <p class="card-text">Guugle to humorystyczna prosta przeglądarka internetowa stworzona na podstawie silnika wyszukiwarki google. Charakteryzująca się szybkością działania oraz wszechstronną funkcjonalnością</p>
                 <a href="https://github.com/alwoodm/Guugle" class="btn btn-primary">Idź do projektu</a>
               </div>
             </div>
@@ -58,22 +58,18 @@
               <img src="..." class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Portfolio</h5>
-                <p class="card-text">Właśnie je widzisz. To portfolio zostało stworzone z wykorzystaniem Bootstrapa 5.3,
-                  oferując responsywny i estetyczny design, który pozwala na klarowne prezentowanie umiejętności
-                  programistycznych i projektów, jednocześnie zapewniając łatwą nawigację dla użytkowników.</p>
+                <p class="card-text">Właśnie je widzisz. To portfolio zostało stworzone z wykorzystaniem Bootstrapa 5.3, oferując responsywny i estetyczny design, który pozwala na klarowne prezentowanie umiejętności programistycznych i projektów, jednocześnie zapewniając łatwą nawigację dla użytkowników.</p>
                 <a href="https://github.com/alwoodm/Portfolio" class="btn btn-primary">Idź do projektu</a>
               </div>
             </div>
           </div>
           <div class="col-md-6 mb-4">
             <div class="card h-100">
-              <img src="..." class="card-img-top" alt="...">
+              <img src="img/Youtube_downloader_UI.png" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title">Card title 3</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id justo a
-                  justo fringilla accumsan. Morbi fringilla eleifend ex sit amet fermentum. Proin auctor finibus enim.
-                  Vivamus sit amet elit lacinia, ultrices libero non, aliquet tortor.</p>
-                <a href="#" class="btn btn-primary">Idź do projektu</a>
+                <h5 class="card-title">Youtube Downloader</h5>
+                <p class="card-text">YouTube Downloader to aplikacja desktopowa stworzona w Pythonie z wykorzystaniem PyQt5. Służy do pobierania plików wideo i dźwiękowych z YouTube w celach edukacyjnych i naukowych. Interfejs użytkownika jest prosty i umożliwia wybór formatu (MP3 lub MP4), wprowadzenie adresu URL oraz określenie lokalizacji zapisu pliku.</p>
+                <a href="#" class="btn btn-primary" id="YoutubeDownloader_downloadBtn">Pobierz program</a>
               </div>
             </div>
           </div>
@@ -82,9 +78,7 @@
               <img src="..." class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Card title 4</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id justo a
-                  justo fringilla accumsan. Morbi fringilla eleifend ex sit amet fermentum. Proin auctor finibus enim.
-                  Vivamus sit amet elit lacinia, ultrices libero non, aliquet tortor. Duis non condimentum urna.</p>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id justo a justo fringilla accumsan. Morbi fringilla eleifend ex sit amet fermentum. Proin auctor finibus enim. Vivamus sit amet elit lacinia, ultrices libero non, aliquet tortor. Duis non condimentum urna.</p>
                 <a href="#" class="btn btn-primary">Idź do projektu</a>
               </div>
             </div>
@@ -93,10 +87,9 @@
       </div>
     </div>
   </div>
+  iv>
+  
   <!-- ------------------------------------------------------------------------------------------ -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
 </body>
 
 </html>
