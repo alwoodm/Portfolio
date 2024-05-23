@@ -19,11 +19,11 @@ Projekt składa się z następujących plików i folderów:
 - **school.html**: Sekcja strony zawierająca osiągniącia w ramach edukacji szkolnej oraz link do strony zawierającej materiały z lekcji w szkole.
 - **contact.html**: Sekcja kontaktowa strony.
 - **/node_modules/bootstrap**: Folder zawierający framework bootstrap w wersji 5.3.3.
-- **script**: Folder zawierający skrypty strony
-- **script/contact.js**: Skrypt obsługujący przesyłanie formularza kontaktowego.
-- **script/portfolio.js**: Skrypt umożliwiający pobieranie plików z sekcji portfolio.
-- **style**: Folder stylów
-- **style/contact.css**: Plik stylów do strony portflolio.html
+- **/script/**: Folder zawierający skrypty strony
+- **/script/contact.js**: Skrypt obsługujący przesyłanie formularza kontaktowego.
+- **/script/portfolio.js**: Skrypt umożliwiający pobieranie plików z sekcji portfolio.
+- **/style**: Folder stylów
+- **/style/contact.css**: Plik stylów do strony portflolio.html
 
 ## Autor
 
