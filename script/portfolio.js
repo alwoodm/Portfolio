@@ -1,3 +1,4 @@
+// Funkcja przycisku pobierz dla YoutubeDownloader
 document.getElementById('YoutubeDownloader_downloadBtn').addEventListener('click', function (event) {
     event.preventDefault();
     var downloadLink = document.createElement('a');
