@@ -10,118 +10,77 @@
 </head>
 
 <body>
-  <!-- Header -->
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">alwood</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">O mnie</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="portfolio.html">Portfolio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true" href="school.html">Szkoła</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="contact.html" aria-current="page">Kontakt</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <!----------------------------------------------------------------------------------------------->
-
-  <!-- Main -->
-  <section id="contact" class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">Kontakt</h2>
-      <div class="row">
-        <div class="col-lg-6">
-          <!-- Form original -->
-          <form id="form" method="POST">
-            <div class="mb-3">
-              <input type="hidden" name="access_key" value="a1164101-c794-4780-98c2-016d7cfb66cd">
-              <label for="name" class="form-label">Imię</label>
-              <input type="text" class="form-control" id="name" name="name" placeholder="Podaj swoje imię" required>
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Adres email</label>
-              <input type="email" class="form-control" id="email" name="email" placeholder="Podaj swój adres email"
-                required>
-            </div>
-            <div class="mb-3">
-              <label for="message" class="form-label">Wiadomość</label>
-              <textarea class="form-control" id="message" name="message" rows="5" placeholder="Napisz swoją wiadomość"
-                required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Wyślij</button>
-            <div id="result"></div>
-          </form>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">alwood</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">O mnie</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="portfolio.html">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" aria-disabled="true" href="school.html">Szkoła</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="contact.html" aria-current="page">Kontakt</a>
+            </li>
+          </ul>
         </div>
-        <script src="https://web3forms.com/client/script.js" async defer></script>
-        <script>
-          const form = document.getElementById('form');
-          const result = document.getElementById('result');
-
-          form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            const formData = new FormData(form);
-            const object = Object.fromEntries(formData);
-            const json = JSON.stringify(object);
-            result.innerHTML = "Please wait..."
-
-            fetch('https://api.web3forms.com/submit', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-              },
-              body: json
-            })
-              .then(async (response) => {
-                let json = await response.json();
-                if (response.status == 200) {
-                  result.innerHTML = "Form submitted successfully";
-                } else {
-                  console.log(response);
-                  result.innerHTML = json.message;
-                }
-              })
-              .catch(error => {
-                console.log(error);
-                result.innerHTML = "Something went wrong!";
-              })
-              .then(function () {
-                form.reset();
-                setTimeout(() => {
-                  result.style.display = "none";
-                }, 3000);
-              });
-          });
-        </script>
-        <!---------------------------------------------------------------------------------------------------------------->
-        <div class="col-lg-6 mt-4 mt-lg-0">
-          <div class="info">
-            <h3>Informacje kontaktowe</h3>
-            <p>Adres: BLANK</p>
-            <p>Telefon: BLANK</p>
-            <p>Email: kontakt@alwood.site</p>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section id="contact" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Kontakt</h2>
+        <div class="row">
+          <div class="col-lg-6">
+            <!-- Form original -->
+            <form id="form" method="POST">
+              <div class="mb-3">
+                <input type="hidden" name="access_key" value="a1164101-c794-4780-98c2-016d7cfb66cd">
+                <label for="name" class="form-label">Imię</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Podaj swoje imię" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Adres email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Podaj swój adres email"
+                  required>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Wiadomość</label>
+                <textarea class="form-control" id="message" name="message" rows="5" placeholder="Napisz swoją wiadomość"
+                  required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Wyślij</button>
+              <div id="result"></div>
+            </form>
+          </div>
+          <div id="toast-container" style="position: fixed; top: 10px; right: 10px;"></div>
+          <script src="script/contact.js"></script>
+          <script src="https://web3forms.com/client/script.js" async defer></script>
+          <!----------------------------------------------------------------------------------------------->
+          <div class="col-lg-6 mt-4 mt-lg-1">
+            <div class="info">
+              <h3>Informacje kontaktowe</h3>
+              <p>Adres: BLANK</p>
+              <p>Telefon: BLANK</p>
+              <p>Email: kontakt@alwood.site</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-
-
-  <!----------------------------------------------------------------------------------------------->
+    </section>
+  </main>
+  <footer></footer>
 </body>
 
 </html>
