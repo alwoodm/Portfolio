@@ -8,7 +8,7 @@ Moje portfolio internetowe jest miejscem, gdzie prezentuję moje umiejętności,
 
 ## Adres strony projektu
 - Github: https://github.com/alwoodm/Portfolio
-- Strona: https://alwood.site
+- Strona: https://alwood.ovh
 
 ## Struktura projektu
 
