@@ -30,4 +30,4 @@ Projekt składa się z następujących plików i folderów:
 Autor: Aleksander Lis
 
 
-Kontakt: [kontakt@alwood.site](mailto:kontakt@alwood.site)
+Kontakt: [kontakt@alwood.ovh](mailto:kontakt@alwood.ovh)
